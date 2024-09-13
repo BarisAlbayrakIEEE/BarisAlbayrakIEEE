@@ -1,12 +1,20 @@
-# 1. Fundamentals of the Software Engineering
+# 1. Introduction
+I created this github page in order to give a reference in my job applications.
+Please consider this README file as an extension of my resume.
 
-## 1.1. Software Design
+This github page presents some of my works written in C++, python and java.
+
+The following sections summarizes my software engineering background and experience.
+
+# 2. Fundamentals of the Software Engineering
+
+## 2.1. Software Design
 - **Modularity:** A design solution is highly modular if the high cohesion/low coupling principle is satisfied among the modules.
 - **Layered Design:** The modules are arranged in a hierarchy of layers forming a tree-like diagram.
 - **Function-Oriented Design:** The design is decomposed into a set of interacting units where each unit has a clearly defined function.
 - **Object-Oriented Design:** The system is viewed as being made up of a collection of objects.
 
-## 1.2. Abstraction and Modeling
+## 2.2. Abstraction and Modeling
 - **The biggest mistake:** Designing the software which represents the real-life problem as it is without designing structural or behavioral abstractions.
 - **Two Types:** Data abstraction should be considered together with the process abstraction.
 - **Factors:** Many issues such as the data structures and the concurrency should be evaluated:
@@ -30,7 +38,7 @@ However, a vector has an invariant that at least one component should be non-zer
 The above point example inspects the **WHAT** question only.
 Consider two other geometric entities: axis and line piece.
 An axis is the set of points achieved by infinitely translating a point along a vector in both directions.
-A line piece, on the other hand, excludes the points of the axis that are out of the two boundary points.
+A line piece, on the other hand, excludes the points of the axis those are out of the two boundary points.
 So, why not defining the line piece class by inheritting from the axis class?
 Then, adding the two boundary points would finish the definition of the line piece.
 Again, this looks like a good design solution based on the famous **IS A** relation.
@@ -54,17 +62,17 @@ considering the geometric operations such as transformations and intersection.
 
 Another mistake in the above line piece class is the boundary points defined as members of the line piece.
 The line piece objects are aware of the boundary points while the points are not aware of the line using them.
-Again, an inexperienced developer would solve this issue by creating an abstract base class for all entities and storing the pointers to the entities using the object.
+Again, an unexperienced developer would solve this issue by creating an abstract base class for all entities and storing the pointers to the entities using the object.
 The boundary points store a shared pointer to the line piece object.
 This approach looks enough to define the relations between the objects in our geometry library.
-However, what we did is to reimplement an existing data structure: directed acyclic graph (DAG).
+However, what we did is re-implementing an existing data structure: directed acyclic graph (DAG).
 A DAG can easily manage the ancestor and descendant relations in a geometry library.
 Hence, we neither need to store the raw pointers to the boundary points in the line piece object nor the shared pointer to the line piece in the boundary point objects.
 
 Finally, by managing the geometric objects by the help of a DAG structure, the concurrency can be applied to the application very easily.
 Actually, after having a multithreaded DAG, not much remains.
 
-## 1.3. Programming Paradigms
+## 2.3. Programming Paradigms
 - Structured programming (C, C++, FORTRAN, PATRAN PCL)
 - Object-Oriented Programming, OOP (C++, Python, Java, Visual Basic)
 - Functional Programming, FP (purity, higher-level functions, ranges, monads, template metaprogramming, currying)
@@ -74,6 +82,7 @@ Actually, after having a multithreaded DAG, not much remains.
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL, and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
+I have developed a number of projects using python, java and C++ later in my professional life.
 For the last two years, like many other software engineers, I have been studying FP from books and by inspecting public works of other people from GitHub.
 I already had a good background in template metaprogramming, hence, I did not have a big trouble during my studies.
 
@@ -82,12 +91,12 @@ Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) r
 I had some earlier work on a geometry library which is currently not a structured mixture.
 I will publish two libraries from this work:
 
-- *GeometryLibrary_OCCT:* C++03 relying on OCCT smart pointers (i.e., handles): Presents the wrong designs covered in [Abstraction and Modeling](#1.2-Abstraction-and-Modeling)
+- *GeometryLibrary_OCCT:* C++03 relying on OCCT smart pointers (i.e., handles): Presents the wrong designs covered in [Abstraction and Modeling](#2.2-Abstraction-and-Modeling)
 - *GeometryLibrary_Modern:* C++20: A well-designed concurrent library
 
 Please see [Geometry Library](https://github.com/BarisAlbayrakIEEE/cpp) repository in my GitHub page for my skills in OOP and FP.
 
-## 1.4. Data Structures and Algorithms
+## 2.4. Data Structures and Algorithms
 - Memory management
 - All basic data structures (static and dynamic arrays, linked lists, queues, stacks, trees, binary trees, red-black trees, sets, graphs, hash maps/tables, etc.)
 - Persistent data structures (partial, full, and functional)
@@ -97,7 +106,7 @@ Please see [Geometry Library](https://github.com/BarisAlbayrakIEEE/cpp) reposito
 - Fundamental algorithms for any container (insert, erase, traversal, sort, partition, etc.)
 - Time and space complexity analysis (best and worst cases, amortized analysis)
 
-## 1.5. OOP Concepts
+## 2.5. OOP Concepts
 - Basic concepts (abstraction, encapsulation, inheritance, delegation, polymorphism)
 - High cohesion, low coupling (fully orthogonal interfaces, dependency inversion)
 - SOLID principles
@@ -117,7 +126,7 @@ This methodology is highly based on abstract base classes (or interfaces) and dy
 However, since C++99, with the lead of Stroustrup, C++ has been introducing new tools with every new standard, replacing dynamic polymorphism with static definitions.
 Currently, many design patterns can be implemented generically, maybe with some additional help from template metaprogramming.
 
-## 1.6. Functional Programming (FP)
+## 2.6. Functional Programming (FP)
 - Immutable state and purity (functions lack side effects)
 - Higher-level functions (partial functions, function composition, function lifting, currying)
 - Laziness (lazy initialization, copy on write idiom, memoization)
@@ -127,7 +136,7 @@ Currently, many design patterns can be implemented generically, maybe with some 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my GitHub page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the persistent data structures.
 
-## 1.7. Template Metaprogramming
+## 2.7. Template Metaprogramming
 C++ provides a compile-time (i.e., static) template definition,
 while for other languages (e.g., Java), template definitions result in a class hierarchy
 as all objects inherit from the language's base object (e.g., JavaObject).
@@ -138,7 +147,7 @@ Hence, the following issues are related mostly to C++:
 - Static type checking (better debugging and compile-time error detection)
 - Removes a lot of boilerplate code
 
-## 1.8. Concurrency
+## 2.8. Concurrency
 - Separation of concerns, task parallelism, and data parallelism
 - Oversubscription (more threads than the hardware can support)
 - Scalability and Amdahl’s law
@@ -155,7 +164,7 @@ Hence, the following issues are related mostly to C++:
 - False sharing: The cache line is shared, even though none of the data is shared
 - Data proximity: if the data is spread out in memory, the related cache lines must be loaded from memory onto the processor cache
 
-## 1.9. Rules for Concurrent Data Structures
+## 2.9. Rules for Concurrent Data Structures
 - Decide fine/coarse-grained locking (lock-based approach)
 - Ensure that no thread can see a state where the invariants of the data structure have been broken by the actions of another thread
 - Avoid race conditions inherent in the interface by providing functions for complete operations (e.g., top_and_pop) rather than for operation steps (e.g., top, pop)
@@ -166,14 +175,14 @@ Hence, the following issues are related mostly to C++:
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my GitHub page contains a concurrent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues.
 
-# 2. Languages & Tools
+# 3. Languages & Tools
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
 - CMake
 - git, TortoiseSVN
 - Google Test
 - MS Visual Studio, VS Code, Anaconda, Netbeans
 
-# 3. C/C++ Skills
+# 4. C/C++ Skills
 SW: Synchronizes-with
 ITHB: Inter-thread-happens-before
 EBC: Empty base class
