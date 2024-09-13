@@ -7,7 +7,7 @@
 - **Object-Oriented Design:** The system is viewed as being made up of a collection of objects.
 
 ## 1.2. Abstraction and Modeling
-- **The biggest mistake:** Designing the software which represents the real-life problem as it is.
+- **The biggest mistake:** Designing the software which represents the real-life problem as it is without designing structural or behavioral abstractions.
 - **Two Types:** Data abstraction should be considered together with the process abstraction.
 - **Factors:** Many issues such as the data structures and the concurrency should be evaluated:
 - Separation of concerns
