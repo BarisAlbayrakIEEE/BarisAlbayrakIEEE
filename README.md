@@ -240,6 +240,16 @@ However, this is not the true in most of the cases.
 Any action which is not at the ends of the doubly linked list requires
 a traversal which keeps doing the pointer indirection between arbitrary memory locations.
 In other words, the time complexities given in the standard can be misleading.
+In this case, the developer should know about the followings in order to choose between the two containers:
+
+- memory allocations: dynamic contiguous vs dynamic arbitrary (i.e. nodal)
+- iterator categories: random access vs bidirectional
+- flexibility depending on the contained type: vector can activate memcopy if T is trivially copyable
+- size: S(N) vs S(kN) where k stands for the pointers to the next and previous elements
+- etc
+
+I did not list the time complexities for the majority of the basic functions.
+In most of the cases, the 1st two items are more and more effective than the time complexities of functions.
 
 # 5. Acknowledgments
 1. Alexandrescu, Modern C++ Design
