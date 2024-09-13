@@ -251,7 +251,7 @@ In this case, the developer should know about the followings in order to choose 
 I did not list the time complexities for the majority of the basic functions.
 In most of the cases, the 1st two items are more and more effective than the time complexities of functions.
 
-# 5. Acknowledgments
+# 5. Acknowledgements
 1. Alexandrescu, Modern C++ Design
 2. Ivan Cukic, Functional Programming in C++
 3. Anthony Williams, C++ Concurrency in Action
