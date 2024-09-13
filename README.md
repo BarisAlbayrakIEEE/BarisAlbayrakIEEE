@@ -15,7 +15,7 @@ The following sections summarizes my software engineering background and experie
 - **Object-Oriented Design:** The system is viewed as being made up of a collection of objects.
 
 ## 2.2. Abstraction and Modeling
-- **The biggest mistake:** Designing the software which represents the real-life problem as it is without designing structural or behavioral abstractions.
+- **The crucial mistake:** Designing the software which represents the real-life problem as it is without designing structural or behavioral abstractions.
 - **Two Types:** Data abstraction should be considered together with the process abstraction.
 - **Factors:** Many issues such as the data structures and the concurrency should be evaluated:
 - Separation of concerns
@@ -29,7 +29,7 @@ Similarly, a concurrent system would have a different structure than a single-th
 
 Most beginner developers think that OOP is the best solution for every problem.
 Besides, many developers unfortunately apply OOP in the wrong way.
-One of the biggest mistakes, in this respect, is to design a class as the exact copy of the real life object.
+One of the crucial mistakes, in this respect, is to design a class as the exact copy of the real life object.
 Consider the vectors and the points in geometry.
 The geometric definition of a point is based on a vector.
 So, the 1st choice for a point class is to put a vector in the point class as a member or inherit the point from the vector class.
@@ -48,7 +48,7 @@ The above design would require four overloads for the intersection.
 Even worst, the intersection operation for axis-line piece combination would require double dispatching which is not supported by C++.
 Although, the strategy (or visitor) design pattern or double dispatch idiom could easily solve the problem,
 these kind of problems are the sign of a bad design practice.
-This is the 2nd biggest mistake that the behavioral analysis is considered to be belonging to the function-oriented approach
+This is the **2nd crucial mistake** that the behavioral analysis is considered to be belonging to the function-oriented approach
 and is forgotten/neglected during the object-oriented approach.
 If the developer has considered the behaviors of the two entities,
 she would have realized that the line piece is a bounded geometry
@@ -183,10 +183,11 @@ The README file of the repository presents a detailed discussion about the above
 - MS Visual Studio, VS Code, Anaconda, Netbeans
 
 # 4. C/C++ Skills
-SW: Synchronizes-with
-ITHB: Inter-thread-happens-before
-EBC: Empty base class
+SW: Synchronizes-with\
+ITHB: Inter-thread-happens-before\
+EBC: Empty base class\
 NVI: Non-virtual interface
+
 - Long-term experience with C++99/03/11/14/17/20
 - OOP basics (abstract base class and virtual functions, dynamic polymorphism, single dispatch, RTTI, special/defaulted functions, memory management, etc.)
 - Evaluation of C++ with C++11 (move semantics, smart pointers, std::thread and concurrency, type traits, lambdas, etc.)
@@ -204,3 +205,38 @@ NVI: Non-virtual interface
 - memory_order_relaxed: Relaxed ordering; stores and loads are not synchronized, obeys happens-before relationships but does not obey SW relationships
 - memory_order_acquire-memory_order_release-memory_order_acq_rel: Acquire-release ordering; one step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
 - Template metaprogramming: Concepts, template specializations, template type deduction rules, traits, and type manipulation, static type checking
+
+I will introduce two examples in order to make some of the above issues clear:
+
+1. Unexperienced developers usualy suffer from the dangling pointers or the memory leaks.\
+The are many causes for the 1st one:
+
+- not managing a resource correctly (lack of RAII)
+- invalidated pointers (even STL containers can invalidate pointers/iterators to an element)
+- returning local variables
+- lack of exception safety (at least strong exception safety is required)
+- a race condition which invalidates invariants
+- etc
+
+and for the 2nd one:
+
+- missing or incomplete RAII
+- design errors: wrong ownership relations, wrong smart pointer usage, exceeding single responsibility principle
+- lack of exception safety (at least strong exception safety is required)
+- etc
+
+As can be seen from the above items, even a very fundamental issue like the validity of a pointer/reference
+requires a strong background while working with C++.
+
+2. Internet (e.g. stackoverflow) provides fast and summarized information which can be misleading in many cases.\
+Consider we need a data structure to store the elements of type T.
+As Stroustrup says that std::vector is the best choice in most of the cases.
+However, when we trace the time complexities of the operations on the containers,
+in some cases a list looks better than a vector (e.g. inserting an element at the middle).
+So, an unexperienced developer can easily prefer the list instead of a vector
+when she is informed about this time complexity issue.
+However, this is not the true in most of the cases.
+**I have never been to use a list data structure** because I know that its cumborsome.
+Any action which is not at the ends of the doubly linked list requires
+a traversal which keeps doing the pointer indirection between arbitrary memory locations.
+In other words, the time complexities given in the standard can be misleading.
