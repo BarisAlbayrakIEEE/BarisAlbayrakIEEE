@@ -41,7 +41,7 @@ An axis is the set of points achieved by infinitely translating a point along a 
 A line piece, on the other hand, excludes the points of the axis those are out of the two boundary points.
 So, why not defining the line piece class by inheritting from the axis class?
 Then, adding the two boundary points would finish the definition of the line piece.
-Again, this looks like a good design solution based on the famous **IS A** relation.
+Again, this looks like a good design solution based on the famous **IS A** and **HAS A** relations.
 The above two examples do not consider the functionality (i.e. the behavior) of the objects at all.
 For example, how to perform the intersection operations involving an axis or a line piece?
 The above design would require four overloads for the intersection.
