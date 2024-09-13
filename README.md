@@ -242,7 +242,7 @@ a traversal which keeps doing the pointer indirection between arbitrary memory l
 In other words, the time complexities given in the standard can be misleading.
 In this case, the developer should know about the followings in order to choose between the two containers:
 
-- memory allocations: dynamic contiguous vs dynamic arbitrary (i.e. nodal)
+- memory allocations: dynamic contiguous vs dynamic non-contiguous (i.e. nodal)
 - iterator categories: random access vs bidirectional
 - flexibility depending on the contained type: vector can activate memcopy if T is trivially copyable
 - size: S(N) vs S(kN) where k stands for the pointers to the next and previous elements
