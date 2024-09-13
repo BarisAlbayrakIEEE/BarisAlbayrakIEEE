@@ -82,8 +82,9 @@ Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) r
 I had some earlier work on a geometry library which is currently not a structured mixture.
 I will publish two libraries from this work:
 
-GeometryLibrary_OCCT: C++03 relying on OCCT smart pointers (i.e., handles): Presents the wrong designs covered in [Abstraction and Modeling](#1.2-Abstraction-and-Modeling)
-GeometryLibrary_Modern: C++20: A well-designed concurrent library
+- *GeometryLibrary_OCCT:* C++03 relying on OCCT smart pointers (i.e., handles): Presents the wrong designs covered in [Abstraction and Modeling](#1.2-Abstraction-and-Modeling)
+- *GeometryLibrary_Modern:* C++20: A well-designed concurrent library
+
 Please see [Geometry Library](https://github.com/BarisAlbayrakIEEE/cpp) repository in my GitHub page for my skills in OOP and FP.
 
 ## 1.4. Data Structures and Algorithms
