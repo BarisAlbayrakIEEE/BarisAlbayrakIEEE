@@ -240,3 +240,14 @@ However, this is not the true in most of the cases.
 Any action which is not at the ends of the doubly linked list requires
 a traversal which keeps doing the pointer indirection between arbitrary memory locations.
 In other words, the time complexities given in the standard can be misleading.
+
+# 5. Acknowledgments
+1. Alexandrescu, Modern C++ Design
+2. Ivan Cukic, Functional Programming in C++
+3. Anthony Williams, C++ Concurrency in Action
+4. Edouard Alligand & Joel Falcou, Practical C++ Metaprogramming
+5. Phil Bagwell, Ideal Hash Tries
+6. Loki [GitHub Pages](https://github.com/dutor/loki)
+7. C++ concurrency library [GitHub Pages](https://github.com/David-Haim/concurrencpp)
+8. C++ persistent data structures [GitHub Pages](https://github.com/arximboldi/immer)
+9. C++ Template class implementation of Hash Array Mapped Trie [GitHub Pages](https://github.com/chaelim/HAMT)
