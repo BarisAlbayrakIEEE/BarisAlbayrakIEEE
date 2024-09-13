@@ -70,6 +70,7 @@ Actually, after having a multithreaded DAG, not much remains.
 - Functional Programming, FP (purity, higher-level functions, ranges, monads, template metaprogramming, currying)
 
 **Personal Background**
+
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL, and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
@@ -80,6 +81,7 @@ Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) r
 
 I had some earlier work on a geometry library which is currently not a structured mixture.
 I will publish two libraries from this work:
+
 GeometryLibrary_OCCT: C++03 relying on OCCT smart pointers (i.e., handles): Presents the wrong designs covered in [Abstraction and Modeling](#1.2-Abstraction-and-Modeling)
 GeometryLibrary_Modern: C++20: A well-designed concurrent library
 Please see [Geometry Library](https://github.com/BarisAlbayrakIEEE/cpp) repository in my GitHub page for my skills in OOP and FP.
