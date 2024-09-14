@@ -233,9 +233,9 @@ Consider we need a data structure to store the elements of type T.
 As Stroustrup says that std::vector is the best choice in most of the cases.
 However, when we trace the time complexities of the operations on the containers,
 in some cases a list looks better than a vector (e.g. inserting an element at the middle).
-So, an unexperienced developer can easily prefer the list instead of a vector
+So, an unexperienced developer can prefer the list instead of a vector
 when she is informed about this time complexity issue.
-However, this is not the true in most of the cases.
+However, this is not true in most of the cases.
 **I have never been to use a list data structure** because I know that its cumborsome.
 Any action which is not at the ends of the doubly linked list requires
 a traversal which keeps doing the pointer indirection between arbitrary memory locations.
