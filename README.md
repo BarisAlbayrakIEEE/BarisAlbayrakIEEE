@@ -4,7 +4,7 @@ Please consider this README file as an extension of my resume.
 
 This github page presents some of my works written in C++, python and java.
 
-The following sections summarizes my software engineering background and experience.
+The following sections summarize my software engineering background and experience.
 
 # 2. Fundamentals of the Software Engineering
 
