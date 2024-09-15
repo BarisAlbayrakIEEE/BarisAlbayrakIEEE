@@ -5,7 +5,7 @@ I created this github page as a reference for my job applications.
 The page presents some of my works written in C++, python and java.
 Please consider this README file as an extension of my resume.
 
-**Personal Background**\
+**Personal History**\
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL, and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
