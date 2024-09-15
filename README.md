@@ -1,6 +1,6 @@
 # 1. Introduction
 
-**Footnote**
+**Caution**\
 I created this github page as a reference for my job applications and presents some of my works written in C++, python and java.
 Please consider this README file as an extension of my resume.
 
