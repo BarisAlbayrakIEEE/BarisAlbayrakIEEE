@@ -17,7 +17,7 @@ An incident made a great effect on my vision for software engineering.
 I implemented a sorting algorithm for my PATRAN PCL libraries which was *quite fast* comparing to a traditioanl sorting algorithm based on comparison.
 I was realy proud of that algorithm. One day, after a decade around 2017, I decided to make a review of the sorting algorithms other people generated.
 I was shocked that my algorithm was one of the well known sorting algorithms named as *counting sort* and dated back to 1950s.
-Although I was disappointed, this event was a milestone for me such that I realized that software engineering is not creating genius functions but its a science.
+Although I was disappointed, this event was a milestone for me such that I realized that software engineering was not creating genius functions but its a science.
 Hence, I decided to study starting from the fundamentals and build up following the strong references.
 During this *education period* sometimes I followed wrong paths especially at the beginning when I developed programs in python.
 Later I decided to switch to java but soon I understood that C++ was the correct language.
