@@ -227,7 +227,7 @@ NVI: Non-virtual interface
 2. [Java](https://github.com/BarisAlbayrakIEEE/java)
 3. [Python](https://github.com/BarisAlbayrakIEEE/python)
 
-# 6. Acknowledgements
+# 6. Some References
 1. Alexandrescu, Modern C++ Design
 2. Ivan Cukic, Functional Programming in C++
 3. Anthony Williams, C++ Concurrency in Action
