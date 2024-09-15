@@ -26,7 +26,7 @@ C++ is the closest language to the machine among commercial languages.
 Two years ago, I had a similar incident. I created a solution for a problem related to one of my data structures and inspected its pros and cons.
 Later, I made a survey that how other people treated to the problem I faced.
 The result was not surprising for me this time that other developers has approached the problem exactly the same way.
-Even, the solution was named as same as what I typed to google: *swap and pop*.
+Even, the solution was named as same as what I typed to google: *swap and pop idiom*.
 I felt realy good that **my studies has rewarded me with a satisfactory level** in software engineering discipline.
 
 The following sections summarize my software engineering background and experience.
