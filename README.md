@@ -1,5 +1,5 @@
 # 1. Introduction
-I created this github page in order to give a reference in my job applications.
+I created this github page as a reference for my job applications.
 Please consider this README file as an extension of my resume.
 
 This github page presents some of my works written in C++, python and java.
