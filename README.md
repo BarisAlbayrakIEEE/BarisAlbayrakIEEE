@@ -90,7 +90,7 @@ The line piece objects are aware of the boundary points while the points are not
 Again, an unexperienced developer would solve this issue by creating an abstract base class for all entities and storing the pointers to the entities using the object.
 The boundary points store a shared pointer to the line piece object.
 This approach looks enough to define the relations between the objects in our geometry library.
-However, what we did is re-implementing an existing data structure: directed acyclic graph (DAG).
+However, what we did is re-implementing an existing data structure: **directed acyclic graph (DAG)**.
 A DAG can easily manage the ancestor and descendant relations in a geometry library.
 Hence, we neither need to store the raw pointers to the boundary points in the line piece object nor the shared pointer to the line piece in the boundary point objects.
 
@@ -104,13 +104,13 @@ Actually, after having a multithreaded DAG, not much remains.
 
 Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my GitHub page as an example of my FP background.
 
-I had some earlier work on a geometry library which is currently not a structured mixture.
+I had some earlier work on a geometry library which is currently a mixture of buggy code.
 I will publish two libraries from this work:
 
-- *GeometryLibrary_OCCT:* C++03 relying on OCCT smart pointers (i.e., handles): Presents the wrong designs covered in [Abstraction and Modeling](#2.2-Abstraction-and-Modeling)
-- *GeometryLibrary_Modern:* C++20: A well-designed concurrent library
+- *GeometryLibrary_OCCT:* C++03 relying on OCCT smart pointers (i.e., handles): Will present the wrong designs covered in [Abstraction and Modeling](#2.2-Abstraction-and-Modeling)
+- *GeometryLibrary_Modern:* C++20: A well-designed concurrent library: Will present a concurrent modern geometry library.
 
-Please see [Geometry Library](https://github.com/BarisAlbayrakIEEE/cpp) repository in my GitHub page for my skills in OOP and FP.
+Please see [Geometry Library](https://github.com/BarisAlbayrakIEEE/cpp) repository in my GitHub page for the above two.
 
 ## 2.4. Data Structures and Algorithms
 - Memory management
@@ -150,7 +150,7 @@ Currently, many design patterns can be implemented generically, maybe with some 
 - Persistent data structures (free exception safety, free concurrency, free history)
 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my GitHub page contains a persistent DAG data structure.
-The README file of the repository presents a detailed discussion about the persistent data structures.
+The README file of the repository presents a detailed discussion about the persistent data structures and concurrency.
 
 ## 2.7. Template Metaprogramming
 C++ provides a compile-time (i.e., static) template definition,
@@ -221,6 +221,11 @@ NVI: Non-virtual interface
 - memory_order_relaxed: Relaxed ordering; stores and loads are not synchronized, obeys happens-before relationships but does not obey SW relationships
 - memory_order_acquire-memory_order_release-memory_order_acq_rel: Acquire-release ordering; one step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
 - Template metaprogramming: Concepts, template specializations, template type deduction rules, traits, and type manipulation, static type checking
+
+# 5. Repositories
+1. [C++](https://github.com/BarisAlbayrakIEEE/cpp)
+2. [Java](https://github.com/BarisAlbayrakIEEE/java)
+3. [Python](https://github.com/BarisAlbayrakIEEE/python)
 
 # 5. Acknowledgements
 1. Alexandrescu, Modern C++ Design
