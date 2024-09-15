@@ -1,8 +1,33 @@
 # 1. Introduction
-I created this github page as a reference for my job applications.
+
+**Footnote**
+I created this github page as a reference for my job applications and presents some of my works written in C++, python and java.
 Please consider this README file as an extension of my resume.
 
-This github page presents some of my works written in C++, python and java.
+**Personal Background**
+
+I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
+For a long time, I developed using structured languages: FORTRAN, PATRAN PCL, and Visual Basic.
+Later, in 2016, I started studying OOP using Python.
+I have developed a number of projects using python, java and C++ later in my professional life.
+For the last two years, like many other software engineers, I have been studying FP from books and by inspecting public works of other people from GitHub.
+I already had a good background in template metaprogramming, hence, I did not have a big trouble during my studies.
+
+An incident made a great effect on my vision for software engineering.
+I implemented a sorting algorithm for my PATRAN PCL libraries which was *quite fast* comparing to a traditioanl sorting algorithm based on comparison.
+I was realy proud of that algorithm. One day, after a decade around 2017, I decided to make a review of the sorting algorithms other people generated.
+I was shocked that my algorithm was one of the well known sorting algorithms named as *counting sort* and dated back to 1950s.
+Although I was disappointed, this event was a milestone for me such that I realized that software engineering is not creating genius functions but its a science.
+Hence, I decided to study starting from the fundamentals and build up following the strong references.
+During this *education period* sometimes I followed wrong paths especially at the beginning when I developed programs in python.
+Later I decided to switch to java but soon I understood that C++ was the correct language.
+C++ is the closest language to the machine among commercial languages.
+
+Two years ago, I had a similar incident. I created a solution for a problem related to one of my data structures and inspected its pros and cons.
+Later, I made a survey that how other people treated to the problem I faced.
+The result was not surprising for me this time that other developers has approached the problem exactly the same way.
+Even, the solution was named as same as what I typed to google: *swap and pop*.
+I felt realy good that **my studies has rewarded me with a satisfactory level** in software engineering discipline.
 
 The following sections summarize my software engineering background and experience.
 
@@ -76,15 +101,6 @@ Actually, after having a multithreaded DAG, not much remains.
 - Structured programming (C, C++, FORTRAN, PATRAN PCL)
 - Object-Oriented Programming, OOP (C++, Python, Java, Visual Basic)
 - Functional Programming, FP (purity, higher-level functions, ranges, monads, template metaprogramming, currying)
-
-**Personal Background**
-
-I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
-For a long time, I developed using structured languages: FORTRAN, PATRAN PCL, and Visual Basic.
-Later, in 2016, I started studying OOP using Python.
-I have developed a number of projects using python, java and C++ later in my professional life.
-For the last two years, like many other software engineers, I have been studying FP from books and by inspecting public works of other people from GitHub.
-I already had a good background in template metaprogramming, hence, I did not have a big trouble during my studies.
 
 Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my GitHub page as an example of my FP background.
 
