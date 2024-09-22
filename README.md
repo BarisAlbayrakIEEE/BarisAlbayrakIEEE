@@ -84,8 +84,8 @@ these kind of problems are the signs of a bad design practice.
 This is **the 2nd crucial mistake** that the behavioral analysis is considered to be a part of FOD
 and is forgotten/neglected during OOD.
 If the developer has considered the behaviors of the two entities,
-she would have realized that the line piece is a bounded geometry
-and the bounded geometries have common properties under many geometric operations.
+she would have realized that the line piece was a bounded geometry
+and the bounded geometries had common properties under many geometric operations.
 A line piece acts very similarly with a surface or a solid as they are all bounded geometries.
 Similarly, an axis is similar with a circle or an ellipse while perforrming a translation.
 Hence, the term boundary would have an important role in the design of a geometric library
