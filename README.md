@@ -60,7 +60,7 @@ The approaches/methods and the factors considered during the design affect the s
 For example, the resultant product would be different if FOD approach is preferred instead of OOD.
 Similarly, a concurrent system would have a different structure than a single-threaded system.
 
-**Abstraction in OOD**
+**Abstraction in OOD**\
 Many developers unfortunately apply OOD in the wrong way.
 **The 1st crucial mistake while following OOD approach**, is to design a class as the exact copy of the real life object.
 Consider the vectors and the points in geometry.
@@ -102,7 +102,7 @@ However, what we did is re-implementing an existing data structure: **directed a
 A DAG can easily manage the ancestor and descendant relations in a geometry library.
 Hence, we neither need to store the raw pointers to the boundary points in the line piece object nor the shared pointer to the line piece in the boundary point objects.
 
-**Abstraction in FOD**
+**Abstraction in FOD**\
 FOD models a system by studying the functionality of the posible solutions to the problem.
 Hence, the abstraction concentrates on the behaviors and encapsulates specific pieces of logic in functions.
 The functions are organized hierarchically (e.g. higher level functions) which allows for layered abstraction.
