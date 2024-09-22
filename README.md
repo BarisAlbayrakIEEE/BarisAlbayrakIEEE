@@ -54,7 +54,7 @@ FOD utilizes persistency and activates concurrency without any cost by removing 
 - **Separation of concerns:** Dividing a complex system into distinct sections each dealing with a specific concern while following the single responsibility and interface segregation principles
 - **Maintainability, flexibility and extendibility:** A must
 
-Abstraction is at the center of software design in OOD and FOD.
+Abstraction is at the center of software design.
 The approaches/methods and the factors considered during the design affect the structure and functionality of the product.
 
 For example, the resultant product would be different if FOD approach is preferred instead of OOD.
