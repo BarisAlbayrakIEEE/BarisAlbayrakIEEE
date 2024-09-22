@@ -119,9 +119,10 @@ The implementation of such a persistent DAG would require the techniques of DOD
 in order to decorate the DAG with efficient solutions to the problems related to the memory allocation and transformation.
 
 ## 2.3. Programming Paradigms
-- Structured programming (C, C++, FORTRAN, PATRAN PCL)
-- Object-Oriented Programming, OOP (C++, Python, Java, Visual Basic)
-- Functional Programming, FP (purity, higher-level functions, ranges, monads, template metaprogramming, currying, sum and product types)
+I am well-experienced with the following programming paradigms and the corresponding languages accept for Clojure and Haskel
+- **Structured programming:** C, C++, FORTRAN, PATRAN PCL, Visual Basic
+- **Object-Oriented Programming, OOP:** C++, Python, Java, Visual Basic
+- **Functional Programming, FP:** Clojure, Haskel, etc.
 
 Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page as an example of my FP background.
 
