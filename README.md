@@ -121,7 +121,7 @@ in order to decorate the DAG with efficient solutions to the problems related to
 ## 2.3. Programming Paradigms
 - Structured programming (C, C++, FORTRAN, PATRAN PCL)
 - Object-Oriented Programming, OOP (C++, Python, Java, Visual Basic)
-- Functional Programming, FP (purity, higher-level functions, ranges, monads, template metaprogramming, currying)
+- Functional Programming, FP (purity, higher-level functions, ranges, monads, template metaprogramming, currying, sum and product types)
 
 Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page as an example of my FP background.
 
