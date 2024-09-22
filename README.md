@@ -284,12 +284,12 @@ The README file of the repository presents a detailed discussion about the above
 23. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
 
 # 7. Current Studies
-1. Kernel development\
+1. Kernel development
 - K. C. Wang; Systems Programming in Unix/Linux; 2017
 - Robert Love; Linux Kernel Development; 2010
 - P. Raghavan, Amol Lad and Sriram Neelakandan; Embedded Linux System Design and Development; 2006
 - Mark Mitchell, Jeffrey Oldham and Alex Samuel; Advanced Linux Programming; 2001
-2. Assembly language\
+2. Assembly language
 - Randall Hyde; The Art of Assembly Language, 2010
 - Randall Hyde; The Art of 64-bit Assembly, 2020
 - Sivarama P. Dandamudi; Introduction to Assembly Language Programming; 2005
