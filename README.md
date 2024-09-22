@@ -50,9 +50,9 @@ FOD utilizes persistency and activates concurrency without any cost by removing 
 ## 2.2. Abstraction
 - **The crucial mistake:** Designing the software which represents the real-life problem as it is without designing structural or behavioral abstractions.
 - **Two Types:** Data abstraction should be considered together with the process abstraction.
-- **Factors:** Many issues such as the data structures and the concurrency should be evaluated:
+- **Factors:** Many issues such as the data structures and the concurrency should be evaluated.
 - **Separation of concerns:** Dividing a complex system into distinct sections each dealing with a specific concern while following the single responsibility and interface segregation principles
-- **Maintainability, flexibility and extendibility:** 
+- **Maintainability, flexibility and extendibility:** A must
 
 Abstraction is at the center of software design in OOD and FOD.
 The approaches/methods and the factors considered during the design affect the structure and functionality of the product.
