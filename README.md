@@ -47,20 +47,20 @@ DOD provides tools to improve the memory allocation and the cache effectivity.
 Additionally, with DOD, its possible to implement the concurrency with lock-free approach more easily.
 FOD utilizes persistency and activates concurrency without any cost by removing the shared state.
 
-## 2.2. Abstraction
+## 2.2. Abstraction and Encapsulation
 - **The crucial mistake:** Designing the software which represents the real-life problem as it is without designing structural or behavioral abstractions.
 - **Two Types:** Data abstraction should be considered together with the process abstraction.
 - **Factors:** Many issues such as the data structures and the concurrency should be evaluated.
 - **Separation of concerns:** Dividing a complex system into distinct sections each dealing with a specific concern while following the single responsibility and interface segregation principles
 - **Maintainability, flexibility and extendibility:** A must
 
-Abstraction is at the center of software design.
+Abstraction and encapsulation is at the center of software design.
 The approaches/methods and the factors considered during the design affect the structure and functionality of the product.
 
 For example, the resultant product would be different if FOD approach is preferred instead of OOD.
 Similarly, a concurrent system would have a different structure than a single-threaded system.
 
-**Abstraction in OOD**\
+**Abstraction and encapsulation in OOD**\
 Many developers unfortunately apply OOD in the wrong way.
 **The 1st crucial mistake while following OOD approach**, is to design a class as the exact copy of the real life object.
 Consider the vectors and the points in geometry.
@@ -81,19 +81,18 @@ The above design would require four overloads for the intersection.
 Even worst, the intersection operation for axis-line piece combination would require double dispatching which is not supported by C++.
 Although, the strategy (or visitor) design pattern or double dispatch idiom could easily solve the double dispatch problem,
 these kind of problems are the signs of a bad design practice.
-This is **the 2nd crucial mistake** that the behavioral analysis is considered to be a part of FOD
-and is forgotten/neglected during OOD.
+This is **the 2nd crucial mistake in OOD** that the behavioral analysis is missed/neglected.
 If the developer has considered the behaviors of the two entities,
 she would have realized that the line piece was a bounded geometry
 and the bounded geometries had common properties under many geometric operations.
 A line piece acts very similarly with a surface or a solid as they are all bounded geometries.
-Similarly, an axis is similar with a circle or an ellipse while perforrming a translation.
+Similarly, an axis is similar with a plane or a circle while performing a translation.
 Hence, the term boundary would have an important role in the design of a geometric library
 together with other issues such as pivot/anchor or analytically definability.
 As a result, the interface of a geometric library would start by defining the abstractions which simulate the boundaries, anchors, some analytical definitions (etc.)
-considering the geometric operations such as transformations and intersection.
+considering the geometric operations (transformations, intersection, etc.).
 
-Another mistake in the above line piece class is the boundary points defined as members of the line piece.
+Another mistake in the above line piece class is associating the boundary points to the line piece.
 The line piece objects are aware of the boundary points while the points are not aware of the line using them.
 Again, an unexperienced developer would solve this issue by creating an abstract base class for all entities and storing the pointers to the entities using the object.
 The boundary points store a shared pointer to the line piece object.
@@ -102,8 +101,8 @@ However, what we did is re-implementing an existing data structure: **directed a
 A DAG can easily manage the ancestor and descendant relations in a geometry library.
 Hence, we neither need to store the raw pointers to the boundary points in the line piece object nor the shared pointer to the line piece in the boundary point objects.
 
-**Abstraction in FOD**\
-FOD models a system by studying the functionality of the posible solutions to the problem.
+**Abstraction and encapsulation in FOD**\
+FOD models a system by studying the functionality of the possible solutions to the problem.
 Hence, the abstraction concentrates on the behaviors and encapsulates specific pieces of logic in functions.
 The functions are organized hierarchically (e.g. higher level functions) which allows for layered abstraction.
 Generic programming is at the center of FOD which allows decoupling the implementation of a logic from the target types.
@@ -112,7 +111,7 @@ The abstractions mentioned above (boundaries, anchors, some analytical definitio
 as those are the common entities involved in the fundamental operations performed in a geometric application.
 
 FP relies on the immutable data structures.
-Hence, for the geometry application of the above example would use a persistent DAG
+Hence, the geometry application of the above example would use a persistent DAG
 which would, by definition, eliminate the need to synchronize the shared data in a concurrent system.
 
 The implementation of such a persistent DAG would require the techniques of DOD
@@ -139,7 +138,7 @@ Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the
 - **Basic data structures:** Static and dynamic arrays, linked lists, queues, stacks, trees, binary trees, red-black trees, sets, graphs, hash maps/tables, etc.
 - **Persistent data structures:** Partial vs full vs functional persistency, persistent implementations of the basic data structures (e.g. persistent vector)
 - **Iterator design pattern:** Iterator categories, traversal algorithms (e.g. BFS and DFS)
-- **Problem-solving techniques:** Divide and conquer (recursion, thread pools or task parallelism), dynamic programming (caching)
+- **Problem-solving techniques:** Divide and conquer (recursion, thread pools or task parallelism), dynamic programming (caching and memoization)
 - **Fundamental algorithms:** Insert, erase, traversal, sort, partition, etc.
 - **Time and space complexity analysis:** Best and worst cases, amortized analysis
 - **Concurrency:** Lock-based vs lock-free designs, fine vs coarse-grained locking schemes, persistency
@@ -150,10 +149,10 @@ Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the
 - **Class vs object:** Declaration vs definition, instantiation vs initialization vs assignment
 - **High cohesion, low coupling:** Fully orthogonal interfaces, dependency inversion
 - **SOLID principles:** Fundamental rules for all design methodologies (OOD, FOD, DOD, flow-oriented design or else), maintainable/flexible/extendible systems
-- **Design patterns:** GoF, structural and behavioral design patterns, dependency inversion, orthogonality, abstract base classes, runtime polymorphism, delegation
+- **Design patterns:** GoF, creational vs structural vs behavioral design patterns, SOLID principles, orthogonality, abstract base classes, runtime polymorphism, delegation
 - **Mixin classes:** Usually templated, rarely introduces new data but new functionality, usually multiple mixins can be used together, layered application, orthogonality
-- **Proxy classes:** Loki's approach, similar to mixins, templated inheritance, orthogonality
-- **Dispatching:** Single dispatch (polymorphism) and double dispatch (C++ does not support, but can be implemented, sign of a bad design)
+- **Proxy classes:** Loki's approach, similar to mixins, templated inheritance like CRTP, usually multiple inheritance, orthogonality
+- **Dispatching:** Single dispatch (dynamic polymorphism in C++) and double dispatch (C++ does not support, but can be implemented, sign of a bad design)
 - **Memory management:** Handle body idiom, exclusive and shared ownership, stack and heap memories, RAII, C++ value categories
 - **Stack vs heap memories:** Scope of an object, static vs dynamic containers, source ownership
 - **Memory leaks and dangling pointers:** Pointer/reference invalidation, functions returning local variables, RAII, smart pointers
