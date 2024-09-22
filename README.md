@@ -132,7 +132,7 @@ I will publish two libraries from this work:
 - **GeometryLibrary_OCCT, C++03:** Relying on OCCT smart pointers (i.e., handles); will present the wrong designs covered in [Abstraction and Modeling](#2.2-Abstraction-and-Modeling)
 - **GeometryLibrary_Modern, C++20:** A well-designed concurrent library; will present a concurrent modern geometry library.
 
-Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository in my github page for the above two.
+Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the above two.
 
 ## 2.4. Data Structures and Algorithms
 - **Allocations:** Contiguous vs pointer-based, static (stack) vs dynamic (heap), sequence vs set
