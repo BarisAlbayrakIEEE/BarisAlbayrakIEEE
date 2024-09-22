@@ -239,6 +239,7 @@ The README file of the repository presents a detailed discussion about the above
 - **OOP:** Abstract base class and virtual functions, dynamic polymorphism, single dispatch, RTTI, special/defaulted functions, memory management, etc.
 - **C++11:** Evaluation of C++ with C++11 (move semantics, smart pointers, std::thread and concurrency, type traits, lambdas, etc.)
 - **Keep up to date:** Current trend toward FP (virtual polymorphism to templated class families, template metaprogramming, value-based architecture, immutability, persistent data structures)
+- **Libraries:** Boost, OpenCascade
 - **C++ memory model and DOD:** Everything is an object, cache lines, atomic operations, concurrency
 - **Value categories:** lvalue/rvalue/xvalue/glvalue/prvalue, universal references and perfect forwarding
 - **Pointers and references:** Dynamic memory allocation, source ownership, handle body idiom, smart pointers, RAII, exception, thread safety, dangling pointers, memory leaks
