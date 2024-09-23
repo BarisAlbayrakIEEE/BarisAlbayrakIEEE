@@ -159,12 +159,16 @@ Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the
 - **Generic programming:** Templated interfaces vs runtime polymorphism, template specialization vs virtual tables, template metaprogramming, type traits, concepts
 - **Exception and thread safety:** Pure member functions, at least strong exception safety, preconditions and invariants, race conditions, RAII
 
-The traditional software design composes complex class hierarchies obtained by applying the well-known design patterns.
+The software design composes complex class hierarchies obtained by applying the well-known design patterns.
 The design patterns deal with encapsulating different logics (creation, structure, behavior or else) from the rest of the system and follow the SOLID principles.
 The last one, dependency inversion, of the SOLID principles plays a central role in this configuration.
 The dependencies are redirected by the interfaces, which reduces the coupling and results in orthogonal modules.
 The traditional design is highly based on abstract base classes (or interfaces) and dynamic polymorphism.
-However, since C++99, with the lead of Stroustrup, C++ has been introducing new tools with every new standard, replacing dynamic polymorphism with static definitions.
+Dynamic polymorphism has some performance and memory penalties due to the additional pointer to locate the virtual calls (i.e. vptr).
+Nevertheles, it must be decorated by rule of 3/5/7 and a polymorphic copy (usually clone member function) to manage the object lifetime, assignments, etc.
+These requirements creates lots of boilerplate code repeated all over the project.
+However, since C++99, with the lead of Stroustrup, C++ has been introducing new tools with every new standard,
+which allows replacing the dynamic polymorphism with static definitions (e.g. templates, sum and product types, constraints, etc).
 Currently, many design patterns can be implemented generically, maybe with some additional help from template metaprogramming.
 
 ## 2.6. Functional Programming (FP)
