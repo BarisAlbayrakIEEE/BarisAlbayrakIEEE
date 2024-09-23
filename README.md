@@ -168,7 +168,7 @@ Dynamic polymorphism has some performance and memory penalties due to the additi
 Nevertheles, it must be decorated by rule of 3/5/7 and a polymorphic copy (usually clone member function) to manage the object lifetime, assignments, etc.
 These requirements creates lots of boilerplate code repeated all over the project.
 However, since C++99, with the lead of Stroustrup, C++ has been introducing new tools with every new standard,
-which allows replacing the dynamic polymorphism with static definitions (e.g. templates, sum and product types, constraints, etc).
+which allows replacing the dynamic polymorphism with static definitions (e.g. templates, sum and product types, traits, consepts, etc).
 Currently, many design patterns can be implemented generically, maybe with some additional help from template metaprogramming.
 
 ## 2.6. Functional Programming (FP)
