@@ -47,75 +47,51 @@ DOD provides tools to improve the memory allocation and the cache effectivity.
 Additionally, with DOD, its possible to implement the concurrency with lock-free approach more easily.
 FOD utilizes persistency and activates concurrency without any cost by removing the shared state.
 
-## 2.2. Abstraction and Encapsulation
-- **The crucial mistake:** Designing the software which represents the real-life problem as it is without designing structural or behavioral abstractions.
-- **Two Types:** Data abstraction should be considered together with the process abstraction.
-- **Factors:** Many issues such as the data structures and the concurrency should be evaluated.
-- **Separation of concerns:** Dividing a complex system into distinct sections each dealing with a specific concern while following the single responsibility and interface segregation principles
-- **Maintainability, flexibility and extendibility:** A must
+## 2.2. Abstraction, Encapsulation and Polymorphism
+These three concepts forms the basis of software engineering in all programming paradigms.
 
-Abstraction and encapsulation is at the center of software design.
-The approaches/methods and the factors considered during the design affect the structure and functionality of the product.
+Similar to the math, any type in a software program abstracts and encapsulates the structure and behavior of a concept.
+For example, integer data type abstracts the integer numbers in number theory limited by a lower bound and an upper bound.
+A function is also an abstraction.
+The abstraction, in summary, encapsulates (i.e. hides) some data and/or procedures and defines an interface which represents the encapsulated data and procedures.
+For example, the `emplace_back` function of `std::vector`.
+Lets start with a simple definition: `emplace_back` **abstracts the construction of a new element in the dynamically allocated array**.
+The signature of `emplace_back` corresponds to the following statements:
+- The element is created in-place (as the name emplace suggests) instead of copying an already existing object into the container (as the name push_back suggests).
+- The element is constructed at the end of the container.
 
-For example, the resultant product would be different if FOD approach is preferred instead of OOD.
-Similarly, a concurrent system would have a different structure than a single-threaded system.
+An experienced engineer would easily deduce the followings from the above statements:\
+- Its more efficient to work at the end of a `std::vector`.
+- The size of the container is incremented.
+- `emplace_back` may result with reallocation of the `std::vector` which means that all the pointers/references to the existing elements are invalidated.
 
-**Abstraction and encapsulation in OOD**\
-Many developers unfortunately apply OOD in the wrong way.
-**The 1st crucial mistake while following OOD approach**, is to design a class as the exact copy of the real life object.
-Consider the vectors and the points in geometry.
-The geometric definition of a point is based on a vector.
-So, the 1st choice for a point class is to delegate a vector or inherit from the vector class.
-However, a vector has an invariant that at least one component should be non-zero which does not apply to a point.
+Hence, refining the 1st definition:
+`emplace_back` **abstracts the in-place construction of a new element at the and of a dynamically allocated array for which the size is increased**.
+Now, this process is encapsulated so that the user do not need to know the details.
+Some of the details are described in the documentation of the method (e.g. possibility of the reference/pointer invalidation)
+because not all users would be able to visualize the details of the algorithm.
 
-The above point example inspects the **WHAT** question only.
-Consider two other geometric entities: axis and line piece.
-An axis is the set of points achieved by infinitely translating a point along a vector in both directions.
-A line piece, on the other hand, excludes the points of the axis those are out of the two boundary points.
-So, why not defining the line piece class by inheritting from the axis class?
-Then, adding the two boundary points would finish the definition of the line piece.
-Again, this looks like a good design solution based on the famous **IS A** and **HAS A** relations.
-The above two examples do not consider the functionality (i.e. the behavior) of the objects at all.
-For example, how to perform the intersection operations involving an axis or a line piece?
-The above design would require four overloads for the intersection.
-Even worst, the intersection operation for axis-line piece combination would require double dispatching which is not supported by C++.
-Although, the strategy (or visitor) design pattern or double dispatch idiom could easily solve the double dispatch problem,
-these kind of problems are the signs of a bad design practice.
-This is **the 2nd crucial mistake in OOD** that the behavioral analysis is missed/neglected.
-If the developer has considered the behaviors of the two entities,
-she would have realized that the line piece was a bounded geometry
-and the bounded geometries had common properties under many geometric operations.
-A line piece acts very similarly with a surface or a solid as they are all bounded geometries.
-Similarly, an axis is similar with a plane or a circle while performing a translation.
-Hence, the term boundary would have an important role in the design of a geometric library
-together with other issues such as pivot/anchor or analytically definability.
-As a result, the interface of a geometric library would start by defining the abstractions which simulate the boundaries, anchors, some analytical definitions (etc.)
-considering the geometric operations (transformations, intersection, etc.).
+Polymorphism is a fundamental concept that allows defining a uniform interface to a set of functions.
+The keyword here is the **uniform interface** which is indispensable in the design of a system.
+Single and double dispatch are the two types while double dispatch is not supported by C++ and its successors.
+Function overloading has nothing to do with the polymorphism as a function is defined by its full signature including the name, arguments and return value
+while the arguments are not the same for an overload function.
 
-Another mistake in the above line piece class is associating the boundary points to the line piece.
-The line piece objects are aware of the boundary points while the points are not aware of the line using them.
-Again, an unexperienced developer would solve this issue by creating an abstract base class for all entities and storing the pointers to the entities using the object.
-The boundary points store a shared pointer to the line piece object.
-This approach looks enough to define the relations between the objects in our geometry library.
-However, what we did is re-implementing an existing data structure: **directed acyclic graph (DAG)**.
-A DAG can easily manage the ancestor and descendant relations in a geometry library.
-Hence, we neither need to store the raw pointers to the boundary points in the line piece object nor the shared pointer to the line piece in the boundary point objects.
+The term uniform interface is crucial such that all design patterns rely on a number of function interfaces
+which are defined case by case based on the needs.
+For example, the strategy design pattern defines the signature of a behavior
+while the implementation differs for each of the concrete classes.
+Consider a Shape class which is the base for some geometric entities such as Circle and Ellipse.
+The `void draw()` is the interface to draw a shape on the display window.
+The function would be implemented differently in Circle and Ellipse
+but the clients can easily call the function on all Shape objects including the Circle and Ellipse.
 
-**Abstraction and encapsulation in FOD**\
-FOD models a system by studying the functionality of the possible solutions to the problem.
-Hence, the abstraction concentrates on the behaviors and encapsulates specific pieces of logic in functions.
-The functions are organized hierarchically (e.g. higher level functions) which allows for layered abstraction.
-Generic programming is at the center of FOD which allows decoupling the implementation of a logic from the target types.
-
-The abstractions mentioned above (boundaries, anchors, some analytical definitions, etc) are obvious by FOD approach
-as those are the common entities involved in the fundamental operations performed in a geometric application.
-
-FP relies on the immutable data structures.
-Hence, the geometry application of the above example would use a persistent DAG
-which would, by definition, eliminate the need to synchronize the shared data in a concurrent system.
-
-The implementation of such a persistent DAG would require the techniques of DOD
-in order to decorate the DAG with efficient solutions to the problems related to the memory allocation and transformation.
+Polymorphism can be designed statically or dynamically in C++
+while the languages like java and python are based on a universal abstract base type (e.g. JavaObject)
+which does not allow polymorphism to be defined statically.
+Static polymorphism is achieved by the tools coming from the generic programming such as template specializations and CRTP
+while dynamic polymorphism is achieved by overriding virtaul functions of abstract base classes.
+The differences between the two are described in the following sections.
 
 ## 2.3. Programming Paradigms
 I am well-experienced with the following programming paradigms and the corresponding languages accept for Clojure and Haskel
@@ -163,15 +139,26 @@ The software design composes complex class hierarchies obtained by applying the 
 The design patterns deal with encapsulating different logics (creation, structure, behavior or else) from the rest of the system and follow the SOLID principles.
 The last one, dependency inversion, of the SOLID principles plays a central role in this configuration.
 The dependencies are redirected by the interfaces, which reduces the coupling and results in orthogonal modules.
-The traditional design is highly based on abstract base classes (or interfaces) and dynamic polymorphism.
+Hence, the traditional design is highly based on the abstract base classes (or interfaces) and dynamic polymorphism.
 Dynamic polymorphism has some performance and memory penalties due to the additional pointer to locate the virtual calls (i.e. vptr).
-Nevertheles, it must be decorated by rule of 3/5/7 and a polymorphic copy (usually clone member function) to manage the object lifetime, assignments, etc.
+The derived types of a polymorphic base class cannot be stored in a contiguous container.
+Hence, the container must store the base class pointers to the derived objects relying on the polymorphism.
+As a result, the objects of the derived types would be spreaded away in the heap memory.
+This is the **2nd reason for the low performance of dynamic polymorphism caused by the cache misses**.
+Nevertheles, it **terminates the rule of zero** due to the virtual destructor and
+the objects are **maintained by rule of 3/5/7 and a polymorphic copy (usually clone member function)**.
 These requirements creates lots of boilerplate code repeated all over the project.
 However, since C++99, with the lead of Stroustrup, C++ has been introducing new tools with every new standard,
 which allows replacing the dynamic polymorphism with static definitions (e.g. templates, sum and product types, traits, consepts, type erasure, etc).
-Currently, many design patterns can be implemented generically, maybe with some additional help from template metaprogramming.
+Currently, **many design patterns can be implemented generically, maybe with some additional help from template metaprogramming**.
 
 ## 2.6. Functional Programming (FP)
+First of all, FP has nothing to do with FOD.
+In other words, FP does not mean designing a software system by only functions.
+The name comes from the definition of a pure function in math for which the same inputs return the same output whenever its called.
+With software engineering terms, a pure function has no side effect.
+This requires working with values instead of references and introduces immutable state.
+Hence, the fundamental properties of FP are:\
 - **Immutability:** Functions keep the state unchanged, functions prefer passing by value
 - **Purity:** Approaching the functions in math, functions lacking side effects
 - **Function hierarchy:** Higher-level functions, partial functions, function composition, function lifting, currying
@@ -198,8 +185,8 @@ Hence, the following issues are related mostly to C++:\
 ## 2.8. Concurrency
 - **Why:** Separation of concerns, task parallelism and data parallelism
 - **Amdahl’s law:** Scalability
-- **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data, data race (undefined behavior)
-- **Atomic operation:** Indivisible operation: You can’t observe such an operation half-done from any thread in the system; it’s either done or not done
+- **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data; data race = undefined behavior
+- **Atomic operation:** An indivisible operation: You can’t observe such an operation half-done from any thread in the system; it’s either done or not done
 - **Data structure classification:** Lock-based and lock-free concurrent data structures
 - **Deadlocks:** Define a lock order, avoid nested locks, define lock hierarchy
 - **Proccess relationship types:** Synchronizes-with and happens-before relationships
@@ -207,9 +194,9 @@ Hence, the following issues are related mostly to C++:\
 - **Serialization:** Threads access the data serially rather than concurrently (e.g., in case of a mutex lock)
 - **Oversubscription:** More threads than the hardware can support
 - **Contention:** If the processors rarely have to wait for each other, you have low contention
-- **Cache ping-pong:** the data is passed back and forth between the caches many times (e.g. locking a mutex in a loop)
+- **Cache ping-pong:** The data is passed back and forth between the caches many times (e.g. locking a mutex in a loop)
 - **L1/L2/L3 caches:** Memory segments designed to speed up access
-- **Cache line:** Blocks of memory dealt with by the processors (typically 32 or 64 bytes)
+- **Cache line:** Blocks of memory dealt by the processors (typically 32 or 64 bytes)
 - **False sharing:** The cache line is shared, even though none of the data is shared
 - **Data proximity:** If the data is spread out in memory, the related cache lines must be loaded from memory onto the processor cache
 
@@ -223,7 +210,7 @@ Hence, the following issues are related mostly to C++:\
 - **Cache effectivity and false sharing:** Optimize the cache usage while avoiding the false sharing
 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a concurrent DAG data structure.
-The README file of the repository presents a detailed discussion about the above issues.
+The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
 # 3. Languages & Tools
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
@@ -239,7 +226,7 @@ The README file of the repository presents a detailed discussion about the above
 *NVI:* Non-virtual interface
 
 - **Experience:** Long-term experience with C++99/03/11/14/17/20
-- **OOP:** Abstract base class and virtual functions, dynamic polymorphism, single dispatch, RTTI, special/defaulted functions, memory management, etc.
+- **OOP:** Abstract base class and virtual functions, dynamic polymorphism, single dispatch, RTTI, special/defaulted functions, memory management, rule of 0/3/5/7, etc.
 - **C++11:** Evaluation of C++ with C++11 (move semantics, smart pointers, std::thread and concurrency, type traits, lambdas, etc.)
 - **Keep up to date:** Current trend toward FP (virtual polymorphism to templated class families, template metaprogramming, value-based architecture, immutability, persistent data structures)
 - **Libraries:** STL, boost, OpenCascade, gtest
@@ -249,10 +236,10 @@ The README file of the repository presents a detailed discussion about the above
 - **STL algorithms:** Categories, unary/binary/ternary functions, implementation details, complexity analysis, function objects, and lambdas
 - **Type deduction rules:** Template and auto type deductions, C++11/14/17 rules with auto and decltype, perfect forwarding
 - **Idioms:** RAII, handle body idiom, copy and swap, swap and pop, lazy initialization, copy on write, EBC, double dispatch, SFINAE, CRTP, Pimpl, execute around pointer, NVI
-- **Optimization techniques:** inlining, bit manipulation, bitwise copy, RVO and NRVO, loop unrolling, vectorization, etc.
+- **Optimization techniques:** Inlining, bit manipulation, bitwise copy, RVO and NRVO, loop unrolling, vectorization, etc.
 - **Template metaprogramming:** Concepts, template specializations, template type deduction rules, traits and type manipulation, static type checking
 - **Lambda expressions:** Anonymous functions, capture modes, capture auto type deduction rules, return type deduction rules, STL algorithms
-- **Multithreading vs multitasking:** std::thread/std::jthread vs std::async, task parallelism vs data parallelism, hardware thread management, oversubscription and task switching
+- **Multithreading vs multitasking:** std::thread/std::jthread vs std::async, std::atomic vs std::mutex, std::lock_guard vs std::scoped_lock vs std::unique_lock/std::shared_lock, std::condition_variable vs std::promise
 - **memory_order_seq_cst:** Sequentially consistent ordering: All threads see the same order of operations, obeys SW relationships, the default and the easiest one
 - **memory_order_relaxed:** Relaxed ordering: Stores and loads are not synchronized, obeys happens-before relationships but does not obey SW relationships
 - **memory_order_acquire-memory_order_release-memory_order_acq_rel:** Acquire-release ordering: One step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
