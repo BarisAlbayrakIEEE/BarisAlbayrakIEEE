@@ -60,7 +60,7 @@ The signature of `emplace_back` corresponds to the following statements:
 - The element is created in-place (as the name emplace suggests) instead of copying an already existing object into the container (as the name push_back suggests).
 - The element is constructed at the end of the container.
 
-An experienced engineer would easily deduce the followings from the above statements:\
+An experienced engineer would easily deduce the followings from the above statements:
 - Its more efficient to work at the end of a `std::vector`.
 - The size of the container is incremented.
 - `emplace_back` may result with reallocation of the `std::vector` which means that all the pointers/references to the existing elements are invalidated.
