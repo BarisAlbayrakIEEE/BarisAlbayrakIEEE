@@ -1,3 +1,20 @@
+[Introduction](#1.Introduction)
+[Fundamentals of the Software Engineering](#2.Fundamentals-of-the-Software-Engineering)
+[Software Design](##2.1.Software-Design)
+[Abstraction, Encapsulation and Polymorphism](##2.2.Abstraction,-Encapsulation-and-Polymorphism)
+[Programming Paradigms](##2.3.Programming-Paradigms)
+[Data Structures and Algorithms](##2.4.Data-Structures-and-Algorithms)
+[OOP Concepts](##2.5.OOP-Concepts)
+[Functional Programming (FP)](##2.6.Functional-Programming-(FP))
+[Template Metaprogramming](##2.7.Template-Metaprogramming)
+[Concurrency](##2.8.Concurrency)
+[Rules for Concurrent Data Structures](##2.9.Rules-for-Concurrent-Data-Structures)
+[Languages & Tools](#3.Languages-&-Tools)
+[C/C++ Skills](#4.C/C++-Skills)
+[Repositories](#5.Repositories)
+[Some References](#6.Some-References)
+[Current Studies](#7.Current-Studies)
+
 # 1. Introduction
 
 **Caution**\
@@ -72,13 +89,13 @@ Some of the details are described in the documentation of the method (e.g. possi
 because not all users would be able to visualize the details of the algorithm.
 
 Polymorphism is a fundamental concept that allows defining a uniform interface to a set of functions.
+The uniformity can be achieved by other approaches/tools as well such as function overloading.
 The keyword here is the **uniform interface** which is indispensable in the design of a system.
 Single and double dispatch are the two types while double dispatch is not supported by C++ and its successors.
 Function overloading has nothing to do with the polymorphism as a function is defined by its full signature including the name, arguments and return value
 while the arguments are not the same for an overload function.
 
-The term uniform interface is crucial such that all design patterns rely on a number of function interfaces
-which are defined case by case based on the needs.
+The term uniform interface is crucial such that all design patterns rely on interfaces.
 For example, the strategy design pattern defines the signature of a behavior
 while the implementation differs for each of the concrete classes.
 Consider a Shape class which is the base for some geometric entities such as Circle and Ellipse.
@@ -110,6 +127,10 @@ I will publish two libraries from this work:
 Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the above two.
 
 ## 2.4. Data Structures and Algorithms
+Stroustrup has always stated that the std::vector is the best choice in ost of the cases.
+The evoluation of C++ under the pressure coused by the FP and DOD has proved this fact many times.
+Most of the experts currently answer the question about the data structures shortly: **almost always vector**.
+
 - **Allocations:** Contiguous vs pointer-based, static (stack) vs dynamic (heap), sequence vs set
 - **Basic data structures:** Static and dynamic arrays, linked lists, queues, stacks, trees, binary trees, red-black trees, sets, graphs, hash maps/tables, etc.
 - **Persistent data structures:** Partial vs full vs functional persistency, persistent implementations of the basic data structures (e.g. persistent vector)
@@ -141,16 +162,16 @@ The last one, dependency inversion, of the SOLID principles plays a central role
 The dependencies are redirected by the interfaces, which reduces the coupling and results in orthogonal modules.
 Hence, the traditional design is highly based on the abstract base classes (or interfaces) and dynamic polymorphism.
 Dynamic polymorphism has some performance and memory penalties due to the additional pointer to locate the virtual calls (i.e. vptr).
-The derived types of a polymorphic base class cannot be stored in a contiguous container.
+Additionally, the derived types of a polymorphic base class cannot be stored in a contiguous container.
 Hence, the container must store the base class pointers to the derived objects relying on the polymorphism.
 As a result, the objects of the derived types would be spreaded away in the heap memory.
 This is the **2nd reason for the low performance of dynamic polymorphism caused by the cache misses**.
 Nevertheles, it **terminates the rule of zero** due to the virtual destructor and
-the objects are **maintained by rule of 3/5/7 and a polymorphic copy (usually clone member function)**.
+the objects must be **maintained by rule of 3/5/7 and a polymorphic copy (usually clone member function)**.
 These requirements creates lots of boilerplate code repeated all over the project.
 However, since C++99, with the lead of Stroustrup, C++ has been introducing new tools with every new standard,
 which allows replacing the dynamic polymorphism with static definitions (e.g. templates, sum and product types, traits, consepts, type erasure, etc).
-Currently, **many design patterns can be implemented generically, maybe with some additional help from template metaprogramming**.
+Currently, **many design patterns can be implemented generically/statically, maybe with some additional help from template metaprogramming**.
 
 ## 2.6. Functional Programming (FP)
 First of all, FP has nothing to do with FOD.
@@ -158,7 +179,7 @@ In other words, FP does not mean designing a software system by only functions.
 The name comes from the definition of a pure function in math for which the same inputs return the same output whenever its called.
 With software engineering terms, a pure function has no side effect.
 This requires working with values instead of references and introduces immutable state.
-Hence, the fundamental properties of FP are:\
+Hence, the fundamental properties of FP are:
 - **Immutability:** Functions keep the state unchanged, functions prefer passing by value
 - **Purity:** Approaching the functions in math, functions lacking side effects
 - **Function hierarchy:** Higher-level functions, partial functions, function composition, function lifting, currying
@@ -170,24 +191,32 @@ Hence, the fundamental properties of FP are:\
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the persistent data structures and concurrency.
 
+## 2.2. Abstraction, Encapsulation and Polymorphism
+## 2.3. Programming Paradigms
+## 2.4. Data Structures and Algorithms
+## 2.5. OOP Concepts
+## 2.6. Functional Programming (FP)
 ## 2.7. Template Metaprogramming
 Template metaprogramming helps removing a lot of boilerplate code.
 
 C++ provides a compile-time (i.e., static) template definition,
 while for other languages (e.g., Java), template definitions result in a class hierarchy
 as all objects inherit from the language's base object (e.g., JavaObject).
-Hence, the following issues are related mostly to C++:\
+Hence, the following tools used by template metaprogramming are related mostly to C++:
+- Compile-time type and value determination
+- constexpr
 - Template specializations
 - Template type deduction rules
 - Traits and type manipulation
 - Static type checking (better debugging and compile-time error detection)
+- Type and value aliasing
 
 ## 2.8. Concurrency
 - **Why:** Separation of concerns, task parallelism and data parallelism
 - **Amdahl’s law:** Scalability
 - **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data; data race = undefined behavior
 - **Atomic operation:** An indivisible operation: You can’t observe such an operation half-done from any thread in the system; it’s either done or not done
-- **Data structure classification:** Lock-based and lock-free concurrent data structures
+- **Data structure classification:** Lock-based, lock-free and wait-free concurrent data structures
 - **Deadlocks:** Define a lock order, avoid nested locks, define lock hierarchy
 - **Proccess relationship types:** Synchronizes-with and happens-before relationships
 - **Modification ordering:** Sequentially consistent ordering, relaxed ordering, and acquire-release ordering
@@ -203,10 +232,11 @@ Hence, the following issues are related mostly to C++:\
 ## 2.9. Rules for Concurrent Data Structures
 - **Thread Safety:** Ensure that no thread can see a state where the invariants of the data structure have been broken by the actions of another thread
 - **Exception Safety:** Pay attention to how the data structure behaves in the presence of exceptions to ensure that the invariants are not broken
-- **Shared data:** Design without shared data or decide about how to secure the shared data (lock-based or lock-free)
+- **Shared data:** Design without shared data as much as possible, otherwise decide about how to secure the shared data
 - **Race conditions:** Avoid race conditions inherent in the interface by providing functions for complete operations (e.g., top_and_pop) rather than for operation steps (e.g., top, pop)
 - **Deadlocks:** Minimize the opportunities for deadlocks by designing the data structure, the interface and locking scheme carefully and avoiding nested locks
-- **Granularity:** Decide fine/coarse-grained locking (for lock-based approach)
+- **Serialization:** If its worth design wait-free, otherwise lock-free, otherwise with fine-grained locks
+- **Granularity:** Achieve the deepest possible level of granularity in case of lock-based approach
 - **Cache effectivity and false sharing:** Optimize the cache usage while avoiding the false sharing
 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a concurrent DAG data structure.
@@ -256,7 +286,7 @@ The README file of the repository presents a detailed discussion about the above
 3. Edouard Alligand & Joel Falcou, Practical C++ Metaprogramming
 4. Loki [github](https://github.com/dutor/loki)
 5. C++ concurrency library [github](https://github.com/David-Haim/concurrencpp)
-6. Data oriented design resources [github](https://github.com/dbartolini/data-oriented-design)
+6. Data-oriented design resources [github](https://github.com/dbartolini/data-oriented-design)
 7. Data-oriented design book source code [github](https://github.com/raspofabs/dodbooksourcecode)
 8. DOD Performance Benchmarks [github](https://github.com/KamilVDono/DOD_Performance_Benchmarks)
 9.  DOD optimizations [github](https://github.com/etuckerman/Data_Oriented_Design_Optimizations)
@@ -266,22 +296,27 @@ The README file of the repository presents a detailed discussion about the above
 13. Immer: A library of persistent and immutable data structures written in C++ [github](https://github.com/arximboldi/immer)
 14. FP tutorials and articles [github](https://github.com/xgrommx/awesome-functional-programming)
 15. List of materials and links about FP in C++ [github](https://github.com/graninas/cpp_functional_programming)
-16. FP suggestions to reduce code noise and how to dealg with only one single level of abstraction at a time [github](https://github.com/Dobiasd/FunctionalPlus)
+16. FP suggestions to reduce code noise and how to deal with only one single level of abstraction at a time [github](https://github.com/Dobiasd/FunctionalPlus)
 17. C++ persistent data structures [github](https://github.com/arximboldi/immer)
 18. A C++ implementation of a immutable vector following Rich Hickey's clojure implementation [github](https://github.com/andrewrothstein/cpp-persistent-vector)
 19. A fast and reliable persistent (immutable) vector class for C++ [github](https://github.com/marcusz/steady)
 20. Phil Bagwell, Ideal Hash Tries
 21. A hash array-mapped trie (HAMT) implementation in C99 [github](https://github.com/mkirchner/hamt)
 22. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
-23. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
 
 # 7. Current Studies
-1. Kernel development
+1. Lock-free and wait-free programming code reviews
+- A collection of resources on wait-free and lock-free programming [github](https://github.com/rigtorp/awesome-lockfree.git)
+- Wait-free data structure for single-writer/multi-reader [github](https://github.com/gnu-enjoyer/LeftWrite.git)
+- Library of lock-free and wait-free algorithms [github](https://github.com/hayabusa-cloud/concurrent.git)
+- Single header, wait-free queues for C++ [github](https://github.com/marcusspangenberg/waitfreequeue.git)
+- ...
+2. Kernel development
 - K. C. Wang; Systems Programming in Unix/Linux; 2017
 - Robert Love; Linux Kernel Development; 2010
 - P. Raghavan, Amol Lad and Sriram Neelakandan; Embedded Linux System Design and Development; 2006
 - Mark Mitchell, Jeffrey Oldham and Alex Samuel; Advanced Linux Programming; 2001
-2. Assembly language
+3. Assembly language
 - Randall Hyde; The Art of Assembly Language, 2010
 - Randall Hyde; The Art of 64-bit Assembly, 2020
 - Sivarama P. Dandamudi; Introduction to Assembly Language Programming; 2005
