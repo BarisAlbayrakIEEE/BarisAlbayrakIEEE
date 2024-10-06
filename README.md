@@ -13,7 +13,7 @@
 [C/C++ Skills](#4.C/C++-Skills)\
 [Repositories](#5.Repositories)\
 [Some References](#6.Some-References)\
-[Current Studies](#7.Current-Studies)\
+[Current Studies](#7.Current-Studies)
 
 # 1. Introduction
 
