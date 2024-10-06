@@ -1,19 +1,19 @@
-[Introduction](#1.Introduction)
-[Fundamentals of the Software Engineering](#2.Fundamentals-of-the-Software-Engineering)
-[Software Design](##2.1.Software-Design)
-[Abstraction, Encapsulation and Polymorphism](##2.2.Abstraction,-Encapsulation-and-Polymorphism)
-[Programming Paradigms](##2.3.Programming-Paradigms)
-[Data Structures and Algorithms](##2.4.Data-Structures-and-Algorithms)
-[OOP Concepts](##2.5.OOP-Concepts)
-[Functional Programming (FP)](##2.6.Functional-Programming-(FP))
-[Template Metaprogramming](##2.7.Template-Metaprogramming)
-[Concurrency](##2.8.Concurrency)
-[Rules for Concurrent Data Structures](##2.9.Rules-for-Concurrent-Data-Structures)
-[Languages & Tools](#3.Languages-&-Tools)
-[C/C++ Skills](#4.C/C++-Skills)
-[Repositories](#5.Repositories)
-[Some References](#6.Some-References)
-[Current Studies](#7.Current-Studies)
+[Introduction](#1.Introduction)\
+[Fundamentals of the Software Engineering](#2.Fundamentals-of-the-Software-Engineering)\
+[Software Design](##2.1.Software-Design)\
+[Abstraction, Encapsulation and Polymorphism](##2.2.Abstraction,-Encapsulation-and-Polymorphism)\
+[Programming Paradigms](##2.3.Programming-Paradigms)\
+[Data Structures and Algorithms](##2.4.Data-Structures-and-Algorithms)\
+[OOP Concepts](##2.5.OOP-Concepts)\
+[Functional Programming (FP)](##2.6.Functional-Programming-(FP))\
+[Template Metaprogramming](##2.7.Template-Metaprogramming)\
+[Concurrency](##2.8.Concurrency)\
+[Rules for Concurrent Data Structures](##2.9.Rules-for-Concurrent-Data-Structures)\
+[Languages & Tools](#3.Languages-&-Tools)\
+[C/C++ Skills](#4.C/C++-Skills)\
+[Repositories](#5.Repositories)\
+[Some References](#6.Some-References)\
+[Current Studies](#7.Current-Studies)\
 
 # 1. Introduction
 
