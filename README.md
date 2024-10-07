@@ -28,11 +28,10 @@ I started creating software programs in the beginning of 2000s during my undergr
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL, and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
 I have developed a number of projects using python, java and C++ later in my professional life.
-For the last two years, like many other software engineers, I have been studying FP from books and by inspecting public works of other people from github.
-I already had a good background in template metaprogramming, hence, I did not have a big trouble during my studies.
+For the last two years, like many other software engineers, I have been studying FP and DOD from books and by inspecting public works of other people from github.
 
 An incident made a great effect on my vision for software engineering.
-I implemented a sorting algorithm in 2000s for my PATRAN PCL libraries which was *quite fast* comparing to a traditioanl sorting algorithm based on comparison.
+I implemented a sorting algorithm in 2000s for my PATRAN PCL libraries which was *quite fast* comparing to a *traditional sorting algorithm* based on comparison.
 I was realy proud of that algorithm. One day, after a decade around 2017, I decided to make a review of the sorting algorithms other people generated.
 I was shocked that my algorithm was one of the well known sorting algorithms named as *counting sort* and dated back to **1950s**.
 Although I was disappointed, this event was a milestone for me such that I realized that **software engineering was not creating genius functions but its a science**.
