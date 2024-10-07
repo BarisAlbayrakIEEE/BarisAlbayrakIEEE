@@ -1,14 +1,14 @@
 **Contents**\
 1.   [Introduction](#sec1)
-2.   [Fundamentals of the Software Engineering](#sec2)
-2.1. [Software Design](#sec21)
-2.2. [Abstraction, Encapsulation and Polymorphism](#sec22)
-2.3. [Programming Paradigms](#sec23)
-2.4. [Data Structures and Algorithms](#sec24)
-2.5. [OOP Concepts](#sec25)
-2.6. [Functional Programming (FP)](#sec26)
-2.7. [Template Metaprogramming](#sec27)
-2.8. [Concurrency](#sec28)
+2.   [Fundamentals of the Software Engineering](#sec2)\
+2.1. [Software Design](#sec21)\
+2.2. [Abstraction, Encapsulation and Polymorphism](#sec22)\
+2.3. [Programming Paradigms](#sec23)\
+2.4. [Data Structures and Algorithms](#sec24)\
+2.5. [OOP Concepts](#sec25)\
+2.6. [Functional Programming (FP)](#sec26)\
+2.7. [Template Metaprogramming](#sec27)\
+2.8. [Concurrency](#sec28)\
 2.9. [Rules for Concurrent Data Structures](#sec29)
 3.   [Languages & Tools](#sec3)
 4.   [C/C++ Skills](#sec4)
