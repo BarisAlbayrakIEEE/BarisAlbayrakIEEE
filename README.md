@@ -1,5 +1,5 @@
-[Introduction](#1.Introduction)\
-[Fundamentals of the Software Engineering](#2.Fundamentals-of-the-Software-Engineering)\
+[Introduction](#1.introduction)\
+[Fundamentals of the Software Engineering](#2.fundamentals-of-the-software-engineering)\
 [Software Design](#2.1.software-design)\
 [Abstraction, Encapsulation and Polymorphism](#2.2.abstraction,-encapsulation-and-polymorphism)\
 [Programming Paradigms](#2.3.programming-paradigms)\
@@ -9,11 +9,11 @@
 [Template Metaprogramming](#2.7.template-metaprogramming)\
 [Concurrency](#2.8.concurrency)\
 [Rules for Concurrent Data Structures](##2.9.Rules-for-Concurrent-Data-Structures)\
-[Languages & Tools](#3.Languages-&-Tools)\
-[C/C++ Skills](#4.C/C++-Skills)\
-[Repositories](#5.Repositories)\
-[Some References](#6.Some-References)\
-[Current Studies](#7.Current-Studies)
+[Languages & Tools](#3.languages-&-tools)\
+[C/C++ Skills](#4.c/c++-skills)\
+[Repositories](#5.repositories)\
+[Some References](#6.some-references)\
+[Current Studies](#7.current-studies)
 
 # 1. Introduction
 
