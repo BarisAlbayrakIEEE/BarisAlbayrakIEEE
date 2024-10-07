@@ -1,21 +1,21 @@
-[Introduction](#1.introduction)\
-[Fundamentals of the Software Engineering](#2.fundamentals-of-the-software-engineering)\
-[Software Design](#2.1.software-design)\
-[Abstraction, Encapsulation and Polymorphism](#2.2.abstraction,-encapsulation-and-polymorphism)\
-[Programming Paradigms](#2.3.programming-paradigms)\
-[Data Structures and Algorithms](#2.4.data-structures-and-algorithms)\
-[OOP Concepts](#2.5.oop-concepts)\
-[Functional Programming (FP)](#2.6.functional-programming-(fp))\
-[Template Metaprogramming](#2.7.template-metaprogramming)\
-[Concurrency](#2.8.concurrency)\
-[Rules for Concurrent Data Structures](##2.9.Rules-for-Concurrent-Data-Structures)\
-[Languages & Tools](#3.languages-&-tools)\
-[C/C++ Skills](#4.c/c++-skills)\
-[Repositories](#5.repositories)\
-[Some References](#6.some-references)\
-[Current Studies](#7.current-studies)
+[Introduction](#sec1)\
+[Fundamentals of the Software Engineering](#sec2)\
+[Software Design](#sec21)\
+[Abstraction, Encapsulation and Polymorphism](#sec22)\
+[Programming Paradigms](#sec23)\
+[Data Structures and Algorithms](#sec24)\
+[OOP Concepts](#sec25)\
+[Functional Programming (FP)](#sec26)\
+[Template Metaprogramming](#sec27)\
+[Concurrency](#sec28)\
+[Rules for Concurrent Data Structures](#sec29)\
+[Languages & Tools](#sec3)\
+[C/C++ Skills](#sec4)\
+[Repositories](#sec5)\
+[Some References](#sec6)\
+[Current Studies](#sec7)
 
-# 1. Introduction
+# 1. Introduction <a id='sec1'></a>
 
 **Caution**\
 I created this github page as a reference for my job applications.
@@ -48,9 +48,9 @@ I felt realy good that **my studies has rewarded me with a satisfactory level** 
 
 The following sections summarize my software engineering background and experience.
 
-# 2. Fundamentals of the Software Engineering
+# 2. Fundamentals of the Software Engineering <a id='sec2'></a>
 
-## 2.1. Software Design
+## 2.1. Software Design <a id='sec21'></a>
 - **Modularity:** A design solution is highly modular if the high cohesion/low coupling principle is satisfied among the modules.
 - **Layered Design:** The modules are arranged in a hierarchy of layers forming a tree-like diagram.
 - **Object-Oriented Design (OOD):** The system is viewed as being made up of a collection of objects.
@@ -64,7 +64,7 @@ DOD provides tools to improve the memory allocation and the cache effectivity.
 Additionally, with DOD, its possible to implement the concurrency with lock-free approach more easily.
 FOD utilizes persistency and activates concurrency without any cost by removing the shared state.
 
-## 2.2. Abstraction, Encapsulation and Polymorphism
+## 2.2. Abstraction, Encapsulation and Polymorphism <a id='sec22'></a>
 These three concepts forms the basis of software engineering in all programming paradigms.
 
 Similar to the math, any type in a software program abstracts and encapsulates the structure and behavior of a concept.
@@ -110,7 +110,7 @@ Static polymorphism is achieved by the tools coming from the generic programming
 while dynamic polymorphism is achieved by overriding virtaul functions of abstract base classes.
 The differences between the two are described in the following sections.
 
-## 2.3. Programming Paradigms
+## 2.3. Programming Paradigms <a id='sec23'></a>
 I am well-experienced with the following programming paradigms and the corresponding languages accept for Clojure and Haskel
 - **Structured programming:** C, C++, FORTRAN, PATRAN PCL, Visual Basic
 - **Object-Oriented Programming, OOP:** C++, Python, Java, Visual Basic
@@ -121,12 +121,12 @@ Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) r
 I had some earlier work on a geometry library which is currently a mixture of buggy code.
 I will publish two libraries from this work:
 
-- **GeometryLibrary_OCCT, C++03:** Relying on OCCT smart pointers (i.e., handles); will present the wrong designs covered in [Abstraction and Modeling](#2.2-Abstraction-and-Modeling)
+- **GeometryLibrary_OCCT, C++03:** Relying on OCCT smart pointers (i.e., handles); will present the wrong designs covered in [Abstraction and Modeling](#sec22)
 - **GeometryLibrary_Modern, C++20:** A well-designed concurrent library; will present a concurrent modern geometry library.
 
 Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the above two.
 
-## 2.4. Data Structures and Algorithms
+## 2.4. Data Structures and Algorithms <a id='sec24'></a>
 Stroustrup has always stated that the std::vector is the best choice in ost of the cases.
 The evoluation of C++ under the pressure coused by the FP and DOD has proved this fact many times.
 Most of the experts currently answer the question about the data structures shortly: **almost always vector**.
@@ -141,7 +141,7 @@ Most of the experts currently answer the question about the data structures shor
 - **Concurrency:** Lock-based vs lock-free designs, fine vs coarse-grained locking schemes, persistency
 - **DOD principles:** Better memory allocation (size and alignment studies), improved cache effectivity and increased capacity for lock-free concurrency
 
-## 2.5. OOP Concepts
+## 2.5. OOP Concepts <a id='sec25'></a>
 - **Basic concepts:** Abstraction, encapsulation, inheritance, delegation, polymorphism
 - **Class vs object:** Declaration vs definition, instantiation vs initialization vs assignment
 - **High cohesion, low coupling:** Fully orthogonal interfaces, dependency inversion
@@ -173,7 +173,7 @@ However, since C++99, with the lead of Stroustrup, C++ has been introducing new 
 which allows replacing the dynamic polymorphism with static definitions (e.g. templates, sum and product types, traits, consepts, type erasure, etc).
 Currently, **many design patterns can be implemented generically/statically, maybe with some additional help from template metaprogramming**.
 
-## 2.6. Functional Programming (FP)
+## 2.6. Functional Programming (FP) <a id='sec26'></a>
 First of all, FP has nothing to do with FOD.
 In other words, FP does not mean designing a software system by only functions.
 The name comes from the definition of a pure function in math for which the same inputs return the same output whenever its called.
@@ -191,7 +191,7 @@ Hence, the fundamental properties of FP are:
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the persistent data structures and concurrency.
 
-## 2.7. Template Metaprogramming
+## 2.7. Template Metaprogramming <a id='sec27'></a>
 Template metaprogramming helps removing a lot of boilerplate code.
 
 C++ provides a compile-time (i.e., static) template definition,
@@ -206,7 +206,7 @@ Hence, the following tools used by template metaprogramming are related mostly t
 - Static type checking (better debugging and compile-time error detection)
 - Type and value aliasing
 
-## 2.8. Concurrency
+## 2.8. Concurrency <a id='sec28'></a>
 - **Why:** Separation of concerns, task parallelism and data parallelism
 - **Amdahl’s law:** Scalability
 - **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data; data race = undefined behavior
@@ -224,7 +224,7 @@ Hence, the following tools used by template metaprogramming are related mostly t
 - **False sharing:** The cache line is shared, even though none of the data is shared
 - **Data proximity:** If the data is spread out in memory, the related cache lines must be loaded from memory onto the processor cache
 
-## 2.9. Rules for Concurrent Data Structures
+## 2.9. Rules for Concurrent Data Structures <a id='sec29'></a>
 - **Thread Safety:** Ensure that no thread can see a state where the invariants of the data structure have been broken by the actions of another thread
 - **Exception Safety:** Pay attention to how the data structure behaves in the presence of exceptions to ensure that the invariants are not broken
 - **Shared data:** Design without shared data as much as possible, otherwise decide about how to secure the shared data
@@ -237,14 +237,14 @@ Hence, the following tools used by template metaprogramming are related mostly t
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a concurrent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
-# 3. Languages & Tools
+# 3. Languages & Tools <a id='sec3'></a>
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
 - CMake
 - git, TortoiseSVN
 - Google Test
 - MS Visual Studio, VS Code, Anaconda, Netbeans
 
-# 4. C/C++ Skills
+# 4. C/C++ Skills <a id='sec4'></a>
 *SW:* Synchronizes-with\
 *ITHB:* Inter-thread-happens-before\
 *EBC:* Empty base class\
@@ -269,13 +269,13 @@ The README file of the repository presents a detailed discussion about the above
 - **memory_order_relaxed:** Relaxed ordering: Stores and loads are not synchronized, obeys happens-before relationships but does not obey SW relationships
 - **memory_order_acquire-memory_order_release-memory_order_acq_rel:** Acquire-release ordering: One step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
 
-# 5. Repositories
+# 5. Repositories <a id='sec5'></a>
 1. A concurrent persistent DAG in C++ [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG)
 2. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp)
 3. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java)
 4. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python)
 
-# 6. Some References
+# 6. Some References <a id='sec6'></a>
 1. Alexandrescu, Modern C++ Design
 2. Anthony Williams, C++ Concurrency in Action
 3. Edouard Alligand & Joel Falcou, Practical C++ Metaprogramming
@@ -299,7 +299,7 @@ The README file of the repository presents a detailed discussion about the above
 21. A hash array-mapped trie (HAMT) implementation in C99 [github](https://github.com/mkirchner/hamt)
 22. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
 
-# 7. Current Studies
+# 7. Current Studies <a id='sec7'></a>
 1. Lock-free and wait-free programming code reviews
 - A collection of resources on wait-free and lock-free programming [github](https://github.com/rigtorp/awesome-lockfree.git)
 - Wait-free data structure for single-writer/multi-reader [github](https://github.com/gnu-enjoyer/LeftWrite.git)
