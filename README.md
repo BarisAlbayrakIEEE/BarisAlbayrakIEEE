@@ -20,7 +20,7 @@
 **Caution**\
 I created this github page as a reference for my job applications.
 The page presents some of my works written in C++, python and java.
-Please consider this README file as an extension of my resume.
+Please consider this README file as an extension to my resume.
 
 **Personal History**\
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
@@ -121,7 +121,7 @@ Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) r
 I had some earlier work on a geometry library which is currently a mixture of buggy code.
 I will publish two libraries from this work:
 
-- **GeometryLibrary_OCCT, C++03:** Relying on OCCT smart pointers (i.e., handles); will present the wrong designs covered in [Abstraction and Modeling](#sec22)
+- **GeometryLibrary_OCCT, C++03:** Relying on OCCT smart pointers (i.e., handles); will present a primitive library without interfaces and design patterns
 - **GeometryLibrary_Modern, C++20:** A well-designed concurrent library; will present a concurrent modern geometry library.
 
 Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the above two.
