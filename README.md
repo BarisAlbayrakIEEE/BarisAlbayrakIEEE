@@ -191,11 +191,6 @@ Hence, the fundamental properties of FP are:
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the persistent data structures and concurrency.
 
-## 2.2. Abstraction, Encapsulation and Polymorphism
-## 2.3. Programming Paradigms
-## 2.4. Data Structures and Algorithms
-## 2.5. OOP Concepts
-## 2.6. Functional Programming (FP)
 ## 2.7. Template Metaprogramming
 Template metaprogramming helps removing a lot of boilerplate code.
 
