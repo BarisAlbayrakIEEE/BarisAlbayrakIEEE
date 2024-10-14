@@ -205,7 +205,7 @@ Although geometries are pre-defined (e.g. I-section, rectangular, etc.), each St
 Hence, the relation between the two is a **composition** where the StructuralObject constructs and destructs the contained AuxiliaryObjects.
 This is very important.
 Consider if a geometry could be used by many StructuralObjects.  
-It would have required a tree or a graph data structure in order to manage one-to-many and many-to-one (for graph) relations.  
+It would have required a tree or a graph data structure in order to manage one-to-many and many-to-one (for graph) relations.
 Hence, with the defined constraints, we need continuous containers (i.e. array or vector) in order to store the objects.
 
 The other objects (i.e. AnalysisDataset and AnalysisObject) need more discussion, which will be introduced in the following sections.
