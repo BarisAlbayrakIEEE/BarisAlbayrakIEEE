@@ -199,7 +199,7 @@ StructuralObjects store the key for DB queries.
 
 **What kind of data structures does the software need?**\
 Let's review the relations between the objects.
-A StructuralObject **HAS** AuxiliaryObjects which are mainly geometry and material.  
+A StructuralObject **HAS** AuxiliaryObjects which are mainly geometry and material.
 The material is stored by the keys to the DB.
 Although geometries are pre-defined (e.g. I-section, rectangular, etc.), each StructuralObject would have its own geometry.  
 Hence, the relation between the two is a **composition** where the StructuralObject constructs and destructs the contained AuxiliaryObjects.
@@ -422,9 +422,9 @@ Below are the key points when OOP is considered:
 - **Memory management:** RAII, C++ value categories, stack and heap memories, handle body idiom, exclusive and shared ownership,
 memory leaks and dangling pointers, caches, DOD, etc.
 - **Stack vs heap memories:** Scope of an object, static vs dynamic containers, source ownership
-- **Memory leaks and dangling pointers:** Ownership semantics, RAII, compiler generated special functions and rule of 0/3/5/7, 
-bugs in the special functions, working with the raw pointers instead of the smart pointers, 
-pointer/reference invalidation, shallow copy and double delete, pointer to a moved from object, 
+- **Memory leaks and dangling pointers:** Ownership semantics, RAII, compiler generated special functions and rule of 0/3/5/7,
+bugs in the special functions, working with the raw pointers instead of the smart pointers,
+pointer/reference invalidation, shallow copy and double delete, pointer to a moved from object,
 functions returning pointer/reference to a local variable, unsecured shared data and race conditions
 - **Generic programming:** Templated interfaces, template specializations, template metaprogramming, type traits, concepts
 - **Exception and thread safety:** Pure member functions, at least strong exception safety, preconditions and invariants, race conditions, RAII
