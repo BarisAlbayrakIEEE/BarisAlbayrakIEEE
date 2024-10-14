@@ -225,9 +225,9 @@ The steps of an analysis guided by UI would be:
 9. The software tabulates AnalysisResults
 
 <pre>
-The above workflow can be represented with the following transformations:\
-AuxiliaryObject -> StructuralObject |\
-                                    | -> AnalysisDataset -> AnalysisObject -> AnalysisResult\
+The above workflow can be represented with the following transformations:
+AuxiliaryObject -> StructuralObject |
+                                    | -> AnalysisDataset -> AnalysisObject -> AnalysisResult
                          LoadObject |
 </pre>
 Note that the pipe and arrow signs above are for visual representation only.
