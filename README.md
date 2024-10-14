@@ -9,7 +9,7 @@
 2.6. [Functional Programming (FP)](#sec26)\
 2.7. [Data Oriented Design (DOD)](#sec27)\
 2.8. [Template Metaprogramming](#sec28)\
-2.9. [Concurrency](#sec29)\
+2.9. [Concurrency](#sec29)
 3.   [Languages & Tools](#sec3)
 4.   [C/C++ Skills](#sec4)
 5.   [Repositories](#sec5)
