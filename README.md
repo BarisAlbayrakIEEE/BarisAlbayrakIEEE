@@ -239,10 +239,9 @@ Step 6 is also similar.
 Steps 5, 7, 8, and 9 correspond to time-consuming processes.
 
 Let's consider Step 8 first.
-Consider the user has thousands of StructuralObjects and LoadObjects which makes millions of analyses to be executed.
-A structural analysis can contain hundreds, even thousands, of lines of expressions
+A structural analysis can contain hundreds even thousands of lines of expressions
 which makes **runtime for fetching the memory or accessing data from the cache negligible**.
-**Hence, the performance of the application fully depends on the analysis methods**:
+**Hence, the performance of the application fully depends on the analysis methods**
 which takes AnalysisObject and returns AnalysisResult
 **rather than how AnalysisObjects are defined or stored (i.e. the data structure)**.
 The performance can be improved by activating data parallelism
