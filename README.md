@@ -226,8 +226,8 @@ The steps of an analysis guided by UI would be:
 
 The above workflow can be represented with the following transformations:\
 AuxiliaryObject -> StructuralObject |\
-                                    | -> AnalysisDataset -> AnalysisObject -> AnalysisResult\
-                         LoadObject |
+\                                    | -> AnalysisDataset -> AnalysisObject -> AnalysisResult\
+\                         LoadObject |
 
 Note that the pipe and arrow signs above are for visual representation only.
 We need to keep in mind that the transformations have various shapes due to the polymorphic types.
