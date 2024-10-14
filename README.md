@@ -274,9 +274,10 @@ We can add a couple of points on how class hierarchy is built on virtual polymor
 
 Firstly, we need **the visitor design pattern** in Steps 5, 7, and 8, and 9.
 Hence, we need interfaces for each step corresponding to the pattern.
-
 Next, AuxiliaryObjects and StructuralObjects would have class families (e.g. cross-sections).
 We would need strategy or visitor design patterns for them also.
+Additionally, as usual, the command design patteern would provide undo/redo functionality.
+And more...
 
 **I will skip the remaining questions as we already achieved a satisfactory design frame.**
 
