@@ -201,10 +201,10 @@ StructuralObjects store the key for DB queries.
 Let's review the relations between the objects.
 A StructuralObject **HAS** AuxiliaryObjects which are mainly geometry and material.
 The material is stored by the keys to the DB.
-Although geometries are pre-defined (e.g. I-section, rectangular, etc.), each StructuralObject would have its own geometry.  
+Although geometries are pre-defined (e.g. I-section, rectangular, etc.), each StructuralObject would have its own geometry.
 Hence, the relation between the two is a **composition** where the StructuralObject constructs and destructs the contained AuxiliaryObjects.
 This is very important.
-Consider if a geometry could be used by many StructuralObjects.  
+Consider if a geometry could be used by many StructuralObjects.
 It would have required a tree or a graph data structure in order to manage one-to-many and many-to-one (for graph) relations.
 Hence, with the defined constraints, we need continuous containers (i.e. array or vector) in order to store the objects.
 
