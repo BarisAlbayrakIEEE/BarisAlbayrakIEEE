@@ -115,7 +115,7 @@ How does a component behave?
 And more questions...
 These questions have arisen as I did not perform a design procedure.
 
-*Note*\
+*Note:*\
 *The term 'component' is misused in the above statements with its meaning in structural engineering.*
 *I did this mistake intentionally in order to underline that I was on the wrong path.*
 
