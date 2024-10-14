@@ -85,7 +85,7 @@ In other words, for complex systems, the software design is designing the interf
 
 Let's consider we need to design a software which will perform the strength analysis of structural systems.
 
-*Note*\
+*Note:*\
 *In OOP, the inheritance, composition and aggregation are the possible ways of defining the relationships between the objects.*
 *Hence, the selection between the three is an important parameter of the design procedure.*
 *However, sometimes, I will treat them interchangeably for simplicity.*
@@ -119,7 +119,7 @@ These questions have arisen as I did not perform a design procedure.
 *The term 'component' is misused in the above statements with its meaning in structural engineering.*
 *I did this mistake intentionally in order to underline that I was on the wrong path.*
 
-The correct questions would be:\
+The correct questions would be:
 - What does the software do?
 - What are the requested capabilities of the software?
 - What kind of data structures does the software need?
@@ -138,7 +138,7 @@ The correct questions would be:\
 - What about concurrency?
 - and more...
 
-*Note*\
+*Note:*\
 *I will skip the UI and graphics design for simplicity.*
 *It's obvious that a concurrent application is required at least because of the two.*
 *However, it's important to note that this is where we apply the separation of concerns.*
@@ -148,24 +148,24 @@ In other words, these questions simulate the principles and guidelines stated at
 
 Let's try to answer them one by one.
 
-**What does the software do?**\
+**What does the software do?**
 - We will have various types of **structural entities** (i.e. components in the above discussion) which need to be inspected against various failure modes.
 - The **structural entities** are inter-related to each other structurally, behaviorally, and in terms of the roles.
-- We need definitions for **auxiliary items** for geometry, material, and loading in order to define the **structural entities**.\
+- We need definitions for **auxiliary items** for geometry, material, and loading in order to define the **structural entities**. 
 An **item** itself is not a subject of structural analysis but it may have some data and behavior.
-- An inspection depends on the **structural entity** it involves and the loading on it.\
+- An inspection depends on the **structural entity** it involves and the loading on it. 
 In other words, the inspection on a structural entity may vary depending on the loading.  
-- A **structural entity** may act differently in different environments as it faces different stresses and different failure modes.\
+- A **structural entity** may act differently in different environments as it faces different stresses and different failure modes. 
 Hence, the **structural entities** shall be defined by considering the role as well.  
 - The inspection depends also on the material (i.e. isotropic/metallic vs orthotropic/composite).
 - A number of load cases are applied on a **structural entity**.  
-- A **structural entity** can be composed of a number of **structural entities**.\
+- A **structural entity** can be composed of a number of **structural entities**. 
 A stiffened panel and a joint are examples of such a **structural entity**.  
 These composed **structural entities** have their own failure modes, independent of the **structural entities** they compose.
-- The **structural entities** are grouped under **structural assemblies**.\
+- The **structural entities** are grouped under **structural assemblies**. 
 A **structural assembly** itself is not a subject of structural inspection. It's just a container.
 
-From the above specifications/requirements, we can deduce the following abstractions:\ 
+From the above specifications/requirements, we can deduce the following abstractions:
 1. AuxiliaryObject (**Auxiliary item**): Polymorphic: Geometry, material, etc.  
 2. StructuralObject (**Structural entity**): Polymorphic: Panel, stiffener, joint, etc. Combination of AuxiliaryObjects.  
 3. LoadObject: Related to AuxiliaryObject.  
@@ -183,7 +183,7 @@ Also, note the dependencies and relations between the definitions.
 The capabilities of the software need to be well-defined.
 However, the design must hold flexibility as the customers always request updates.  
 
-We need the answers to the following questions:\
+We need the answers to the following questions:
 - Is it single-user or multi-user?
 - **I will skip graphics/GUI**
 - Does it require a database (e.g. material)?
@@ -254,7 +254,7 @@ Such an application would have used immutable data types and value semantics sug
 However, considering the highlighted statements as well, we can work with references/pointers.
 This choice would simplify Steps 5, 7, and 9 reasonably.
 
-Summary of the above discussions:\
+Summary of the above discussions:
 - The performance gain that would be obtained from static polymorphism would have a very negligible effect on the final performance.
 - The cache usage while storing AnalysisObjects or others would also have a very negligible effect on the final performance.
 - Functions can work with references/pointers instead of values
@@ -263,11 +263,8 @@ Summary of the above discussions:\
 Now, the application became very simple and easy to implement.
 
 **Do I need to follow Object-Oriented Design (OOD)?**\
-It's obvious that the software can be designed efficiently
-with object-oriented programming (OOP)
-as the problem encapsulates data and behavior into packages.
+It's obvious that the software can be designed efficiently with object-oriented programming (OOP) as the problem encapsulates data and behavior into packages.
 OOD needs to answer the following questions:
-
 - What are the components of the software?
 - How do these components interact with each other?
 - What are the behaviors of these components?
@@ -292,11 +289,11 @@ A function is also an abstraction.
 The abstraction, in summary, encapsulates (i.e. hides) some data and/or procedures and defines an interface which represents the encapsulated data and procedures.
 For example, the `emplace_back` function of `std::vector`.
 Lets start with a simple definition: `emplace_back` **abstracts the construction of a new element in the dynamically allocated array**.
-The signature of `emplace_back` corresponds to the following statements:\
+The signature of `emplace_back` corresponds to the following statements:
 - The element is created in-place (as the name emplace suggests) instead of copying an already existing object into the container (as the name push_back suggests).
 - The element is constructed at the end of the container.
 
-**An experienced engineer would easily deduce the followings from the above statements:**\
+**An experienced engineer would easily deduce the followings from the above statements:**
 - Its more efficient to work at the end of a `std::vector`.
 - The size of the container is incremented.
 - `emplace_back` may result with reallocation of the `std::vector` which means that all the pointers/references to the existing elements are invalidated.
@@ -330,7 +327,7 @@ while dynamic polymorphism is achieved by overriding virtaul functions of abstra
 The differences between the two are described in the following sections.
 
 ## 2.3. Programming Paradigms <a id='sec23'></a>
-I am well-experienced with the following programming paradigms and the corresponding languages accept for Clojure and Haskel\
+I am well-experienced with the following programming paradigms and the corresponding languages accept for Clojure and Haskel:
 - **Structured programming:** C, C++, FORTRAN, PATRAN PCL, Visual Basic
 - **Object-Oriented Programming, OOP:** C++, Python, Java, Visual Basic
 - **Functional Programming, FP:** C++, Clojure, Haskel, etc.
@@ -338,7 +335,7 @@ I am well-experienced with the following programming paradigms and the correspon
 Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page as an example of my FP and DOD background.
 
 I had some earlier work on a geometry library which is currently a mixture of buggy code.
-I will publish two libraries from this work:\
+I will publish two libraries from this work:
 - **GeometryLibrary_OCCT, C++03:** Relying on OCCT smart pointers (i.e., handles); will present a primitive library without interfaces and design patterns
 - **GeometryLibrary_Modern, C++20:** A well-designed concurrent library; will present a concurrent modern geometry library.
 
@@ -363,7 +360,7 @@ Although the researches for the wait-free access date back to 1980s,
 practical and efficient implementations in the industry have arisen quite recently
 especially in low-latency applications like finance.
 
-Below are the key points when data structures are considered:\
+Below are the key points when data structures are considered:
 - **Allocation:** Contiguous vs pointer-based, static (stack) vs dynamic (heap), sequence vs set
 - **Basic data structures:** Static and dynamic arrays, linked lists, queues, stacks, trees, binary trees, red-black trees, sets, graphs, hash maps/tables, etc.
 - **Persistent data structures:** Partial vs full vs functional persistency, persistent implementations of the basic data structures (e.g. persistent vector)
@@ -381,12 +378,12 @@ Currently, the approach has standard solutions to almost any problem.
 The corresponding specifications provide a consensus and a common language among the developers
 such that a code written by an engineer can easily be traced by another.
 
-On the other hand, the dynamic polymorphism comes with performance a fall mainly due to three reasons:\
+On the other hand, the dynamic polymorphism comes with performance a fall mainly due to three reasons:
 - **Extra pointer indirection:** The virtual pointer table, vptr
 - **Optimization loss:** The dynamic dispatch prevents the compiler making optimizations like inlining
 - **Cache misses:** Containers need to store the base class pointers which prevents storing the objects contiguously.
 
-In addition to the performance problems, virtual polymorphism has secondary issues in case of C++:\
+In addition to the performance problems, virtual polymorphism has secondary issues in case of C++:
 - virtual destructor terminates rule of zero which means steping to one of rule of 3/5/7
 - need for **polymorphic clone** member function
 - endangers the definitions like EBC optimization, trivially copyability, etc.
@@ -413,7 +410,7 @@ which as far as I know cannot be implemented efficiently as such a solution woul
 So, each problem should be studied separately so that an optimum solution based on the requirements can be achieved.
 In summary, **static polymorphism has full effect only when the compiler is supplied with all the informations it needs for the compilation.**
 
-Below are the key points when OOP is considered:\
+Below are the key points when OOP is considered:
 - **Basic concepts:** Abstraction, encapsulation, inheritance, aggregation, polymorphism
 - **Class vs object:** Declaration vs definition, instantiation vs initialization vs assignment
 - **High cohesion, low coupling:** Toward fully orthogonal interfaces, dependency inversion
@@ -440,17 +437,17 @@ Especially C++ community has been affected by this movement.
 Every year, a couple of talks in CppCon are related to the applications of FP.
 Actually, C++ had this tendency since the introduction of the templates.
 STL algorithms have followed the higher order function concept of FP since they were first released.
-Later, every new C++ standard has introduced new concepts from FP such as:\
+Later, every new C++ standard has introduced new concepts from FP such as:
 - lambdas (C++11)
 - sum and product types like std::variant, std::tuple, and std::optional (C++17)
 - ranges and views (C++20), etc.
 
-Now STL algorithms support the basic concepts of FP very well:\
+Now STL algorithms support the basic concepts of FP very well:
 - first-class functions
 - function composition
 - lazy evaluation, etc.
 
-Below are the key points when FP is considered:\
+Below are the key points when FP is considered:
 - **Immutability:** Functions keep the state unchanged, functions follow pass by value
 - **Purity:** Toward the functions in math, functions lacking side effects
 - **Functions as first class citizens:** Required to achieve a function hierarchy
@@ -469,11 +466,11 @@ while the memory instructions did alot on behalf of the cache improvement (up to
 This evolution forces the developers to evaluate more efficient cache usage as a crucial design parameter.
 Hence, the cache optimization is one of the hot topics in the industry.
 For example, currently, almost half of the talks in cppcon contains at least one slide about the issue.
-An interesting highlight from cppcon:\
+An interesting highlight from cppcon:
 - The complexity analysis is useless(!) comparing to the cache efficiency
 - **almost always use vector!**
 
-Below are the key points when DOD is considered:\
+Below are the key points when DOD is considered:
 - **Focus:** How data is stored, accessed, and transformed
 - **Separate data from behavior:** Relies on data transformations as the behaviors is secondary while defining the types
 - **Abstraction vs concrete:** As opposed to OOD, emphasis on the concrete data sstructures and access patterns
@@ -492,7 +489,7 @@ while for other languages (e.g., Java), template definitions result in a class h
 as all objects inherit from the language's base object (e.g., JavaObject).
 Hence, the template metaprogramming is a branch related to C++.
 
-Below are the key points when the template metaprogramming is considered:\
+Below are the key points when the template metaprogramming is considered:
 - enable_if, void_t, SFINAE
 - constexpr
 - Type and value aliasing
@@ -521,7 +518,7 @@ However, its one of the issues I currently study.
 This approach is one of the mostly discussed topics in the last decade.
 Studies and applications are quite alot related to the wait-free queues, stacks and even vectors (by Stroustrup et al.).
 
-Below are the key points when FP is considered:\
+Below are the key points when FP is considered:
 - **Why:** Separation of concerns, task parallelism and data parallelism
 - **Amdahl’s law:** Scalability
 - **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data; data race = undefined behavior
@@ -539,7 +536,7 @@ Below are the key points when FP is considered:\
 - **False sharing:** The cache line is shared, even though none of the data is shared
 - **Data proximity:** If the data is spread out in memory, the related cache lines must be loaded from memory onto the processor cache
 
-**Rules for Concurrent Data Structures**\
+**Rules for Concurrent Data Structures:**
 - **Thread Safety:** Ensure that no thread can see a state where the invariants of the data structure have been broken by the actions of another thread
 - **Exception Safety:** Pay attention to how the data structure behaves in the presence of exceptions to ensure that the invariants are not broken
 - **Shared data:** Design without shared data as much as possible, otherwise decide about how to secure the shared data
