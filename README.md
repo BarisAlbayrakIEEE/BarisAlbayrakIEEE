@@ -224,11 +224,12 @@ The steps of an analysis guided by UI would be:
 8. The software executes analysis on each AnalysisObject and gets an AnalysisResult  
 9. The software tabulates AnalysisResults
 
+<pre>
 The above workflow can be represented with the following transformations:\
 AuxiliaryObject -> StructuralObject |\
-\                                    | -> AnalysisDataset -> AnalysisObject -> AnalysisResult\
-\                         LoadObject |
-
+                                    | -> AnalysisDataset -> AnalysisObject -> AnalysisResult\
+                         LoadObject |
+</pre>
 Note that the pipe and arrow signs above are for visual representation only.
 We need to keep in mind that the transformations have various shapes due to the polymorphic types.
 
