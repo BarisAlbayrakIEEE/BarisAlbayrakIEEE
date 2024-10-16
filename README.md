@@ -31,11 +31,11 @@ without giving any detail because those are the fundamentals and obligatory for 
 
 Some aspects are considered significant and explained with formal statements
 while some others are covered by a list of the related entities that I have full power such as for **memory leaks and dangling pointers**:<pre>
-    Ownership semantics, RAII, compiler-generated special functions and rule of 6/3/5/7,
-    bugs in the special functions, working with raw pointers instead of smart pointers,
-    pointer/reference invalidation, shallow copy and double delete,
-    pointer to a moved-from object, functions returning pointer/reference to a local variable,
-    unsecured shared data and race conditions.</pre>
+  Ownership semantics, RAII, compiler-generated special functions and rule of 6/3/5/7,
+  bugs in the special functions, working with raw pointers instead of smart pointers,
+  pointer/reference invalidation, shallow copy and double delete,
+  pointer to a moved-from object, functions returning pointer/reference to a local variable,
+  unsecured shared data and race conditions.</pre>
 As a note, **the list of related issues** may describe various aspects of the topic.
 In the example, the causes (e.g. bugs in the special functions) and the cures (e.g. RAII) are listed together.
 Thus, please, consider the lists as *the related entities* without expecting a conceptual completeness.
