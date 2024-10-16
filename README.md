@@ -36,7 +36,6 @@ while some others are covered by a list of the related entities that I have full
     pointer/reference invalidation, shallow copy and double delete,
     pointer to a moved-from object, functions returning pointer/reference to a local variable,
     unsecured shared data and race conditions.</pre>
-
 As a note, **the list of related issues** may describe various aspects of the topic.
 In the example, the causes (e.g. bugs in the special functions) and the cures (e.g. RAII) are listed together.
 Thus, please, consider the lists as *the related entities* without expecting a conceptual completeness.
