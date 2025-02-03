@@ -25,7 +25,7 @@ Hence, here, I will try to **summarize** my knowledge and skills without falling
 # 1. Introduction <a id='sec1'></a>
 The main approach in this README is to provide a description at the beginning of each heading followed by the categorized list of details.
 
-I will skip basic issues (e.g. inheritance in OOP) and the details (e.g. how to create abstract base classes).
+I will skip basic issues (e.g. inheritance in OOP).
 Yet, some topics (e.g. GoF design patterns or SOLID design rules) are only covered in the lists
 without giving any detail because those are the fundamentals and obligatory for a software engineer.
 
@@ -37,12 +37,12 @@ pointer/reference invalidation, shallow copy and double delete, pointer to a mov
 unsecured shared data and race conditions.*
 
 As a note, **the list of related issues** may describe various aspects of the topic.
-In the example, the causes (e.g. bugs in the special functions) and the cures (e.g. RAII) are listed together.
+In the above example, the causes (e.g. bugs in the special functions) and the cures (e.g. RAII) are listed together.
 Thus, please, consider the lists as *the related entities* without expecting a conceptual completeness.
 
 **Brief History**\
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
-For a long time, I developed using structured languages: FORTRAN, PATRAN PCL, and Visual Basic.
+For a long time, I developed using structured languages: FORTRAN, PATRAN PCL and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
 I have developed a number of projects using python, java and C++ later in my professional life.
 For the last two years, like many other software engineers, I have been studying FP and DOD from books and by inspecting public works of other people from github.
@@ -54,24 +54,21 @@ I was realy proud of that algorithm. One day, after a decade around 2017, I deci
 I was shocked that my algorithm was one of the well known sorting algorithms named as *counting sort* and dated back to **1950s**.
 Although I was disappointed, this event was a milestone for me such that I realized that **software engineering was not creating genius functions but its a science**.
 Hence, I decided to study starting from the fundamentals and build up following the strong references.
-During this *education period* sometimes I followed wrong paths especially at the beginning when I developed programs in python.
-Later, I decided to switch to java but soon I understood that C++ was the correct language.
-C++ is the closest language to the machine among all commercial languages.
 
 Two years ago, I had a similar incident. I created a solution for a problem related to one of my data structures and inspected its pros and cons.
 Later, I made a survey that how other people treated to the problem I faced.
-The result was not surprising for me this time that other developers has approached the problem exactly the same way.
-Even, the solution was named as same as what I typed to google: *swap and pop idiom*.
+The result was not surprising for me this time that the formal solution is exactly the same as I defined.
+Besides, it was named same as what I typed to google: *swap and pop idiom*.
 
 **See**\
-I have repositories for C++, Java, and Python in order to provide a picture of this profile readme.
+I have repositories for C++, Java and Python in order to provide a picture of this profile readme.
 See [Repositories](#sec5) section to trace these repositories.
 Following sections summarize my software engineering skills under the headings listed in the *Contents*.
 
 # 2. Fundamentals of the Software Engineering <a id='sec2'></a>
 
 ## 2.1. Software Design <a id='sec21'></a>
-Several fundamental principles guide the development of a scalable, maintainable, and efficient software:
+Several fundamental principles guide the development of a scalable, maintainable and efficient software:
 Modularity, high cohesion, low coupling, separation of concerns, SOLID principles, testability, DRY, YAGNI, KISS, etc.
 
 Most of the cases, the application of the above principles and guidelines yield a system which circulates around well-defined interfaces.
@@ -144,8 +141,8 @@ Let's try to answer them one by one.
 
 **What does the software do?**
 - We will have various types of **structural entities** (i.e. components in the above discussion) which need to be inspected against various **failure modes**.
-- The **structural entities** are inter-related to each other structurally, behaviorally, and in terms of the roles.
-- We need definitions for **auxiliary items** for geometry, material, and loading in order to define the **structural entities**.
+- The **structural entities** are inter-related to each other structurally, behaviorally and in terms of the roles.
+- We need definitions for **auxiliary items** for geometry, material and loading in order to define the **structural entities**.
 An **auxiliary item** itself is not a subject of **structural analysis** but it may have some data and behavior.
 - An inspection depends on the **structural entity** it involves and the loading on it.
 In other words, the inspection on a structural entity may vary depending on the loading. 
@@ -155,7 +152,7 @@ Hence, the **structural entities** shall be defined by considering the role as w
 - A number of load cases are applied on a **structural entity**.
 - A **structural entity** can be composed of a number of **structural entities**.
 A stiffened panel and a joint are examples of such a **structural entity**.
-These composed **structural entities** have their own failure modes, independent of the **structural entities** they compose.
+These **composed structural entities** have their own failure modes, independent of the **structural entities** they compose.
 - The **structural entities** are grouped under **structural assemblies**.
 A **structural assembly** itself is not a subject of structural inspection. It's just a container.
 
@@ -170,7 +167,7 @@ From the above specifications/requirements, we can deduce the following abstract
 The above discussion is only to get insights into the problem.  
 The abstractions would most probably change later.
 
-Note that up to now, I followed the OOP approach only.
+Note that up to now, I followed the OOD approach only.
 Also, note the dependencies and relations between the definitions.
 
 **What are the requested capabilities of the software?**\
@@ -189,7 +186,7 @@ We need the answers to the following questions:
 Let's assume a single-user application for simplicity.  
 A multi-user application would additionally need the protection on the shared data due to concurrency.
 We can have a material database.
-AuxiliaryObjects store the key for DB queries.
+AuxiliaryObjects would store the key for DB queries.
 
 **What kind of data structures does the software need?**\
 Let's review the relations between the objects.
@@ -200,7 +197,7 @@ Hence, the relation between the two is a **composition** where the StructuralObj
 This is very important.
 Consider if the customer requested that a geometry could be used by many StructuralObjects.
 It would have required a tree or a graph data structure in order to manage one-to-many and many-to-one (for graph) relations.
-Neglecting such a requirement, we need continuous containers (i.e. array or vector) in order to store the objects.
+Neglecting such a requirement, we can use contiguous containers (i.e. array or vector) in order to store the objects.
 
 The other objects (i.e. AnalysisDataset and AnalysisObject) need more discussion, which will be introduced in the following sections.
 The UI would need a simple tree data structure based on the composite design pattern in order for the user to trace the relations between the objects.
@@ -229,7 +226,7 @@ We need to keep in mind that the transformations have various shapes due to the 
 The steps up to Step 4 are usual UI operations.  
 A smooth user experience can easily be provided for these steps as they do not contain long-running calculations.  
 Step 6 is also similar.  
-Steps 5, 7, 8, and 9 correspond to time-consuming processes.
+Steps 5, 7, 8 and 9 correspond to time-consuming processes.
 
 Let's consider Step 8 first.
 A structural analysis can contain hundreds even thousands of lines of expressions
@@ -240,14 +237,15 @@ which takes AnalysisObject and returns AnalysisResult
 The performance can be improved by activating data parallelism
 as the container storing the AnalysisObjects would not change dynamically.
 
-Steps 5, 7, and 9 are similar.
+Steps 5, 7 and 9 are similar.
 Hence, I will discuss only Step 5.
 While answering the question about the requested capabilities of the application, I discarded the multi-user case which needed shared data protection
 because otherwise the application would need immutable data types and value semantics suggested by functional programming (FP).
 However, considering the highlighted statements as well, we can work with references/pointers.
-This choice would simplify Steps 5, 7, and 9 reasonably.
+This choice would simplify Steps 5, 7 and 9 reasonably.
 
 Summary of the above discussions:
+- The performance mostly depends on the structural analysis methods.
 - The performance gain that would be obtained from static polymorphism would have a very negligible effect on the final performance.
 - The cache usage while storing AnalysisObjects or others would also have a very negligible effect on the final performance.
 - Functions can work with references/pointers instead of values
@@ -256,7 +254,6 @@ Summary of the above discussions:
 Now, the application became very simple and easy to implement.
 
 **Do I need to follow Object-Oriented Design (OOD)?**\
-It's obvious that the software can be designed efficiently with object-oriented programming (OOP) as the problem encapsulates data and behavior into packages.
 OOD needs to answer the following questions:
 - What are the components of the software?
 - How do these components interact with each other?
@@ -265,10 +262,10 @@ OOD needs to answer the following questions:
 The discussion in the previous question has answered many questions already.
 We can add a couple of points on how class hierarchy is built on virtual polymorphism.
 
-Firstly, we need the visitor design pattern in Steps 5, 7, and 8, and 9.
+Firstly, we need the visitor design pattern in Steps 5, 7 and 8 and 9.
 Hence, we need interfaces for each step corresponding to the pattern.
 Next, AuxiliaryObjects and StructuralObjects would have class families (e.g. cross-sections).
-We would need strategy or visitor design patterns for them also.
+We would need creational (e.g. factory), strategy or visitor design patterns for them also.
 Additionally, as usual, the command design pattern would provide undo/redo functionality.
 **I think there is no need to give more details.**
 
@@ -278,7 +275,7 @@ Additionally, as usual, the command design pattern would provide undo/redo funct
 These three concepts forms the basis of software engineering in all programming paradigms if supported.
 
 Similar to the math, any type in a software program abstracts and encapsulates the structure and behavior of a concept.
-For example, integer data type abstracts the integer numbers in number theory limited by a lower bound and an upper bound.
+For example, integer data type abstracts the integer numbers in number theory limited by lower and upper bounds.
 A function is also an abstraction.
 The abstraction, in summary, encapsulates (i.e. hides) some data and/or procedures and defines an interface which represents the encapsulated data and procedures.
 For example, the `emplace_back` function of `std::vector`.
@@ -435,7 +432,7 @@ Actually, C++ had this tendency since the introduction of the templates.
 STL algorithms have followed the higher order function concept of FP since they were first released.
 Later, every new C++ standard has introduced new concepts from FP such as:
 - lambdas (C++11)
-- sum and product types like std::variant, std::tuple, and std::optional (C++17)
+- sum and product types like std::variant, std::tuple and std::optional (C++17)
 - ranges and views (C++20), etc.
 
 Now STL algorithms support the basic concepts of FP very well:
@@ -468,7 +465,7 @@ An interesting highlight from cppcon:
 - **almost always use vector!**
 
 Below are the key points when DOD is considered:
-- **Focus:** How data is stored, accessed, and transformed
+- **Focus:** How data is stored, accessed and transformed
 - **Separate data from behavior:** Relies on data transformations as the behaviors are secondary while defining the types
 - **Abstraction vs concrete:** As opposed to OOD, emphasis on the concrete data structures and access patterns
 - **Memory:** Optimized memory accessed through L1/L2/L3 caches, design to access memory sequencially to minimize the cache misses
@@ -501,8 +498,25 @@ Below are the key points when the template metaprogramming is considered:
 - **STL:** constexpr, type traits library (enable_if/void_t, conditional, is_same, etc.), tuple, integer_sequence and index_sequence, etc.
 
 ## 2.9. Concurrency <a id='sec29'></a>
+First of all, the performance is not the only reason for concurrent programming.
+The need for the concurrent programming may arise to separate different concerns of an application.
+For example, any application having a user interface would need to spare a thread for the GUI interaction.
+
+The second use is the obvious one: to increase the performance of the application.
+The are two approaches: data parallelism and task parallelism.
+Data parallelism is straight forward: each thread executes the same operation on a different portion of the data.
+Task parallelism, on the other hand, divides a single task into parts and run each in parallel.
+
+Both approaches look straight forward but can be quite complex when there exist dependencies between the various parts of the data or the task.
+One of the dependecies is the shared data.
+Both data and task parallelism need to deal with the shared data in order to prevent race conditions.
+However, the best solution is to design without shared data.
+For the task parallelism, the side effects are the second source of dependencies.
+The side effects are signs of bad practice and should not exist in a concurrent code.
+
+Lock-based, lock-free and wwait-free strategies are the two ways of dealing with the shared data.
 Despite its' easy use, lock-based concurrency has a number of drawbacks.
-First of all it does not guarantee that at least one thread makes progress.
+First of all, it does not guarantee that at least one thread makes progress (i.e. deadlocks).
 Race conditions, deadlocks, serialization and cache ping-pong are some of the problems to be escaped in this case.
 
 The lock-free approach, on the other hand, ensures at least one thread will make progress.
@@ -515,15 +529,15 @@ However, its one of the issues I currently study.
 This approach is one of the mostly discussed topics in the last decade.
 Studies and applications are quite alot related to the wait-free queues, stacks and even vectors (e.g. by Stroustrup et al.).
 
-Below are the key points when FP is considered:
-- **Why:** Separation of concerns, task parallelism and data parallelism
+Below are the key points when concurrency is considered:
+- **Why:** Separation of concerns, pereformance
 - **Amdahl’s law:** Scalability
 - **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data; data race = undefined behavior
-- **Atomic operation:** An indivisible operation. You can’t observe such an operation half-done from any thread in the system; it’s either done or not done
+- **Atomic operation:** An indivisible operation which cannot be observed half-done from any thread in the system; it’s either done or not done
 - **Data structure classification:** Lock-based, lock-free and wait-free concurrent data structures
 - **Deadlocks:** Define a lock order, avoid nested locks, define lock hierarchy, **design for no deadlock**
 - **Proccess relationship types:** Synchronizes-with and happens-before relationships
-- **Modification ordering:** Sequentially consistent ordering, relaxed ordering, and acquire-release ordering
+- **Modification ordering:** Sequentially consistent ordering, relaxed ordering and acquire-release ordering
 - **Serialization:** Threads access the data serially rather than concurrently (e.g. in case of a mutex lock)
 - **Oversubscription:** More threads than the hardware can support
 - **Contention:** If the processors rarely have to wait for each other, you have low contention
@@ -546,6 +560,10 @@ Below are the key points when FP is considered:
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a concurrent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
+[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate) repository in my github page
+contains a genetic algorithm to optimize a composite laminate written in CUDA C.
+The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
+
 # 3. Languages & Tools <a id='sec3'></a>
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
 - CMake
@@ -563,11 +581,11 @@ The README file of the repository presents a detailed discussion about the above
 - **OOP:** Abstract base class and virtual functions, dynamic polymorphism, single dispatch, RTTI, special/defaulted functions, memory management, rule of 0/3/5/7, etc.
 - **C++11:** Evaluation of C++ with C++11: Move semantics, smart pointers, concurrency (std::thread, std::mutex, std::atomic, etc.), type traits, lambdas, etc.
 - **Keep up to date:** Current trend toward FP: Dynamic to static polymorphism, template metaprogramming, value semantics, immutability, persistent data structures, etc.
-- **Libraries:** STL, boost, OpenCascade, gtest
+- **Libraries:** STL, boost, CUDA C, gtest, OpenCascade
 - **C++ memory model and DOD:** Everything is an object, cache lines, atomic operations, concurrency
 - **Value categories:** lvalue/rvalue/xvalue/glvalue/prvalue, universal references and perfect forwarding
 - **Pointers and references:** Dynamic memory allocation, source ownership, handle body idiom, smart pointers, RAII, exception, thread safety, dangling pointers, memory leaks
-- **STL algorithms:** Categories, unary/binary/ternary functions, implementation details, complexity analysis, function objects, and lambdas
+- **STL algorithms:** Categories, unary/binary/ternary functions, implementation details, complexity analysis, function objects and lambdas
 - **Type deduction rules:** Template and auto type deductions, C++11/14/17 rules with auto and decltype, perfect forwarding
 - **Idioms:** RAII, handle body idiom, copy and swap, swap and pop, lazy initialization, copy on write, EBC, double dispatch, SFINAE, CRTP, Pimpl, execute around pointer, NVI
 - **Optimization techniques:** Inlining, bit manipulation, bitwise copy, RVO and NRVO, loop unrolling, vectorization, etc.
@@ -580,9 +598,10 @@ The README file of the repository presents a detailed discussion about the above
 
 # 5. Repositories <a id='sec5'></a>
 1. A concurrent persistent DAG in C++ [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG)
-2. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp)
-3. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java)
-4. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python)
+2. A genetic algorithm for composite laminate optimization in CUDA C [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate)
+3. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp)
+4. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java)
+5. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python)
 
 # 6. Some References <a id='sec6'></a>
 1. Alexandrescu, Modern C++ Design
