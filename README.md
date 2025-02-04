@@ -52,13 +52,12 @@ An incident made a great effect on my vision for software engineering.
 I implemented a sorting algorithm in 2000s for my PATRAN PCL libraries which was *quite fast* comparing to a *traditional sorting algorithm* based on comparison.
 I was realy proud of that algorithm. One day, after a decade around 2017, I decided to make a review of the sorting algorithms *other people generated*.
 I was shocked that my algorithm was one of the well known sorting algorithms named as *counting sort* and dated back to **1950s**.
-Although I was disappointed, this event was a milestone for me such that I realized that **software engineering was not creating genius functions but its a science**.
-Hence, I decided to study starting from the fundamentals and build up following the strong references.
+Although I was disappointed, this event was a milestone for me to learn the software engineering starting from the fundamentals and following the strong references.
 
-Two years ago, I had a similar incident. I created a solution for a problem related to one of my data structures and inspected its pros and cons.
-Later, I made a survey that how other people treated to the problem I faced.
-The result was not surprising for me this time that the formal solution is exactly the same as I defined.
-Besides, it was named same as what I typed to google: *swap and pop idiom*.
+Two years ago, I had a similar incident.
+I created a solution for a problem related to one of my data structures.
+Later, I made a literature review.
+The result was not surprising for me this time that the formal solution and even the name were exactly the same as I defined: *swap and pop idiom*.
 
 **See**\
 I have repositories for C++, Java and Python in order to provide a picture of this profile readme.
@@ -509,12 +508,12 @@ Task parallelism, on the other hand, divides a single task into parts and run ea
 
 Both approaches look straight forward but can be quite complex when there exist dependencies between the various parts of the data or the task.
 One of the dependecies is the shared data.
-Both data and task parallelism need to deal with the shared data in order to prevent race conditions.
+Both data and task parallelism need to deal with the shared data in order to prevent the race conditions.
 However, the best solution is to design without shared data.
 For the task parallelism, the side effects are the second source of dependencies.
 The side effects are signs of bad practice and should not exist in a concurrent code.
 
-Lock-based, lock-free and wwait-free strategies are the two ways of dealing with the shared data.
+Lock-based, lock-free and wait-free strategies are the three ways of dealing with the shared data.
 Despite its' easy use, lock-based concurrency has a number of drawbacks.
 First of all, it does not guarantee that at least one thread makes progress (i.e. deadlocks).
 Race conditions, deadlocks, serialization and cache ping-pong are some of the problems to be escaped in this case.
@@ -568,6 +567,7 @@ The README file of the repository presents a detailed discussion about data and 
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
 - CMake
 - git, gitlab, TortoiseSVN
+- CUDA C
 - Google Test
 - MS Visual Studio, VS Code, Anaconda, Netbeans
 
