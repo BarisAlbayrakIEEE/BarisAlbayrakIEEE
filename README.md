@@ -556,7 +556,10 @@ Below are the key points when concurrency is considered:
 - **Granularity:** Achieve the deepest possible level of granularity in case of lock-based approach
 - **Cache effectivity and false sharing:** Optimize the cache usage while avoiding the false sharing
 
-[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a concurrent DAG data structure.
+[VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) repository in my github page contains a persistent vector tree data structure.
+The README file of the repository presents a detailed discussion about the relation between the persistency and the concurrency.
+
+[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a concurrent persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
 [GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page
