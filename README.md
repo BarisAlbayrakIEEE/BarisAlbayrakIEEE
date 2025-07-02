@@ -599,10 +599,10 @@ The README file of the repository presents a detailed discussion about data and 
 # 5. Repositories <a id='sec5'></a>
 1. A persistent vector tree in C++ [github](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
 2. A concurrent persistent DAG in C++ [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
-3. A genetic algorithm for composite laminate optimization in CUDA C [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate)
-4. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp)
-5. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java)
-6. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python)
+3. A genetic algorithm for composite laminate optimization in CUDA C [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git)
+4. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp.git)
+5. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java.git)
+6. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python.git)
 
 # 6. Some References <a id='sec6'></a>
 1. Alexandrescu, Modern C++ Design
