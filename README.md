@@ -45,7 +45,7 @@ I started creating software programs in the beginning of 2000s during my undergr
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
 I have developed a number of projects using python, java and C++ later in my professional life.
-For the last two years, like many other software engineers, I have been studying FP and DOD from books and by inspecting public works of other people from github.
+For the last three years, like many other software engineers, I have been studying FP and DOD from books and by inspecting public works of other people from github.
 
 **Two Incidents**\
 An incident made a great effect on my vision for software engineering.
@@ -324,7 +324,7 @@ I am well-experienced with the following programming paradigms and the correspon
 - **Object-Oriented Programming, OOP:** C++, Python, Java, Visual Basic
 - **Functional Programming, FP:** C++, Clojure, Haskel, etc.
 
-Please see [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page as an example of my FP and DOD background.
+Please see [VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) and [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repositories in my github page as an example of my FP and DOD background.
 
 I had some earlier work on a geometry library which is currently a mixture of buggy code.
 I will publish two libraries from this work:
@@ -343,21 +343,18 @@ FP and DOD have been dominating the software development in especially performan
 Former tends to decrease the runtime load by increasing the purity while later optimizes the memory allocations and data access patterns.
 At the end of the day, both rely on the same argument: **use almost always vector**.
 FP searches for better vector designs (e.g. vector trie, vector tree, etc.) which covers the persistency as well.
-DOD tries to maximize the benefit of the contiguous memory allocation of the vector (e.g. struct of arrays instead of arrays of structs).
+DOD tries to maximize the benefit of the contiguous memory allocation of the vector (e.g. indices instead of pointers and struct of arrays instead of arrays of structs).
 
 Another issue under this topic is of course the concurrency.
 Current tendency in the industry is to achieve asynchronous tasking by replacing the lock-based systems with lock-free equivalents.
 A further step is being achieved by the wait-free access which currently I have very little experience.
-Although the researches for the wait-free access date back to 1980s,
-practical and efficient implementations in the industry have arisen quite recently
-especially in low-latency applications like finance.
 
 Below are the key points when data structures are considered:
 - **Allocation:** Contiguous vs pointer-based, static (stack) vs dynamic (heap), sequence vs set, etc.
 - **Basic data structures:** Static and dynamic arrays, linked lists, queues, stacks, trees, tries, binary trees, red-black trees, sets, graphs, hash maps/tables, etc.
 - **Persistent data structures:** Partial vs full vs functional persistency, persistent implementations of the basic data structures (e.g. persistent vector)
 - **Iterator design pattern:** Iterator categories, traversal algorithms (e.g. BFS and DFS)
-- **Problem-solving techniques:** Divide and conquer (recursion, thread pools or task parallelism), dynamic programming (caching and memoization)
+- **Problem-solving techniques:** Divide and conquer (recursion, thread pools or task parallelism), dynamic programming (caching, memoization and laziness)
 - **Fundamental algorithms:** Insert, erase, traversal, sort, partition, etc.
 - **Time and space complexity analysis:** Best and worst cases, amortized analysis
 - **Concurrency:** Lock-based vs lock-free designs, fine vs coarse-grained locking schemes, persistency
@@ -388,7 +385,7 @@ In other words, the transformation from a dynamically polymorphic system to a st
 For example, consider we have a container storing the std::variant objects
 and the container is traversed to apply visitor pattern (std::visit) on each variant.
 In this case, the variant would perform similar to a dynamic dispatch if the current type in the variant is resolved at runtime.
-The compiler is not able to deduce the type at compile-time; so no optimization.
+The compiler is not able to deduce the type at compile-time; so no optimization.
 Even worst, the allocated memory would contain paddings if the types in the variant has varying sizes.
 Lets consider the variant stores geometry objects like point and line.
 The objects would associate to each other such as a line is formed by two points.
