@@ -447,8 +447,11 @@ Below are the key points when FP is considered:
 - **Functors and monads:** Category theory, transformations, handling state
 - **Persistent data structures:** Free exception safety, free concurrency, free history
 
-[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a persistent DAG data structure.
-The README file of the repository presents a detailed discussion about the persistent data structures and concurrency.
+[VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) repository in my github page contains a vector tree data structure.
+The README file of the repository presents a detailed discussion about the persistency.
+
+[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
+The README file of the repository presents a detailed discussion about the persistency and concurrency.
 
 ## 2.7. Data Oriented Design (DOD) <a id='sec27'></a>
 In the last decade, the clock frequency of CPUs did not improved significantly
