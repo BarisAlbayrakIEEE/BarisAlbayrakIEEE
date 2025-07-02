@@ -483,7 +483,7 @@ as all objects inherit from a universal base object (e.g., JavaObject).
 Hence, the template metaprogramming is a branch related to C++.
 
 Below are the key points when the template metaprogramming is considered:
-- enable_if, void_t, SFINAE
+- enable_if, void_t, SFINAE, if constexpr
 - constexpr
 - Type and value aliasing
 - Compile-time recursion
@@ -543,7 +543,7 @@ Below are the key points when concurrency is considered:
 - **Cache ping-pong:** The data is passed back and forth between the caches many times (e.g. locking a mutex in a loop)
 - **L1/L2/L3 caches:** Memory segments designed to speed up access
 - **Cache line:** Blocks of memory dealt by the processors (typically 32 or 64 bytes)
-- **False sharing:** The cache line is shared, even though none of the data is shared
+- **False sharing:** The cache line is shared, even though the data is not shared
 - **Data proximity:** If the data is spread out in memory, the related cache lines must be loaded from memory onto the processor cache
 
 **Rules for Concurrent Data Structures:**
@@ -556,10 +556,10 @@ Below are the key points when concurrency is considered:
 - **Granularity:** Achieve the deepest possible level of granularity in case of lock-based approach
 - **Cache effectivity and false sharing:** Optimize the cache usage while avoiding the false sharing
 
-[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG) repository in my github page contains a concurrent DAG data structure.
+[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a concurrent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
-[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate) repository in my github page
+[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page
 contains a genetic algorithm to optimize a composite laminate written in CUDA C.
 The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
 
@@ -597,11 +597,12 @@ The README file of the repository presents a detailed discussion about data and 
 - **memory_order_acquire-memory_order_release-memory_order_acq_rel:** Acquire-release ordering: One step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
 
 # 5. Repositories <a id='sec5'></a>
-1. A concurrent persistent DAG in C++ [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG)
-2. A genetic algorithm for composite laminate optimization in CUDA C [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate)
-3. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp)
-4. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java)
-5. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python)
+1. A persistent vector tree in C++ [github](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
+2. A concurrent persistent DAG in C++ [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
+3. A genetic algorithm for composite laminate optimization in CUDA C [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate)
+4. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp)
+5. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java)
+6. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python)
 
 # 6. Some References <a id='sec6'></a>
 1. Alexandrescu, Modern C++ Design
