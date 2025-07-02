@@ -324,7 +324,11 @@ I am well-experienced with the following programming paradigms and the correspon
 - **Object-Oriented Programming, OOP:** C++, Python, Java, Visual Basic
 - **Functional Programming, FP:** C++, Clojure, Haskel, etc.
 
-Please see [VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) and [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repositories in my github page as an example of my FP and DOD background.
+[VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) repository in my github page contains a persistent vector tree data structure.
+The README file of the repository presents a detailed discussion about the FP principles.
+
+[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
+The README file of the repository presents a detailed discussion about the FP and DOD principles.
 
 I had some earlier work on a geometry library which is currently a mixture of buggy code.
 I will publish two libraries from this work:
@@ -447,7 +451,7 @@ Below are the key points when FP is considered:
 - **Functors and monads:** Category theory, transformations, handling state
 - **Persistent data structures:** Free exception safety, free concurrency, free history
 
-[VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) repository in my github page contains a vector tree data structure.
+[VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) repository in my github page contains a persistent vector tree data structure.
 The README file of the repository presents a detailed discussion about the persistency.
 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
@@ -473,6 +477,9 @@ Below are the key points when DOD is considered:
 - **Optimization:** Avoid branching and dereferencing the pointers
 - **Concurrency:** Design data for concurrency, design data for lock-free concurrency
 - **Usage:** Especially in the game industry, HPC, finance
+
+[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
+The README file of the repository presents a detailed discussion about the DOD principles.
 
 ## 2.8. Template Metaprogramming <a id='sec28'></a>
 Template metaprogramming helps removing a lot of boilerplate code.
@@ -559,11 +566,11 @@ Below are the key points when concurrency is considered:
 [VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) repository in my github page contains a persistent vector tree data structure.
 The README file of the repository presents a detailed discussion about the relation between the persistency and the concurrency.
 
-[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a concurrent persistent DAG data structure.
+[PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
-[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page
-contains a genetic algorithm to optimize a composite laminate written in CUDA C.
+[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
+to optimize a composite laminate written in CUDA C.
 The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
 
 # 3. Languages & Tools <a id='sec3'></a>
