@@ -408,12 +408,12 @@ The README file of the repository presents a detailed discussion about data and 
 - **memory_order_acquire-memory_order_release-memory_order_acq_rel:** Acquire-release ordering: One step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
 
 # 5. Repositories <a id='sec5'></a>
-1. A persistent vector tree in C++ [github](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
-2. A concurrent persistent DAG in C++ [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
-3. A genetic algorithm for composite laminate optimization in CUDA C [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git)
-4. Two geometry libraries in C++03 and C++20 **(buggy)** [github](https://github.com/BarisAlbayrakIEEE/cpp.git)
-5. Some java projects [github](https://github.com/BarisAlbayrakIEEE/java.git)
-6. Some python modules [github](https://github.com/BarisAlbayrakIEEE/python.git)
+1. The architecture and design of an application for the structural aanalyses: [github](https://github.com/BarisAlbayrakIEEE/StructuralAnalysis.git)
+2. A persistent vector tree in C++: [github](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
+3. A concurrent persistent DAG in C++: [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
+4. A genetic algorithm for composite laminate optimization in CUDA C: [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git)
+5. Two geometry libraries in C++03 and C++20 **(buggy)**: [github](https://github.com/BarisAlbayrakIEEE/cpp.git)
+6. Some python modules: [github](https://github.com/BarisAlbayrakIEEE/python.git)
 
 # 6. Some References <a id='sec6'></a>
 1. Alexandrescu, Modern C++ Design
