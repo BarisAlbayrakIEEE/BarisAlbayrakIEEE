@@ -139,7 +139,7 @@ The README file of the repository presents a detailed discussion about the FP pr
 The README file of the repository presents a detailed discussion about the FP and DOD principles.
 
 ## 2.4. Data Structures and Algorithms <a id='sec24'></a>
-The complexity analysis is the main issue under this topic.
+The complexity analysis was the main issue under this topic.
 For example, inserting an element at the middle of a vector is O(N) while the same operation is O(1) for a linked list.
 Hence, if one needs a container which will be subjected to frequent inserts, the correct answer would be a linked list.
 However, **this is only the half of the reality** as the modern computers utilized the caches to improve the performance for memory access.
@@ -182,8 +182,8 @@ In addition to the performance problems, virtual polymorphism has secondary issu
 - need for a **polymorphic clone** member function
 - endangers the definitions like EBC optimization, trivially copyability, etc.
 
-**Staic polymorphism provides solutions to all with the cost of longer compilation times and more complex code.**
-However, some template metaprogramming methods would be required to enable the type transformations.
+**Static polymorphism provides solutions to all with the cost of longer compilation times and more complex code.**
+However, some template metaprogramming methods would enable the type transformations to simplify the code.
 Yet, the static polymorphism requires a design perspective in order to produce the expected results.
 In other words, the transformation from a dynamically polymorphic system to a statically polymorphic system usually requires redesigning the whole system.
 **The static solutions would work similar to the counterpart if the problem remains dynamic.**
@@ -205,7 +205,7 @@ So, each problem should be studied separately so that an optimum solution based 
 In summary, **static polymorphism has full effect only when the compiler is supplied with all the informations it needs for the compilation.**
 
 Below are the key points when OOP is considered:
-- **Basic concepts:** Abstraction, encapsulation, inheritance, aggregation, polymorphism
+- **Basic concepts:** Abstraction, encapsulation, inheritance, composition/association/aggregation, polymorphism
 - **Class/object:** Declaration vs definition, instantiation vs initialization vs assignment
 - **High cohesion, low coupling:** Toward fully orthogonal interfaces, dependency inversion
 - **SOLID principles:** Fundamental rules for all design methodologies (OOD, FOD, DOD, flow-oriented design or else), maintainable/flexible/extendible systems
