@@ -1,20 +1,20 @@
 **Contents**
-1.   [Introduction](#sec1)
-2.   [Fundamentals of the Software Engineering](#sec2)\
-2.1. [Software Design](#sec21)\
-2.2. [Abstraction, Encapsulation and Polymorphism](#sec22)\
-2.3. [Programming Paradigms](#sec23)\
-2.4. [Data Structures and Algorithms](#sec24)\
-2.5. [OOP](#sec25)\
-2.6. [Functional Programming (FP)](#sec26)\
-2.7. [Data Oriented Design (DOD)](#sec27)\
-2.8. [Template Metaprogramming](#sec28)\
-2.9. [Concurrency](#sec29)
-3.   [Languages & Tools](#sec3)
-4.   [C/C++ Skills](#sec4)
-5.   [Repositories](#sec5)
-6.   [Some References](#sec6)
-7.   [Current Studies](#sec7)
+- [1. Introduction](#sec1)
+- [2. Fundamentals of the Software Engineering](#sec2)
+  - [2.1. Software Architecture & Design](#sec21)
+  - [2.2. Abstraction, Encapsulation and Polymorphism](#sec22)
+  - [2.3. Programming Paradigms](#sec23)
+  - [2.4. Data Structures and Algorithms](#sec24)
+  - [2.5. OOP](#sec25)
+  - [2.6. Functional Programming (FP)](#sec26)
+  - [2.7. Data Oriented Design (DOD)](#sec27)
+  - [2.8. Template Metaprogramming](#sec28)
+  - [2.9. Concurrency](#sec29)
+- [3. Languages & Tools](#sec3)
+- [4. C/C++ Skills](#sec4)
+- [5. Repositories](#sec5)
+- [6. Some References](#sec6)
+- [7. Current Studies](#sec7)
 
 **PREFACE**\
 I created this github page as a reference for my job applications.
@@ -30,15 +30,17 @@ Yet, some topics (e.g. GoF design patterns or SOLID design rules) are only cover
 without giving any detail because those are the fundamentals and obligatory for a software engineer.
 
 Some aspects are considered significant and explained with formal statements
-while some others are covered by a list of the related entities that I have full power such as the following:\
+while some others are covered by a list of the related issues that I have full power such as the following:\
 *memory leaks and dangling pointers:*\
-*Ownership semantics, RAII, compiler-generated special functions and rule of 0/3/5/7, bugs in the special functions, working with raw pointers instead of smart pointers,
-pointer/reference invalidation, shallow copy and double delete, pointer to a moved-from object, functions returning pointer/reference to a local variable,
-unsecured shared data and race conditions.*
+*Ownership semantics, RAII, compiler-generated special functions and rule of 0/3/5/7, bugs in the special functions,*
+*raw pointers and smart pointers,*
+*pointer/reference invalidation, shallow copy and double delete, pointer to a moved-from object,*
+*functions returning pointer/reference to a local variable,*
+*unsecured shared data and race conditions.*
 
 As a note, **the list of related issues** may describe various aspects of the topic.
 In the above example, the causes (e.g. bugs in the special functions) and the cures (e.g. RAII) are listed together.
-Thus, please, consider the lists as *the related entities* without expecting a conceptual completeness.
+Thus, please, consider the lists as *the related issues* without expecting a conceptual completeness.
 
 **Brief History**\
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
@@ -66,215 +68,21 @@ Following sections summarize my software engineering skills under the headings l
 
 # 2. Fundamentals of the Software Engineering <a id='sec2'></a>
 
-## 2.1. Software Design <a id='sec21'></a>
+## 2.1. Software Architecture & Design <a id='sec21'></a>
 Several fundamental principles guide the development of a scalable, maintainable and efficient software:
 Modularity, high cohesion, low coupling, separation of concerns, SOLID principles, testability, DRY, YAGNI, KISS, etc.
 
 Most of the cases, the application of the above principles and guidelines yield a system which circulates around well-defined interfaces.
 In other words, for complex systems, the software design is designing the interfaces which define the interaction of the components involved in the system.
 
-Let's consider we need to design a software which will perform the strength analysis of structural systems.
-
-*Note:*\
-*In OOP, the inheritance, composition and aggregation are the possible ways of defining the relationships between the objects.*
-*Hence, the selection between the three is an important parameter of the design procedure.*
-*However, sometimes, I will treat them interchangeably for simplicity.*
-
-Consider two concepts in structural engineering: beam and stiffener.
-They are geometrically the same and achieved by extruding a 2-dimensional section along a path.
-The difference comes from the usage such that a beam is an isolated component while a stiffener is used to support the shell structures (i.e. panel).
-Correspondingly, they have different failure modes.
-In other words, the methods to inspect the failure of the two components differ.
-In software engineering terms, the two have a common **property/data** (i.e. geometry and material) but have different **roles and behaviors**.
-The difference in the behaviors is obvious: the failure modes and analyses.
-What about the roles?
-As stated above, a beam is an isolated member while a stiffener is an integrated member
-which means that a beam is a part of an **assembly** while a stiffener is a part of a **component**.
-Besides, a stiffener accomplishes an additional *role* while supporting a panel: constraining the panel.
-
-Now lets consider how to define the two **components**.
-Do I need to have an inheritance (i.e. **IS A**) relationship or aggregate one in the other or else?
-It looks natural that the stiffener aggregates a beam object and...
-
-This is *of course a bad design practice* but before that...
-Did I say ‘how to define the two **components**'?
-What is a component?  
-What is an assembly?  
-What are failure, failure mode and analysis?  
-How does a component behave?  
-And more questions...
-These questions have arisen as I did not perform a design procedure.
-
-*Note:*\
-*The term 'component' is misused in the above statements with its meaning in structural engineering.*
-*I did this mistake intentionally in order to underline that I was on the wrong path.*
-
-The correct questions would be:
-- What does the software do?
-- What are the requested capabilities of the software?
-- What kind of data structures does the software need?
-- How does the software perform its actions?
-- Do I need to follow Object-Oriented Design (OOD)?
-- Do I need to follow Function-Oriented Design (FOD)?
-- Do I need to follow Data-Oriented Design (DOD)?
-- Do I need to follow a combination of the above?
-- What are the components of the software?
-- How do these components interact with each other?
-- What are the behaviors of these components?
-- Is there any behavioral pattern in the application?
-- Is the application performance critical?
-- Is the application memory critical?
-- What are the target platforms?
-- What about concurrency?
-- and more...
-
-*Note:*\
-*I will skip the UI and graphics design for simplicity.*
-*It's obvious that a concurrent application is required at least because of the two.*
-*However, it's important to note that this is where we apply the separation of concerns.*
-
-These questions guide us to achieve a maintainable and efficient design.  
-In other words, these questions simulate the principles and guidelines stated at the beginning of the section.
-
-Let's try to answer them one by one.
-
-**What does the software do?**
-- We will have various types of **structural entities** (i.e. components in the above discussion) which need to be inspected against various **failure modes**.
-- The **structural entities** are inter-related to each other structurally, behaviorally and in terms of the roles.
-- We need definitions for **auxiliary items** for geometry, material and loading in order to define the **structural entities**.
-An **auxiliary item** itself is not a subject of **structural analysis** but it may have some data and behavior.
-- An inspection depends on the **structural entity** it involves and the loading on it.
-In other words, the inspection on a structural entity may vary depending on the loading. 
-- A **structural entity** may act differently in different environments as it faces different stresses and different failure modes.
-Hence, the **structural entities** shall be defined by considering the role as well.
-- The inspection depends also on the material (i.e. isotropic/metallic vs orthotropic/composite).
-- A number of load cases are applied on a **structural entity**.
-- A **structural entity** can be composed of a number of **structural entities**.
-A stiffened panel and a joint are examples of such a **structural entity**.
-These **composed structural entities** have their own failure modes, independent of the **structural entities** they compose.
-- The **structural entities** are grouped under **structural assemblies**.
-A **structural assembly** itself is not a subject of structural inspection. It's just a container.
-
-From the above specifications/requirements, we can deduce the following abstractions:
-1. AuxiliaryObject (**Auxiliary item**): Polymorphic: Geometry, material, etc.  
-2. StructuralObject (**Structural entity**): Polymorphic: Panel, stiffener, joint, etc. Combination of AuxiliaryObjects.  
-3. LoadObject: Related to AuxiliaryObject.  
-4. AnalysisDataset: The object sent to analysis. Combination of StructuralObjects and LoadObjects.  
-5. AnalysisObject: Polymorphic: Depends on the AnalysisDataset/StructuralObject.  
-6. AnalysisResult: Polymorphic: Depends on the AnalysisDataset/StructuralObject.
-
-The above discussion is only to get insights into the problem.  
-The abstractions would most probably change later.
-
-Note that up to now, I followed the OOD approach only.
-Also, note the dependencies and relations between the definitions.
-
-**What are the requested capabilities of the software?**\
-The capabilities of the software need to be well-defined.
-However, the design must hold flexibility as the customers always request updates.  
-
-We need the answers to the following questions:
-- Is it single-user or multi-user?
-- **I will skip graphics/GUI**
-- Does it require a database (e.g. material)?
-- Does it have an interface with other software (e.g. FE analysis tools like NASTRAN)?
-- Does it need to be extendable for new types (e.g. tension fitting is excluded in the deesign but the **user** may want to add)?
-- Does it need to be extendable for new analysis (e.g. composite panel buckling analysis)?
-- and more...
-
-Let's assume a single-user application for simplicity.  
-A multi-user application would additionally need the protection on the shared data due to concurrency.
-We can have a material database.
-AuxiliaryObjects would store the key for DB queries.
-
-**What kind of data structures does the software need?**\
-Let's review the relations between the objects.
-A StructuralObject **HAS** AuxiliaryObjects which are mainly geometry and material.
-The material is stored by the keys to the DB.
-Although geometries are pre-defined (e.g. I-section, rectangular, etc.), each StructuralObject would have its own geometry.
-Hence, the relation between the two is a **composition** where the StructuralObject constructs and destructs the contained AuxiliaryObjects.
-This is very important.
-Consider if the customer requested that a geometry could be used by many StructuralObjects.
-It would have required a tree or a graph data structure in order to manage one-to-many and many-to-one (for graph) relations.
-Neglecting such a requirement, we can use contiguous containers (i.e. array or vector) in order to store the objects.
-
-The other objects (i.e. AnalysisDataset and AnalysisObject) need more discussion, which will be introduced in the following sections.
-The UI would need a simple tree data structure based on the composite design pattern in order for the user to trace the relations between the objects.
-
-**How does the software perform its actions?**\
-The steps of an analysis guided by UI would be:  
-1. The user creates AuxiliaryObjects  
-2. The user creates StructuralObjects from AuxiliaryObjects  
-3. The user creates LoadObjects  
-4. The user requests analysis  
-5. The software creates the AnalysisDatasets from StructuralObjects and LoadObjects  
-6. The user sets the analysis options  
-7. The software creates the AnalysisObjects from AnalysisDatasets  
-8. The software executes analysis on each AnalysisObject and gets an AnalysisResult  
-9. The software tabulates AnalysisResults
-
-<pre>
-The above workflow can be represented with the following transformations:
-AuxiliaryObject -> StructuralObject |
-                                    | -> AnalysisDataset -> AnalysisObject -> AnalysisResult
-                         LoadObject |
-</pre>
-Note that the pipe and arrow signs above are for visual representation only.
-We need to keep in mind that the transformations have various shapes due to the polymorphic types.
-
-The steps up to Step 4 are usual UI operations.  
-A smooth user experience can easily be provided for these steps as they do not contain long-running calculations.  
-Step 6 is also similar.  
-Steps 5, 7, 8 and 9 correspond to time-consuming processes.
-
-Let's consider Step 8 first.
-A structural analysis can contain hundreds even thousands of lines of expressions
-which makes **runtime for fetching the memory or accessing data from the cache negligible**.
-**Hence, the performance of the application fully depends on the analysis methods**
-which takes AnalysisObject and returns AnalysisResult
-**rather than how AnalysisObjects are defined or stored (i.e. the data structure)**.
-The performance can be improved by activating data parallelism
-as the container storing the AnalysisObjects would not change dynamically.
-
-Steps 5, 7 and 9 are similar.
-Hence, I will discuss only Step 5.
-While answering the question about the requested capabilities of the application, I discarded the multi-user case which needed shared data protection
-because otherwise the application would need immutable data types and value semantics suggested by functional programming (FP).
-However, considering the highlighted statements as well, we can work with references/pointers.
-This choice would simplify Steps 5, 7 and 9 reasonably.
-
-Summary of the above discussions:
-- The performance mostly depends on the structural analysis methods.
-- The performance gain that would be obtained from static polymorphism would have a very negligible effect on the final performance.
-- The cache usage while storing AnalysisObjects or others would also have a very negligible effect on the final performance.
-- Functions can work with references/pointers instead of values
-
-**which yields a very important decision: virtual polymorphism**.
-Now, the application became very simple and easy to implement.
-
-**Do I need to follow Object-Oriented Design (OOD)?**\
-OOD needs to answer the following questions:
-- What are the components of the software?
-- How do these components interact with each other?
-- What are the behaviors of these components?
-
-The discussion in the previous question has answered many questions already.
-We can add a couple of points on how class hierarchy is built on virtual polymorphism.
-
-Firstly, we need the visitor design pattern in Steps 5, 7 and 8 and 9.
-Hence, we need interfaces for each step corresponding to the pattern.
-Next, AuxiliaryObjects and StructuralObjects would have class families (e.g. cross-sections).
-We would need creational (e.g. factory), strategy or visitor design patterns for them also.
-Additionally, as usual, the command design pattern would provide undo/redo functionality.
-**I think there is no need to give more details.**
-
-**I will skip the remaining questions as we already achieved a satisfactory design frame.**
+Please see the [Structural Analysis Application](https://github.com/BarisAlbayrakIEEE/StructuralAnalysis.git) repository which
+demonstrates my experience with the software architecture and design.
 
 ## 2.2. Abstraction, Encapsulation and Polymorphism <a id='sec22'></a>
-These three concepts forms the basis of software engineering in all programming paradigms if supported.
+These three concepts forms the basis of software engineering in all programming paradigms.
 
 Similar to the math, any type in a software program abstracts and encapsulates the structure and behavior of a concept.
-For example, integer data type abstracts the integer numbers in number theory limited by lower and upper bounds.
+For example, integer data type abstracts the integer numbers in the number theory limited by lower and upper bounds.
 A function is also an abstraction.
 The abstraction, in summary, encapsulates (i.e. hides) some data and/or procedures and defines an interface which represents the encapsulated data and procedures.
 For example, the `emplace_back` function of `std::vector`.
@@ -329,13 +137,6 @@ The README file of the repository presents a detailed discussion about the FP pr
 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the FP and DOD principles.
-
-I had some earlier work on a geometry library which is currently a mixture of buggy code.
-I will publish two libraries from this work:
-- **GeometryLibrary_OCCT, C++03:** Relying on OCCT smart pointers (i.e., handles); will present a primitive library without interfaces and design patterns
-- **GeometryLibrary_Modern, C++20:** A well-designed concurrent library; will present a concurrent modern geometry library.
-
-Please see [github](https://github.com/BarisAlbayrakIEEE/cpp) repository for the above two.
 
 ## 2.4. Data Structures and Algorithms <a id='sec24'></a>
 The complexity analysis is the main issue under this topic.
