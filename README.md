@@ -409,8 +409,8 @@ The README file of the repository presents a detailed discussion about data and 
 
 # 5. Repositories <a id='sec5'></a>
 1. The architecture and design of an application for the structural aanalyses: [github](https://github.com/BarisAlbayrakIEEE/StructuralAnalysis.git)
-2. A persistent vector tree in C++: [github](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
-3. A concurrent persistent DAG in C++: [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
+2. A functionally persistent vector tree in C++: [github](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
+3. A functionally persistent DAG in C++: [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
 4. A genetic algorithm for composite laminate optimization in CUDA C: [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git)
 5. Some python modules: [github](https://github.com/BarisAlbayrakIEEE/python.git)
 
