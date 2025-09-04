@@ -394,8 +394,9 @@ The README file of the repository presents a detailed discussion about data and 
 # 3. Languages & Tools <a id='sec3'></a>
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
 - CMake
-- git, gitlab, TortoiseSVN
 - CUDA C
+- Linux shell
+- git, gitlab, TortoiseSVN
 - Google Test, Google benchmark
 - MS Visual Studio, VS Code, Anaconda, Netbeans
 
