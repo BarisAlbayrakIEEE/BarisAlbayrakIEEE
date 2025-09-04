@@ -410,7 +410,7 @@ The README file of the repository presents a detailed discussion about data and 
 - **OOP:** Abstract base class and virtual functions, dynamic polymorphism, single dispatch, RTTI, special/defaulted functions, memory management, rule of 0/3/5/7, etc.
 - **C++11:** Evaluation of C++ with C++11: Move semantics, smart pointers, concurrency (std::thread, std::mutex, std::atomic, etc.), type traits, lambdas, etc.
 - **Keep up to date:** Current trend toward FP: Dynamic to static polymorphism, template metaprogramming, value semantics, immutability, persistent data structures, lazyness, etc.
-- **Libraries:** STL, boost, CUDA C, gtest, OpenCascade
+- **Libraries:** STL, boost, CUDA C, gtest, Google Benchmark, OpenCascade
 - **C++ memory model and DOD:** Everything is an object, cache lines, atomic operations, concurrency
 - **Value categories:** lvalue/rvalue/xvalue/glvalue/prvalue, universal references and perfect forwarding
 - **Pointers and references:** Dynamic memory allocation, source ownership, handle body idiom, smart pointers, RAII, exception, thread safety, dangling pointers, memory leaks
