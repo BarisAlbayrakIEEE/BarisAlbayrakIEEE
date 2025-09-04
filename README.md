@@ -450,7 +450,7 @@ The README file of the repository presents a detailed discussion about data and 
 15. List of materials and links about FP in C++ [github](https://github.com/graninas/cpp_functional_programming)
 16. FP suggestions to reduce code noise and how to deal with only one single level of abstraction at a time [github](https://github.com/Dobiasd/FunctionalPlus)
 17. C++ persistent data structures [github](https://github.com/arximboldi/immer)
-18. A C++ implementation of a immutable vector following Rich Hickey's clojure implementation [github](https://github.com/andrewrothstein/cpp-persistent-vector)
+18. A C++ implementation of an immutable vector following Rich Hickey's clojure implementation [github](https://github.com/andrewrothstein/cpp-persistent-vector)
 19. A fast and reliable persistent (immutable) vector class for C++ [github](https://github.com/marcusz/steady)
 20. Phil Bagwell, Ideal Hash Tries
 21. A hash array-mapped trie (HAMT) implementation in C99 [github](https://github.com/mkirchner/hamt)
