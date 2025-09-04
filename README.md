@@ -457,19 +457,24 @@ The README file of the repository presents a detailed discussion about data and 
 22. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
 
 # 7. Current Studies <a id='sec7'></a>
-1. Lock-free and wait-free programming papers and code reviews
+1. Socket programming
+- Brian (Beej Jorgensen) Hall; Beej’s Guide to Network Programming (C), 2020
+- Michael J. Donahoo & Kenneth L. Calvert; TCP-IP Sockets in C, 2009
+- Gay W. Warren; Linux Socket Programming by Example, 2000
+- W. Richard Stevens; UNIX Network Programming, 1990
+2. Lock-free and wait-free programming papers and code reviews
 - Lock-free dynamically resizable arrays, Stroustrup et al.
 - A collection of resources on wait-free and lock-free programming [github](https://github.com/rigtorp/awesome-lockfree.git)
 - Wait-free data structure for single-writer/multi-reader [github](https://github.com/gnu-enjoyer/LeftWrite.git)
 - Library of lock-free and wait-free algorithms [github](https://github.com/hayabusa-cloud/concurrent.git)
 - Single header, wait-free queues for C++ [github](https://github.com/marcusspangenberg/waitfreequeue.git)
 - ...
-2. Kernel development
+3. Kernel development
 - K. C. Wang; Systems Programming in Unix/Linux; 2017
 - Robert Love; Linux Kernel Development; 2010
 - P. Raghavan, Amol Lad and Sriram Neelakandan; Embedded Linux System Design and Development; 2006
 - Mark Mitchell, Jeffrey Oldham and Alex Samuel; Advanced Linux Programming; 2001
-3. Assembly language
+4. Assembly language
 - Randall Hyde; The Art of Assembly Language, 2010
 - Randall Hyde; The Art of 64-bit Assembly, 2020
 - Sivarama P. Dandamudi; Introduction to Assembly Language Programming; 2005
