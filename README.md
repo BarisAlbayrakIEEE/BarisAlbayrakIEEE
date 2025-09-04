@@ -336,7 +336,19 @@ However, its one of the issues I currently study.
 This approach is one of the mostly discussed topics in the last decade.
 Studies and applications are quite alot related to the wait-free queues, stacks and even vectors (e.g. by Stroustrup et al.).
 
-Below are the key points when concurrency is considered:
+I mastered in the following fundamental strategies for the concurrency:
+- Master/worker
+- Producer/consumer
+- Divide and conquer
+- Pipeline
+- Futures and promises
+- Partition vs elementwise parallellism
+- Partition, reduction, etc.
+
+I currently have no experience in the DAG scheduling strategy.
+However, its one of the items in my future studies list.
+
+Below are the key points when the concurrency is considered:
 - **Why:** Separation of concerns, pereformance
 - **Amdahl’s law:** Scalability
 - **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data; data race = undefined behavior
