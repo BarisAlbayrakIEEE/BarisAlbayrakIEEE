@@ -349,7 +349,7 @@ I currently have no experience with the DAG scheduling strategy.
 However, its one of the items in my future studies list.
 
 I also have some experience with the GPU parallelism.
-[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
+[GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
 to optimize a composite laminate written in CUDA C.
 The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
 
@@ -387,7 +387,7 @@ The README file of the repository presents a detailed discussion about the relat
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
-[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
+[GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
 to optimize a composite laminate written in CUDA C.
 The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
 
