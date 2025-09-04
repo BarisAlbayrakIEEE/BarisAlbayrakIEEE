@@ -336,7 +336,7 @@ However, its one of the issues I currently study.
 This approach is one of the mostly discussed topics in the last decade.
 Studies and applications are quite alot related to the wait-free queues, stacks and even vectors (e.g. by Stroustrup et al.).
 
-I mastered in the following fundamental strategies for the concurrency:
+I mastered in the following fundamental strategies of multithreading:
 - Master/worker
 - Producer/consumer
 - Divide and conquer
@@ -345,8 +345,13 @@ I mastered in the following fundamental strategies for the concurrency:
 - Partition vs elementwise parallellism
 - Partition, reduction, etc.
 
-I currently have no experience in the DAG scheduling strategy.
+I currently have no experience with the DAG scheduling strategy.
 However, its one of the items in my future studies list.
+
+I also have some experience with the GPU parallelism.
+[GenericLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
+to optimize a composite laminate written in CUDA C.
+The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
 
 Below are the key points when the concurrency is considered:
 - **Why:** Separation of concerns, pereformance
