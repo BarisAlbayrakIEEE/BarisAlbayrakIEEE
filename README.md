@@ -228,7 +228,7 @@ Although the FP languages (e.g. Haskell) are not widely used in the industry,
 FP has influenced the industry by guiding the OOP with its principles.
 
 Especially C++ community has been affected by this movement.
-Every year, a couple of talks in CppCon are related to the applications of FP.
+Every year, a couple of talks in [CppCon](https://www.youtube.com/@CppCon) are related to the applications of FP.
 Actually, C++ had this tendency since the introduction of the templates.
 STL algorithms have followed the higher order function concept of FP since they were first released.
 Later, every new C++ standard has introduced new concepts from FP such as:
@@ -263,8 +263,8 @@ In the last decade, the clock frequency of CPUs did not improved significantly
 while the memory instructions did alot on behalf of the cache improvement (up to 100 times increase in cache size).
 This evolution forces the developers to evaluate more efficient cache usage as a crucial design parameter.
 Hence, the cache optimization is one of the hot topics in the industry.
-For example, currently, almost half of the talks in cppcon contains at least one slide about the issue.
-An interesting highlight from cppcon:
+For example, currently, almost half of the talks in [CppCon](https://www.youtube.com/@CppCon) contains at least one slide about the issue.
+An interesting highlight from CppCon:
 - The complexity analysis is useless(!) comparing to the cache efficiency
 - **almost always use vector!**
 
@@ -379,7 +379,7 @@ The README file of the repository presents a detailed discussion about data and 
 - CMake
 - git, gitlab, TortoiseSVN
 - CUDA C
-- Google Test
+- Google Test, Google benchmark
 - MS Visual Studio, VS Code, Anaconda, Netbeans
 
 # 4. C/C++ Skills <a id='sec4'></a>
