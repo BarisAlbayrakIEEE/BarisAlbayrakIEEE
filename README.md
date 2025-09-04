@@ -411,10 +411,10 @@ The README file of the repository presents a detailed discussion about data and 
 - **C++11:** Evaluation of C++ with C++11: Move semantics, smart pointers, concurrency (std::thread, std::mutex, std::atomic, etc.), type traits, lambdas, etc.
 - **Keep up to date:** Current trend toward FP: Dynamic to static polymorphism, template metaprogramming, value semantics, immutability, persistent data structures, lazyness, etc.
 - **Libraries:** STL, boost, CUDA C, gtest, Google Benchmark, OpenCascade
-- **C++ memory model and DOD:** Everything is an object, cache lines, atomic operations, concurrency
-- **Value categories:** lvalue/rvalue/xvalue/glvalue/prvalue, universal references and perfect forwarding
-- **Pointers and references:** Dynamic memory allocation, source ownership, handle body idiom, smart pointers, RAII, exception, thread safety, dangling pointers, memory leaks
-- **STL algorithms:** Categories, unary/binary/ternary functions, implementation details, complexity analysis, function objects and lambdas
+- **C++ memory model:** Everything is an object, cache lines, atomic operations, concurrency
+- **Value categories:** lvalue/rvalue/xvalue/glvalue/prvalue, universal references and perfect forwarding, rvalue semantics, RVO and NRVO, pass by value vs pass by reference
+- **Pointers and references:** Dynamic memory allocation, resource ownership, handle body idiom, smart pointers, RAII, exception, thread safety, dangling pointers, memory leaks, thread and exception safety
+- **STL algorithms:** FP high level functions, pipes, ranges and views, categories, unary/binary/ternary functions, implementation details, complexity analysis, function objects and lambdas
 - **Type deduction rules:** Template and auto type deductions, C++11/14/17 rules with auto and decltype, perfect forwarding
 - **Idioms:** RAII, handle body idiom, copy and swap, swap and pop, lazy initialization, copy on write, EBC, double dispatch, SFINAE, CRTP, Pimpl, execute around pointer, NVI
 - **Optimization techniques:** Inlining, bit manipulation, bitwise copy, RVO and NRVO, loop unrolling, vectorization, etc.
