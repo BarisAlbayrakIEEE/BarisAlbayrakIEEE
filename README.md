@@ -437,25 +437,26 @@ The README file of the repository presents a detailed discussion about data and 
 1. Alexandrescu, Modern C++ Design
 2. Anthony Williams, C++ Concurrency in Action
 3. Edouard Alligand & Joel Falcou, Practical C++ Metaprogramming
-4. Loki [github](https://github.com/dutor/loki)
-5. C++ concurrency library [github](https://github.com/David-Haim/concurrencpp)
-6. Data-oriented design resources [github](https://github.com/dbartolini/data-oriented-design)
-7. Data-oriented design book source code [github](https://github.com/raspofabs/dodbooksourcecode)
-8. DOD Performance Benchmarks [github](https://github.com/KamilVDono/DOD_Performance_Benchmarks)
-9.  DOD optimizations [github](https://github.com/etuckerman/Data_Oriented_Design_Optimizations)
-10. DOD vs OOD performance stats [github](https://github.com/jeuxdemains/DataOriented_vs_ObjectOriented)
-11. Ivan Cukic, Functional Programming in C++
-12. FP ebook [github](https://github.com/imteekay/functional-programming-learning-path)
-13. Immer: A library of persistent and immutable data structures written in C++ [github](https://github.com/arximboldi/immer)
-14. FP tutorials and articles [github](https://github.com/xgrommx/awesome-functional-programming)
-15. List of materials and links about FP in C++ [github](https://github.com/graninas/cpp_functional_programming)
-16. FP suggestions to reduce code noise and how to deal with only one single level of abstraction at a time [github](https://github.com/Dobiasd/FunctionalPlus)
-17. C++ persistent data structures [github](https://github.com/arximboldi/immer)
-18. A C++ implementation of an immutable vector following Rich Hickey's clojure implementation [github](https://github.com/andrewrothstein/cpp-persistent-vector)
-19. A fast and reliable persistent (immutable) vector class for C++ [github](https://github.com/marcusz/steady)
-20. Phil Bagwell, Ideal Hash Tries
-21. A hash array-mapped trie (HAMT) implementation in C99 [github](https://github.com/mkirchner/hamt)
-22. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
+4. Silvia Botros & Jeremy Tinly, High Performance MySQL
+5. Loki [github](https://github.com/dutor/loki)
+6. C++ concurrency library [github](https://github.com/David-Haim/concurrencpp)
+7. Data-oriented design resources [github](https://github.com/dbartolini/data-oriented-design)
+8. Data-oriented design book source code [github](https://github.com/raspofabs/dodbooksourcecode)
+9. DOD Performance Benchmarks [github](https://github.com/KamilVDono/DOD_Performance_Benchmarks)
+10. DOD optimizations [github](https://github.com/etuckerman/Data_Oriented_Design_Optimizations)
+11. DOD vs OOD performance stats [github](https://github.com/jeuxdemains/DataOriented_vs_ObjectOriented)
+12. Ivan Cukic, Functional Programming in C++
+13. FP ebook [github](https://github.com/imteekay/functional-programming-learning-path)
+14. Immer: A library of persistent and immutable data structures written in C++ [github](https://github.com/arximboldi/immer)
+15. FP tutorials and articles [github](https://github.com/xgrommx/awesome-functional-programming)
+16. List of materials and links about FP in C++ [github](https://github.com/graninas/cpp_functional_programming)
+17. FP suggestions to reduce code noise and how to deal with only one single level of abstraction at a time [github](https://github.com/Dobiasd/FunctionalPlus)
+18. C++ persistent data structures [github](https://github.com/arximboldi/immer)
+19. A C++ implementation of an immutable vector following Rich Hickey's clojure implementation [github](https://github.com/andrewrothstein/cpp-persistent-vector)
+20. A fast and reliable persistent (immutable) vector class for C++ [github](https://github.com/marcusz/steady)
+21. Phil Bagwell, Ideal Hash Tries
+22. A hash array-mapped trie (HAMT) implementation in C99 [github](https://github.com/mkirchner/hamt)
+23. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
 
 # 7. Current Studies <a id='sec7'></a>
 1. Socket programming
