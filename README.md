@@ -395,6 +395,7 @@ The README file of the repository presents a detailed discussion about data and 
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
 - CMake
 - CUDA C
+- SQL (MySQL)
 - Linux shell
 - git, gitlab, TortoiseSVN
 - Google Test, Google benchmark
