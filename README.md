@@ -47,7 +47,9 @@ I started creating software programs in the beginning of 2000s during my undergr
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
 I have developed a number of projects using python, java and C++ later in my professional life.
-For the last three years, like many other software engineers, I have been studying FP and DOD from books and by inspecting public works of other people from github.
+For the last three years, like many other software engineers,
+I have been studying FP, DOD and low latency from books and by inspecting public works of other people from github.
+Currently, I am a C++ developer with a powerful background in the low latency applications.
 
 **Two Incidents**\
 An incident made a great effect on my vision for software engineering.
@@ -95,7 +97,7 @@ The signature of `emplace_back` corresponds to the following statements:
 
 **An experienced engineer would easily deduce the followings from the signature:**
 - Its more efficient to work at the end of a `std::vector`.
-- The size of the container is incremented.
+- The size of the container is increased.
 - `emplace_back` may result with reallocation of the `std::vector` which means that all the pointers/references to the existing elements are invalidated.
 
 **Hence, refining the 1st definition:**\
