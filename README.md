@@ -438,15 +438,14 @@ The README file of the repository presents a detailed discussion about data and 
 - **Keep up to date:** Current trend toward FP: Dynamic to static polymorphism, template metaprogramming, value semantics, immutability, persistent data structures, lazyness, etc.
 - **Libraries:** STL, boost, CUDA C, gtest, Google Benchmark, OpenCascade
 - **C++ memory model:** Everything is an object, cache lines, atomic operations, concurrency
-- **Value categories:** lvalue/rvalue/xvalue/glvalue/prvalue, universal references and perfect forwarding, rvalue semantics, RVO and NRVO, pass by value vs pass by reference
-- **Pointers and references:** Dynamic memory allocation, resource ownership, handle body idiom, smart pointers, RAII, exception, thread safety, dangling pointers, memory leaks, thread and exception safety
+- **Memory management:** Stack and heap, ownership and RAII, allocation/construction/destruction/deallocation, placement new, STL style arenas and allocators
 - **STL algorithms:** FP high level functions, pipes, ranges and views, categories, unary/binary/ternary functions, implementation details, complexity analysis, function objects and lambdas
 - **Type deduction rules:** Template and auto type deductions, C++11/14/17 rules with auto and decltype, perfect forwarding
 - **Idioms:** RAII, handle body idiom, copy and swap, swap and pop, lazy initialization, copy on write, EBC, double dispatch, SFINAE, CRTP, Pimpl, execute around pointer, NVI
-- **Optimization techniques:** Inlining, bit manipulation, bitwise copy, RVO and NRVO, loop unrolling, vectorization, etc.
+- **Optimization techniques:** Inlining, bit manipulation, bitwise copy, RVO and NRVO, loop unrolling, vectorization, hotpath/slowpath, branch reduction, etc.
 - **Template metaprogramming:** See [Template Metaprogramming](#sec28)
 - **Lambda expressions:** Anonymous functions, capture modes, capture auto type deduction rules, return type deduction rules, STL algorithms
-- **Multithreading vs multitasking:** std::thread/std::jthread vs std::async, std::atomic vs std::mutex, std::lock_guard vs std::scoped_lock vs std::unique_lock/std::shared_lock, std::condition_variable vs std::promise
+- **Multithreading and multitasking:** std::thread/std::jthread vs std::async, std::atomic vs std::mutex, std::lock_guard vs std::scoped_lock vs std::unique_lock/std::shared_lock, std::condition_variable vs std::promise
 - **memory_order_seq_cst:** Sequentially consistent ordering: All threads see the same order of operations, obeys SW relationships, the default and the easiest one
 - **memory_order_relaxed:** Relaxed ordering: Stores and loads are not synchronized, obeys happens-before relationships but does not obey SW relationships
 - **memory_order_acquire-memory_order_release-memory_order_acq_rel:** Acquire-release ordering: One step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
