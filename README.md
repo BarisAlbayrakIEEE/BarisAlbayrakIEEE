@@ -157,15 +157,15 @@ Current tendency in the industry is to achieve asynchronous tasking by replacing
 A further step is being achieved by the wait-free access which currently I have very little experience.
 
 Below are the key points when data structures are considered:
-- **Allocation:** Contiguous vs pointer-based, static (stack) vs dynamic (heap), sequence vs set, etc.
+- **Allocation:** Contiguous vs pointer-based, static (stack) vs dynamic (heap), placement new, STL style arenas and allocators, etc.
 - **Basic data structures:** Static and dynamic arrays, linked lists, queues, stacks, trees, tries, binary trees, red-black trees, sets, graphs, hash maps/tables, etc.
 - **Persistent data structures:** Partial vs full vs functional persistency, persistent implementations of the basic data structures (e.g. persistent vector)
 - **Iterator design pattern:** Iterator categories, traversal algorithms (e.g. BFS and DFS)
 - **Problem-solving techniques:** Divide and conquer (recursion, thread pools or task parallelism), dynamic programming (caching, memoization and laziness)
 - **Fundamental algorithms:** Insert, erase, traversal, sort, partition, etc.
 - **Time and space complexity analysis:** Best and worst cases, amortized analysis
-- **Concurrency:** Lock-based vs lock-free designs, fine vs coarse-grained locking schemes, persistency
-- **DOD principles:** Better memory allocation (size and alignment studies), improved cache effectivity and increased capacity for lock-free concurrency
+- **Concurrency:** Lock-based vs lock-free designs, fine vs coarse-grained locking schemes, critical section vs atomic operations
+- **DOD principles:** Memory layout strategies, memory access patterns, cache efficiency
 
 ## 2.5. OOP <a id='sec25'></a>
 The traditional approach in OOP relies highly on the dynamic/virtual polymorphism.
@@ -208,15 +208,14 @@ In summary, **static polymorphism has full effect only when the compiler is supp
 
 Below are the key points when OOP is considered:
 - **Basic concepts:** Abstraction, encapsulation, inheritance, composition/association/aggregation, polymorphism
-- **Class/object:** Declaration vs definition, instantiation vs initialization vs assignment
+- **Class/object:** Declaration vs definition, instantiation vs initialization vs assignment, allocation
 - **High cohesion, low coupling:** Toward fully orthogonal interfaces, dependency inversion
 - **SOLID principles:** Fundamental rules for all design methodologies (OOD, FOD, DOD, flow-oriented design or else), maintainable/flexible/extendible systems
 - **Design patterns:** GoF's 24, creational/structural/behavioral patterns, MVC, CRTP
 - **Mixin classes:** Usually templated, rarely introduces new data but new functionality, usually multiple mixins can be used together, layered application, orthogonality
 - **Proxy classes:** Loki's approach, similar to mixins, templated inheritance like CRTP, usually multiple inheritance, orthogonality
 - **Dispatching:** Single dispatch (dynamic polymorphism in C++) and double dispatch (C++ does not support, but can be implemented, sign of a bad design)
-- **Memory management:** RAII, C++ value categories, stack and heap memories, handle body idiom, exclusive and shared ownership,
-memory leaks and dangling pointers, caches, DOD, etc.
+- **Memory management:** RAII, C++ value categories, stack and heap memories, arenas and allocators, handle body idiom, exclusive and shared ownership, memory leaks and dangling pointers, caches, DOD, etc.
 - **Stack vs heap memories:** Scope of an object, static vs dynamic containers, source ownership
 - **Memory leaks and dangling pointers:** Ownership semantics, RAII, compiler generated special functions and rule of 0/3/5/7,
 bugs in the special functions, working with the raw pointers instead of the smart pointers,
@@ -269,6 +268,26 @@ For example, currently, almost half of the talks in [CppCon](https://www.youtube
 An interesting highlight from CppCon:
 - The complexity analysis is useless(!) comparing to the cache efficiency
 - **almost always use vector!**
+
+A good example about **the cache efficiency vs the complexity analysis comparison** is
+[my prime algorithm](https://github.com/BarisAlbayrakIEEE/ProAlgos-Cpp/blob/add-primes-by-counters/cpp/include/algorithm/number_theory/primes_by_counters.hpp).
+The algorithm assigns a counter for each prime and increments it while moving along the number axis.
+When a counter reaches the corresponding prime value, the inspected number is known to be a composite.
+Hence, the counter algorithm increments the counters of the current prime numbers for every cycle of the loop.
+For a cycle of the loop, this corresponds to O(P) operations where P is the prime density for the current cycle.
+My original primes by modular counters algorithm is (`get_primes_counter`)
+which follows the above flowchart.
+A 2nd algorithm tries to replace the increment operation of the counters with a left shift
+and finally achieves a solution even without a left shift: move an offset pointer along a ring buffer.
+Hence, the counter incrementation of O(P) is replaced by an offset advance of O(1).
+This is a quite big optimization in terms of the complexity analysis.
+Even though `get_primes_bitset` has strictly less operations compared to `get_primes_counter`,
+`get_primes_counter` has a better runtime performance.
+However, this is not surprising as `get_primes_bitset` works with a large bitset (`std::array<uint64_t, N>`)
+while `get_primes_counter` works with `std::vector` for which the size is the density of the primes for the current cycle.
+Most of the time, `get_primes_counter` works with a small array.
+In other words, `get_primes_bitset` needs to fetch almost the whole memory (as N is too large) for each cycle.
+The algorithm, most probably, cannot use even the L3 cache efficiently.
 
 Below are the key points when DOD is considered:
 - **Focus:** How data is stored, accessed and transformed
@@ -332,6 +351,8 @@ The lock-free approach, on the other hand, ensures at least one thread will make
 The atomic operations are indispensable so that a **true race condition** cannot occur in a lock-free data structure.
 However, there are some related pitfalls with the lock-free data structures such as ABA problem, livelocks and memory issues like dangling pointers.
 
+[Lock-free](https://github.com/BarisAlbayrakIEEE/lock_free.git) repository in my github page contains a number of lock-free designs for the queue and stack data structures.
+
 The wait-free approach is the most complex of the three approaches.
 **While I am very confident in the lock-based and lock-free concurrencies, I have a little background about the wait-free approach.**
 However, its one of the issues I currently study.
@@ -389,6 +410,8 @@ The README file of the repository presents a detailed discussion about the relat
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the above issues related to the concurrency.
 
+[Lock-free](https://github.com/BarisAlbayrakIEEE/lock_free.git) repository in my github page contains a number of lock-free designs for the queue and stack data structures.
+
 [GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
 to optimize a composite laminate written in CUDA C.
 The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
@@ -429,11 +452,12 @@ The README file of the repository presents a detailed discussion about data and 
 - **memory_order_acquire-memory_order_release-memory_order_acq_rel:** Acquire-release ordering: One step synchronization over relaxed ordering, release operation SW/ITHB an acquire operation
 
 # 5. Repositories <a id='sec5'></a>
-1. The architecture and design of an application for the structural aanalyses: [github](https://github.com/BarisAlbayrakIEEE/StructuralAnalysis.git)
-2. A functionally persistent vector tree in C++: [github](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
-3. A functionally persistent DAG in C++: [github](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
-4. A genetic algorithm for composite laminate optimization in CUDA C: [github](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git)
-5. Some python modules: [github](https://github.com/BarisAlbayrakIEEE/python.git)
+1. [The architecture and design of an application for the structural analyses](https://github.com/BarisAlbayrakIEEE/StructuralAnalysis.git)
+2. [A number of lock-free designs for the queue and stack data structures](https://github.com/BarisAlbayrakIEEE/lock_free.git)
+3. [A functionally persistent vector tree in C++](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
+4. [A functionally persistent DAG in C++](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
+5. [A genetic algorithm for composite laminate optimization in CUDA C](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git)
+6. [Some python modules](https://github.com/BarisAlbayrakIEEE/python.git)
 
 # 6. Some References <a id='sec6'></a>
 1. Alexandrescu, Modern C++ Design
