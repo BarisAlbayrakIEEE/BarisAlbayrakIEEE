@@ -154,7 +154,7 @@ but the clients can easily call the function on all Shape objects including the 
 In summary, the design of a system is mainly the abstraction of the uniform interfaces
 and polymorphism is one of the most powerful tool to achieve this right.
 
-Polymorphism can be designed **statically** or **dynamically** in C++
+Polymorphism can be achieved **statically** or **dynamically** in C++
 while the languages like java and python are based on a universal abstract base type (e.g. JavaObject)
 which does not allow polymorphism to be defined statically.
 Static polymorphism is achieved by the tools coming from the generic programming such as template specializations and CRTP
