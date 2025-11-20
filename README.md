@@ -113,9 +113,9 @@ demonstrates my experience with the software architecture and design.
 These three concepts forms the basis of software engineering in all programming paradigms.
 
 Similar to the math, any type in a software program abstracts and encapsulates the structure and behavior of a concept.
-For example, integer data type abstracts the integer numbers in the number theory limited by lower and upper bounds.
-A function is also an abstraction.
-The abstraction, in summary, encapsulates (i.e. hides) some data and/or procedures and defines an interface which represents the encapsulated data and procedures.
+For example, **int** data type abstracts the integer numbers in the number theory hiding the issues related to the allocation, size, construction, manipulation.
+A direct result of the abstraction is the lower and upper limits that an **int** object can store.
+The abstraction, in summary, encapsulates (i.e. hides) some data and/or behaviour and defines an interface which represents the encapsulated data and procedures.
 For example, the `emplace_back` function of `std::vector`.
 **Lets start with a simple definition:**\
 `emplace_back` **abstracts the inplace construction of a new element in the dynamically allocated array.**
