@@ -85,7 +85,7 @@ I was realy proud of that algorithm. One day, after a decade around 2017, I deci
 I was shocked that my algorithm was one of the well known sorting algorithms named as *counting sort* and dated back to **1950s**.
 Although I was disappointed, this event was a milestone for me to learn the software engineering starting from the fundamentals and following the strong references.
 
-Two years ago, I had a similar incident.
+Three years ago, I had a similar incident.
 I created a solution for a problem related to one of my data structures.
 Later, I made a literature review.
 The result was not surprising for me this time that the formal solution and even the name were exactly the same as I defined: *swap and pop idiom*.
