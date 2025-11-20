@@ -73,9 +73,9 @@ I started creating software programs in the beginning of 2000s during my undergr
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL and Visual Basic.
 Later, in 2016, I started studying OOP using Python.
 I have developed a number of projects using python, java and C++ later in my professional life.
-For the last three years, like many other software engineers,
-I have been studying FP, DOD and low latency from books and by inspecting public works of other people from github.
-Currently, I am a C++ developer with a powerful background in the low latency applications.
+For the last four years, like many other software engineers,
+I have been studying FP, DOD and low-latency from books and open-source libraries/repositories.
+Currently, I am a C++ developer with a powerful background in the low-latency applications.
 
 **Two Incidents**\
 An incident made a great effect on my vision for software engineering.
