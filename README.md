@@ -106,6 +106,8 @@ In other words, for complex systems, the software design is designing the interf
 Please see the [Structural Analysis Application](https://github.com/BarisAlbayrakIEEE/StructuralAnalysis.git) repository which
 demonstrates my experience with the software architecture and design.
 
+**Keep in mind that the repository contains a README file with a brief discussion about the problem and the solution present in the repository.**
+
 ## 2.2. Abstraction, Encapsulation and Polymorphism <a id='sec22'></a>
 These three concepts forms the basis of software engineering in all programming paradigms.
 
@@ -165,6 +167,8 @@ The README file of the repository presents a detailed discussion about the FP pr
 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the FP and DOD principles.
+
+**Keep in mind that each repository contains a README file with a brief discussion about the problem and the solutions present in the repository.**
 
 ## 2.4. Data Structures and Algorithms <a id='sec24'></a>
 The complexity analysis was the main issue under this topic.
@@ -285,6 +289,8 @@ The README file of the repository presents a detailed discussion about the persi
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the persistency and concurrency.
 
+**Keep in mind that each repository contains a README file with a brief discussion about the problem and the solutions present in the repository.**
+
 ## 2.7. Data Oriented Design (DOD) <a id='sec27'></a>
 In the last decade, the clock frequency of CPUs did not improved significantly
 while the memory instructions did alot on behalf of the cache improvement (up to 100 times increase in cache size).
@@ -328,6 +334,8 @@ Below are the key points when DOD is considered:
 
 [PersistentDAG](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git) repository in my github page contains a persistent DAG data structure.
 The README file of the repository presents a detailed discussion about the DOD principles.
+
+**Keep in mind that the repository contains a README file with a brief discussion about the problem and the solution present in the repository.**
 
 ## 2.8. Template Metaprogramming <a id='sec28'></a>
 Template metaprogramming helps removing a lot of boilerplate code.
@@ -383,6 +391,8 @@ However, there are some related pitfalls with the lock-free data structures such
 
 [Lock-free](https://github.com/BarisAlbayrakIEEE/lock_free.git) repository in my github page contains a number of lock-free designs for the queue and stack data structures.
 
+**Keep in mind that the repository contains a README file with a brief discussion about the problem and the solution present in the repository.**
+
 The wait-free approach is the most complex of the three approaches.
 **While I am very confident in the lock-based and lock-free concurrencies, I have a little background about the wait-free approach.**
 However, its one of the issues I currently study.
@@ -405,9 +415,9 @@ I currently **have no experience** with the DAG scheduling strategy.
 However, its one of the items in my future studies list.
 
 I also have some experience with the GPU parallelism.
-[GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
-to optimize a composite laminate written in CUDA C.
-The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
+[GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm to optimize a composite laminate written in CUDA C.
+
+**Keep in mind that the repository contains a README file with a brief discussion about the problem and the solutionspresent in the repository.**
 
 Below are the key points when the concurrency is considered:
 - **Why:** Separation of concerns, performance
@@ -441,12 +451,11 @@ The README file of the repository presents a detailed discussion about the above
 
 [Lock-free](https://github.com/BarisAlbayrakIEEE/lock_free.git) repository in my github page contains a number of lock-free designs for the queue and stack data structures.
 
-[Socket (under construction)](https://github.com/BarisAlbayrakIEEE/socket.git) repository will contain server designs using `select/poll/epoll` event loops and various thread pools.
+[Socket (under construction)](https://github.com/BarisAlbayrakIEEE/socket.git) repository will contain some TCP server designs using `select/poll/epoll` event loops and various thread pools.
 
 [GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm to optimize a composite laminate written in CUDA C.
 
-**Keep in mind that each repository contains a 
-The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
+**Keep in mind that each repository contains a README file with a brief discussion about the problem and the solutions present in the repository.**
 
 # 3. Languages & Tools <a id='sec3'></a>
 - C/C++, FORTRAN, PATRAN PCL, Java, Python, Visual Basic
@@ -488,32 +497,37 @@ The README file of the repository presents a detailed discussion about data and 
 3. [A functionally persistent vector tree in C++](https://github.com/BarisAlbayrakIEEE/VectorTree.git)
 4. [A functionally persistent DAG in C++](https://github.com/BarisAlbayrakIEEE/PersistentDAG.git)
 5. [A genetic algorithm for composite laminate optimization in CUDA C](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git)
-6. [Some python modules](https://github.com/BarisAlbayrakIEEE/python.git)
+6. [TCP server designs using select/pool/epool and thread pools (under construction)](https://github.com/BarisAlbayrakIEEE/socket.git)
+7. [Some python modules](https://github.com/BarisAlbayrakIEEE/python.git)
+
+**Keep in mind that each repository contains a README file with a brief discussion about the problem and the solutions present in the repository.**
 
 # 6. Some References <a id='sec6'></a>
-1. Alexandrescu, Modern C++ Design
-2. Anthony Williams, C++ Concurrency in Action
-3. Edouard Alligand & Joel Falcou, Practical C++ Metaprogramming
-4. Silvia Botros & Jeremy Tinly, High Performance MySQL
-5. Loki [github](https://github.com/dutor/loki)
-6. C++ concurrency library [github](https://github.com/David-Haim/concurrencpp)
-7. Data-oriented design resources [github](https://github.com/dbartolini/data-oriented-design)
-8. Data-oriented design book source code [github](https://github.com/raspofabs/dodbooksourcecode)
-9. DOD Performance Benchmarks [github](https://github.com/KamilVDono/DOD_Performance_Benchmarks)
-10. DOD optimizations [github](https://github.com/etuckerman/Data_Oriented_Design_Optimizations)
-11. DOD vs OOD performance stats [github](https://github.com/jeuxdemains/DataOriented_vs_ObjectOriented)
-12. Ivan Cukic, Functional Programming in C++
-13. FP ebook [github](https://github.com/imteekay/functional-programming-learning-path)
-14. Immer: A library of persistent and immutable data structures written in C++ [github](https://github.com/arximboldi/immer)
-15. FP tutorials and articles [github](https://github.com/xgrommx/awesome-functional-programming)
-16. List of materials and links about FP in C++ [github](https://github.com/graninas/cpp_functional_programming)
-17. FP suggestions to reduce code noise and how to deal with only one single level of abstraction at a time [github](https://github.com/Dobiasd/FunctionalPlus)
-18. C++ persistent data structures [github](https://github.com/arximboldi/immer)
-19. A C++ implementation of an immutable vector following Rich Hickey's clojure implementation [github](https://github.com/andrewrothstein/cpp-persistent-vector)
-20. A fast and reliable persistent (immutable) vector class for C++ [github](https://github.com/marcusz/steady)
-21. Phil Bagwell, Ideal Hash Tries
-22. A hash array-mapped trie (HAMT) implementation in C99 [github](https://github.com/mkirchner/hamt)
-23. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
+1.  Alexandrescu, Modern C++ Design
+2.  Anthony Williams, C++ Concurrency in Action
+3.  Edouard Alligand & Joel Falcou, Practical C++ Metaprogramming
+4.  Silvia Botros & Jeremy Tinly, High Performance MySQL
+5.  Loki [github](https://github.com/dutor/loki)
+6.  C++ concurrency library [github](https://github.com/David-Haim/concurrencpp)
+7.  Low-latency programming repository [github](https://github.com/0burak/imperial_hft.git)
+8.  moodycamel::ConcurrentQueue [github](https://github.com/ikiller1/moodycamel-ConcurrentQueue.git)
+9.  Data-oriented design resources [github](https://github.com/dbartolini/data-oriented-design)
+10. Data-oriented design book source code [github](https://github.com/raspofabs/dodbooksourcecode)
+11. DOD Performance Benchmarks [github](https://github.com/KamilVDono/DOD_Performance_Benchmarks)
+12. DOD optimizations [github](https://github.com/etuckerman/Data_Oriented_Design_Optimizations)
+13. DOD vs OOD performance stats [github](https://github.com/jeuxdemains/DataOriented_vs_ObjectOriented)
+14. Ivan Cukic, Functional Programming in C++
+15. FP ebook [github](https://github.com/imteekay/functional-programming-learning-path)
+16. Immer: A library of persistent and immutable data structures written in C++ [github](https://github.com/arximboldi/immer)
+17. FP tutorials and articles [github](https://github.com/xgrommx/awesome-functional-programming)
+18. List of materials and links about FP in C++ [github](https://github.com/graninas/cpp_functional_programming)
+19. FP suggestions to reduce code noise and how to deal with only one single level of abstraction at a time [github](https://github.com/Dobiasd/FunctionalPlus)
+20. C++ persistent data structures [github](https://github.com/arximboldi/immer)
+21. A C++ implementation of an immutable vector following Rich Hickey's clojure implementation [github](https://github.com/andrewrothstein/cpp-persistent-vector)
+22. A fast and reliable persistent (immutable) vector class for C++ [github](https://github.com/marcusz/steady)
+23. Phil Bagwell, Ideal Hash Tries
+24. A hash array-mapped trie (HAMT) implementation in C99 [github](https://github.com/mkirchner/hamt)
+25. C++ Template class implementation of Hash Array Mapped Trie [github](https://github.com/chaelim/HAMT)
 
 # 7. Current Studies <a id='sec7'></a>
 1. Socket programming
@@ -527,13 +541,20 @@ The README file of the repository presents a detailed discussion about data and 
 - Wait-free data structure for single-writer/multi-reader [github](https://github.com/gnu-enjoyer/LeftWrite.git)
 - Library of lock-free and wait-free algorithms [github](https://github.com/hayabusa-cloud/concurrent.git)
 - Single header, wait-free queues for C++ [github](https://github.com/marcusspangenberg/waitfreequeue.git)
-- ...
-3. Kernel development
+3. NUMA
+- NUMA Deep Dive; Red Hat / IBM Developer
+- Linux kernel NUMA source code [github](https://github.com/torvalds/linux/tree/master/mm)
+- numactl (official NUMA binding library) [github](https://github.com/numactl/numactl.git)
+- hwloc (NUMA topology discovery) [github](https://github.com/open-mpi/hwloc.git)
+- Google memory allocator with NUMA optimizations [github](https://github.com/google/tcmalloc.git)
+- High-performance allocator supporting NUMA node awareness [github](https://github.com/jemalloc/jemalloc.git)
+- lscpu [github](https://github.com/NanXiao/lscpu.git)
+4. Kernel development
 - K. C. Wang; Systems Programming in Unix/Linux; 2017
 - Robert Love; Linux Kernel Development; 2010
 - P. Raghavan, Amol Lad and Sriram Neelakandan; Embedded Linux System Design and Development; 2006
 - Mark Mitchell, Jeffrey Oldham and Alex Samuel; Advanced Linux Programming; 2001
-4. Assembly language
+5. Assembly language
 - Randall Hyde; The Art of Assembly Language, 2010
 - Randall Hyde; The Art of 64-bit Assembly, 2020
 - Sivarama P. Dandamudi; Introduction to Assembly Language Programming; 2005
