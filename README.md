@@ -352,7 +352,11 @@ Below are the key points when the template metaprogramming is considered:
 - **STL:** constexpr, type traits library (enable_if/void_t, conditional, is_same, etc.), tuple, integer_sequence and index_sequence, etc.
 
 ## 2.9. Concurrency <a id='sec29'></a>
-First of all, the performance is not the only reason for concurrent programming.
+First of all, the performance is not the only reason for the concurrent programming.
+Concurrency is about dealing with many tasks at the same time.
+On the other hand, parallelism is only for the performance: executing many tasks at the same time.
+Concurrency is about structure while parallelism is about speed.
+
 The need for the concurrent programming may arise to separate different concerns of an application.
 For example, any application having a user interface would need to spare a thread for the GUI interaction.
 
@@ -375,7 +379,7 @@ Race conditions, deadlocks, serialization and cache ping-pong are some of the pr
 
 The lock-free approach, on the other hand, ensures at least one thread will make progress.
 The atomic operations are indispensable so that a **true race condition** cannot occur in a lock-free data structure.
-However, there are some related pitfalls with the lock-free data structures such as ABA problem, livelocks and memory issues like dangling pointers.
+However, there are some related pitfalls with the lock-free data structures such as ABA problem, livelocks, CAS loops and memory issues like dangling pointers.
 
 [Lock-free](https://github.com/BarisAlbayrakIEEE/lock_free.git) repository in my github page contains a number of lock-free designs for the queue and stack data structures.
 
@@ -394,7 +398,10 @@ I mastered in the following fundamental strategies of multithreading:
 - Partition vs elementwise parallellism
 - Partition, reduction, etc.
 
-I currently have no experience with the DAG scheduling strategy.
+I currently **have no experience** with the NUMA-aware programming.
+However, its one of the items in my future studies list.
+
+I currently **have no experience** with the DAG scheduling strategy.
 However, its one of the items in my future studies list.
 
 I also have some experience with the GPU parallelism.
@@ -403,31 +410,27 @@ to optimize a composite laminate written in CUDA C.
 The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
 
 Below are the key points when the concurrency is considered:
-- **Why:** Separation of concerns, pereformance
+- **Why:** Separation of concerns, performance
 - **Amdahl’s law:** Scalability
-- **Race conditions:** Accessing shared data concurrently while at least one thread writes to the data; data race = undefined behavior
-- **Atomic operation:** An indivisible operation which cannot be observed half-done from any thread in the system; it’s either done or not done
+- **Shared data:** Design without shared data as much as possible, otherwise decide about how to secure the shared data
+- **Race conditions:** Avoid race conditions inherent in the interface (the classical example is to design functions for complete operations such as `top_and_pop` rather than designing for operation steps such as `top` and `pop`)
+- **Atomic operation:** An indivisible operation which cannot be observed half-done from any thread in the system; the implementation may involve a mutex
 - **Data structure classification:** Lock-based, lock-free and wait-free concurrent data structures
 - **Deadlocks:** Define a lock order, avoid nested locks, define lock hierarchy, **design for no deadlock**
 - **Proccess relationship types:** Synchronizes-with and happens-before relationships
-- **Modification ordering:** Sequentially consistent ordering, relaxed ordering and acquire-release ordering
-- **Serialization:** Threads access the data serially rather than concurrently (e.g. in case of a mutex lock)
+- **Modification ordering:** Sequentially consistent ordering, acquire-release ordering and relaxed ordering
+- **Serialization:** Threads access the data serially rather than concurrently (e.g. liblfds lock-free MPMC queue is fully serialized)
 - **Oversubscription:** More threads than the hardware can support
 - **Contention:** If the processors rarely have to wait for each other, you have low contention
-- **Cache ping-pong:** The data is passed back and forth between the caches many times (e.g. locking a mutex in a loop)
-- **L1/L2/L3 caches:** Memory segments designed to speed up access
-- **Cache line:** Blocks of memory dealt by the processors (typically 32 or 64 bytes)
-- **False sharing:** The cache line is shared, even though the data is not shared
-- **Data proximity:** If the data is spread out in memory, the related cache lines must be loaded from memory onto the processor cache
-
-**Rules for Concurrent Data Structures:**
+- **Cache line:** Blocks of memory dealt by the processors (**typically** 32 or 64 bytes)
+- **False sharing and cache ping-pong:** Shared data shall be designed to align well to cache lines
+- **L1/L2/L3 caches:** Memory segments designed to speed up access; **typically** each core has its own L1/L2 caches while L3 is totally shared
+- **Data proximity:** If the data is spread out in memory, the related cache lines shall be loaded from memory onto the processor cache
+- **Spatial and temporal locality:** Principles to keep the cache lines hot to prevent performance lost due to memory fetching
 - **Thread Safety:** Ensure that no thread can see a state where the invariants of the data structure have been broken by the actions of another thread
 - **Exception Safety:** Pay attention to how the data structure behaves in the presence of exceptions to ensure that the invariants are not broken
-- **Shared data:** Design without shared data as much as possible, otherwise decide about how to secure the shared data
-- **Race conditions:** Avoid race conditions inherent in the interface by providing functions for complete operations (e.g., top_and_pop) rather than for operation steps (e.g., top, pop)
 - **Deadlocks:** Minimize the opportunities for deadlocks by designing the data structure, the interface and locking scheme carefully and avoiding nested locks
 - **Serialization:** If its worth design wait-free, otherwise lock-free, otherwise with fine-grained locks, otherwise consider redesigning
-- **Granularity:** Achieve the deepest possible level of granularity in case of lock-based approach
 - **Cache effectivity and false sharing:** Optimize the cache usage while avoiding the false sharing
 
 [VectorTree](https://github.com/BarisAlbayrakIEEE/VectorTree.git) repository in my github page contains a persistent vector tree data structure.
@@ -438,8 +441,11 @@ The README file of the repository presents a detailed discussion about the above
 
 [Lock-free](https://github.com/BarisAlbayrakIEEE/lock_free.git) repository in my github page contains a number of lock-free designs for the queue and stack data structures.
 
-[GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm 
-to optimize a composite laminate written in CUDA C.
+[Socket (under construction)](https://github.com/BarisAlbayrakIEEE/socket.git) repository will contain server designs using `select/poll/epoll` event loops and various thread pools.
+
+[GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm to optimize a composite laminate written in CUDA C.
+
+**Keep in mind that each repository contains a 
 The README file of the repository presents a detailed discussion about data and task parallelism approaches and GPU parallelism using CUDA C.
 
 # 3. Languages & Tools <a id='sec3'></a>
