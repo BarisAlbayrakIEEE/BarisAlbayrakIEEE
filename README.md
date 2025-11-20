@@ -43,7 +43,7 @@ In the above example, the causes (e.g. bugs in the special functions) and the cu
 Thus, please, consider the lists as *the related issues* without expecting a conceptual completeness.
 
 **About Me: Low-Latency C++ Software Engineer**\
-I am a Low-Latency C++ Software Engineer specializing in high-performance, lock-free, and concurrency-optimized systems.
+In my software engineering road map, I followed a path to become a **low latency engineer** specializing in high-performance, lock-free, and concurrency-optimized systems.
 My work focuses on designing and implementing deterministic, cache-efficient, branch-predictable, and hardware-aware C++ applications.
 
 I develop high-performance systems using a deep understanding of:
