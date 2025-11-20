@@ -115,7 +115,7 @@ These three concepts forms the basis of software engineering in all programming 
 Similar to the math, any type in a software program abstracts and encapsulates the structure and behavior of a concept.
 For example, **int** data type abstracts the integer numbers in the number theory hiding the issues related to the allocation, size, construction, manipulation.
 A direct result of the abstraction is the lower and upper limits that an **int** object can store.
-The abstraction, in summary, encapsulates (i.e. hides) some data and/or behaviour and defines an interface which represents the encapsulated data and procedures.
+The abstraction, in summary, encapsulates (i.e. hides) some data and/or behaviour and defines an interface which represents the encapsulated data and behaviour.
 For example, the `emplace_back` function of `std::vector`.
 **Lets start with a simple definition:**\
 `emplace_back` **abstracts the inplace construction of a new element in the dynamically allocated array.**
@@ -142,13 +142,17 @@ Single and double dispatch are the two types while double dispatch is not suppor
 Function overloading has nothing to do with the polymorphism as a function is defined by its full signature including the name, arguments and return value
 while the signature is not the same for an overload function.
 
-The term **uniform interface** is crucial such that all design patterns rely on interfaces.
+The term **uniformity** is the key point while designing any system.
+For example, all the well-known design patterns are built up on uniform interfaces.
 For example, the strategy design pattern defines the signature of a behavior
 while the implementation differs for each of the concrete classes.
 Consider a Shape class which is the base for some geometric entities such as Circle and Ellipse.
 The `void draw()` is the interface to draw a shape on the display window.
 The function would be implemented differently in Circle and Ellipse
 but the clients can easily call the function on all Shape objects including the Circle and Ellipse.
+
+In summary, the design of a system is mainly the abstraction of the uniform interfaces
+and polymorphism is one of the most powerful tool to achieve this right.
 
 Polymorphism can be designed **statically** or **dynamically** in C++
 while the languages like java and python are based on a universal abstract base type (e.g. JavaObject)
