@@ -129,7 +129,7 @@ The signature of `emplace_back` corresponds to the following statements:
 - `emplace_back` may result with reallocation of the `std::vector` which means that all the pointers/references to the existing elements are invalidated.
 
 **Hence, refining the 1st definition:**\
-`emplace_back` **abstracts the in-place construction of a new element at the and of a dynamically allocated array for which the size is increased.**
+`emplace_back` **abstracts the in-place construction of a new element at the end of a dynamically allocated array for which the size is increased.**
 Now, this process is encapsulated so that the user do not need to know the details like when and how the resize operation is needed and allocates the new memory.
 Some of the details are described in the documentation of the method (e.g. possibility of the reference/pointer invalidation)
 because not all users would be able to visualize the details of the algorithm.
