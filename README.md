@@ -42,6 +42,32 @@ As a note, **the list of related issues** may describe various aspects of the to
 In the above example, the causes (e.g. bugs in the special functions) and the cures (e.g. RAII) are listed together.
 Thus, please, consider the lists as *the related issues* without expecting a conceptual completeness.
 
+**About Me – Low-Latency C++ Software Engineer**\
+I am a Low-Latency C++ Software Engineer specializing in high-performance, lock-free, and concurrency-optimized systems.
+My work focuses on designing and implementing deterministic, cache-efficient, branch-predictable, and hardware-aware C++ applications.
+
+I develop high-performance systems using a deep understanding of:
+- CPU caches and data locality
+- instruction-level efficiency and branch prediction
+- memory ordering, atomic operations, and lock-free algorithms
+- cache-friendly data layouts (AoS vs SoA, DOD approaches)
+- profiling, benchmarking, and performance diagnostics
+- modern C++ (C++20/23), template metaprogramming, and value semantics
+
+Over the last several years, I have focused intensively on low-latency system design, producing:
+- lock-free MPMC queues and stacks
+- persistent and cache-efficient data structures
+- high-performance components based on DOD
+- CUDA-based parallel algorithms for compute-heavy workloads
+
+My engineering background, originally in structural analysis, gives me strong fundamentals in
+mathematical modeling, correctness, precision, and system-level thinking.
+I naturally apply these principles to low-latency design, where correctness and performance must coexist without compromise.
+
+Today, I am fully focused on advancing as a Low-Latency C++ Engineer, studying modern techniques
+from real-time systems and high-performance computing
+and building software that maximizes throughput, minimizes latency, and fully leverages modern hardware.
+
 **Brief History**\
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
 For a long time, I developed using structured languages: FORTRAN, PATRAN PCL and Visual Basic.
