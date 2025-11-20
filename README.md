@@ -139,7 +139,7 @@ The uniformity can be achieved by other approaches/tools as well such as functio
 The keyword here is the **uniform interface** which is indispensable in the design of a system.
 Single and double dispatch are the two types while double dispatch is not supported by C++ and its successors.
 Function overloading has nothing to do with the polymorphism as a function is defined by its full signature including the name, arguments and return value
-while the arguments are not the same for an overload function.
+while the signature is not the same for an overload function.
 
 The term **uniform interface** is crucial such that all design patterns rely on interfaces.
 For example, the strategy design pattern defines the signature of a behavior
@@ -171,7 +171,7 @@ The README file of the repository presents a detailed discussion about the FP an
 **Keep in mind that each repository contains a README file with a brief discussion about the problem and the solutions present in the repository.**
 
 ## 2.4. Data Structures and Algorithms <a id='sec24'></a>
-The complexity analysis was the main issue under this topic.
+The complexity analysis **was** the main issue under this topic.
 For example, inserting an element at the middle of a vector is O(N) while the same operation is O(1) for a linked list.
 Hence, if one needs a container which will be subjected to frequent inserts, the correct answer would be a linked list.
 However, **this is only the half of the reality** as the modern computers utilized the caches to improve the performance for memory access.
@@ -186,7 +186,7 @@ Another issue under this topic is of course the concurrency.
 Current tendency in the industry is to achieve asynchronous tasking by replacing the lock-based systems with lock-free equivalents.
 A further step is being achieved by the wait-free access which currently I have very little experience.
 
-Below are the key points when data structures are considered:
+Below are some of the key points when data structures are considered:
 - **Allocation:** Contiguous vs pointer-based, static (stack) vs dynamic (heap), placement new, STL style arenas and allocators, etc.
 - **Basic data structures:** Static and dynamic arrays, linked lists, queues, stacks, trees, tries, binary trees, red-black trees, sets, graphs, hash maps/tables, etc.
 - **Persistent data structures:** Partial vs full vs functional persistency, persistent implementations of the basic data structures (e.g. persistent vector)
