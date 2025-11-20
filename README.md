@@ -79,7 +79,8 @@ Currently, I am a C++ developer with a powerful background in the low-latency ap
 
 **Two Incidents**\
 An incident made a great effect on my vision for software engineering.
-I implemented a sorting algorithm in 2000s for my PATRAN PCL libraries which was *quite fast* comparing to a *traditional sorting algorithm* based on comparison.
+I implemented a sorting algorithm at the beginning of 2000s for my PATRAN PCL libraries
+which was *quite fast* comparing to a *traditional sorting algorithm* based on comparison.
 I was realy proud of that algorithm. One day, after a decade around 2017, I decided to make a review of the sorting algorithms *other people generated*.
 I was shocked that my algorithm was one of the well known sorting algorithms named as *counting sort* and dated back to **1950s**.
 Although I was disappointed, this event was a milestone for me to learn the software engineering starting from the fundamentals and following the strong references.
