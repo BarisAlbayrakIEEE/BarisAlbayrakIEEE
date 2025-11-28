@@ -1,15 +1,16 @@
 **Contents**
 - [1. Introduction](#sec1)
 - [2. Fundamentals of the Software Engineering](#sec2)
-  - [2.1. Software Architecture & Design](#sec21)
-  - [2.2. Abstraction, Encapsulation and Polymorphism](#sec22)
-  - [2.3. Programming Paradigms](#sec23)
-  - [2.4. Data Structures and Algorithms](#sec24)
-  - [2.5. OOP](#sec25)
-  - [2.6. Functional Programming (FP)](#sec26)
-  - [2.7. Data Oriented Design (DOD)](#sec27)
-  - [2.8. Template Metaprogramming](#sec28)
-  - [2.9. Concurrency](#sec29)
+  - [2.01. Software Architecture & Design](#sec201)
+  - [2.02. Abstraction, Encapsulation and Polymorphism](#sec202)
+  - [2.03. Programming Paradigms](#sec203)
+  - [2.04. Data Structures and Algorithms](#sec204)
+  - [2.05. OOP](#sec205)
+  - [2.06. Functional Programming (FP)](#sec206)
+  - [2.07. Data Oriented Design (DOD)](#sec207)
+  - [2.08. Socket Programming and Event-Driven Architecture](#sec208)
+  - [2.09. Template Metaprogramming](#sec209)
+  - [2.10. Concurrency](#sec210)
 - [3. Languages & Tools](#sec3)
 - [4. C/C++ Skills](#sec4)
 - [5. Repositories](#sec5)
@@ -43,16 +44,16 @@ In the above example, the causes (e.g. bugs in the special functions) and the cu
 Thus, please, consider the lists as *the related issues* without expecting a conceptual completeness.
 
 **About Me: Low-Latency C++ Software Engineer**\
-In my software engineering road map, I followed a path to become a **low latency engineer** specializing in high-performance, lock-free, and concurrency-optimized systems.
-My work focuses on designing and implementing deterministic, cache-efficient, branch-predictable, and hardware-aware C++ applications.
+In my software engineering road map, I followed a path to become a **low latency engineer** specializing in high-performance, lock-free and concurrency-optimized systems.
+My work focuses on designing and implementing deterministic, cache-efficient, branch-predictable and hardware-aware C++ applications.
 
 I develop high-performance systems using a deep understanding of:
-- CPU caches and data locality
+- CPU caches and the locality
 - instruction-level efficiency and branch prediction
-- memory ordering, atomic operations, and lock-free algorithms
+- memory ordering, atomic operations and lock-free algorithms
 - cache-friendly data layouts (AoS vs SoA, DOD approaches)
-- profiling, benchmarking, and performance diagnostics
-- modern C++ (C++20/23), template metaprogramming, and value semantics
+- profiling, benchmarking and performance diagnostics
+- modern C++ (C++20/23), template metaprogramming and value semantics
 
 Over the last several years, I have focused intensively on low-latency system design, producing:
 - lock-free MPMC queues and stacks
@@ -61,12 +62,12 @@ Over the last several years, I have focused intensively on low-latency system de
 - CUDA-based parallel algorithms for compute-heavy workloads
 
 My engineering background, originally in structural analysis, gives me strong fundamentals in
-mathematical modeling, correctness, precision, and system-level thinking.
+mathematical modeling, correctness, precision and system-level thinking.
 I naturally apply these principles to low-latency design, where correctness and performance must coexist without compromise.
 
 Today, I am fully focused on advancing as a Low-Latency C++ Engineer, studying modern techniques
 from real-time systems and high-performance computing
-and building software that maximizes throughput, minimizes latency, and fully leverages modern hardware.
+and building software that maximizes throughput, minimizes latency and fully leverages modern hardware.
 
 **Brief History**\
 I started creating software programs in the beginning of 2000s during my undergraduate period with FORTRAN.
@@ -97,7 +98,7 @@ Following sections summarize my software engineering skills under the headings l
 
 # 2. Fundamentals of the Software Engineering <a id='sec2'></a>
 
-## 2.1. Software Architecture & Design <a id='sec21'></a>
+## 2.01. Software Architecture & Design <a id='sec201'></a>
 Several fundamental principles guide the development of a scalable, maintainable and efficient software:
 Modularity, high cohesion, low coupling, separation of concerns, SOLID principles, testability, DRY, YAGNI, KISS, etc.
 
@@ -109,7 +110,7 @@ demonstrates my experience with the software architecture and design.
 
 **Keep in mind that the repository contains a README file with a brief discussion about the problem and the solution present in the repository.**
 
-## 2.2. Abstraction, Encapsulation and Polymorphism <a id='sec22'></a>
+## 2.02. Abstraction, Encapsulation and Polymorphism <a id='sec202'></a>
 These three concepts forms the basis of software engineering in all programming paradigms.
 
 Similar to the math, any type in a software program abstracts and encapsulates the structure and behavior of a concept.
@@ -161,7 +162,7 @@ Static polymorphism is achieved by the tools coming from the generic programming
 while dynamic polymorphism is achieved by overriding virtaul functions of abstract base classes.
 The differences between the two are described in the following sections.
 
-## 2.3. Programming Paradigms <a id='sec23'></a>
+## 2.03. Programming Paradigms <a id='sec203'></a>
 I am well-experienced with the following programming paradigms and the corresponding languages accept for Clojure and Haskel:
 - **Structured programming:** C, C++, FORTRAN, PATRAN PCL, Visual Basic
 - **Object-Oriented Programming, OOP:** C++, Python, Java, Visual Basic
@@ -175,7 +176,7 @@ The README file of the repository presents a detailed discussion about the FP an
 
 **Keep in mind that each repository contains a README file with a brief discussion about the problem and the solutions present in the repository.**
 
-## 2.4. Data Structures and Algorithms <a id='sec24'></a>
+## 2.04. Data Structures and Algorithms <a id='sec204'></a>
 The complexity analysis **was** the main issue under this topic.
 For example, inserting an element at the middle of a vector is O(N) while the same operation is O(1) for a linked list.
 Hence, if one needs a container which will be subjected to frequent inserts, the correct answer would be a linked list.
@@ -202,7 +203,7 @@ Below are some of the key points when data structures are considered:
 - **Concurrency:** Lock-based vs lock-free designs, fine vs coarse-grained locking schemes, critical section vs atomic operations
 - **DOD principles:** Memory layout strategies, memory access patterns, cache efficiency
 
-## 2.5. OOP <a id='sec25'></a>
+## 2.05. OOP <a id='sec205'></a>
 The traditional approach in OOP relies highly on the dynamic/virtual polymorphism.
 Decades of software development based on the dynamic polymorphism gathered many design principles, patterns and idioms such as SOLID design rules, GoF design patterns, etc.
 Currently, the approach has standard solutions to almost any problem.
@@ -259,7 +260,7 @@ functions returning pointer/reference to a local variable, unsecured shared data
 - **Generic programming:** Templated interfaces, template specializations, template metaprogramming, type traits, concepts
 - **Exception and thread safety:** Pure member functions, at least strong exception safety, preconditions and invariants, race conditions, RAII
 
-## 2.6. Functional Programming (FP) <a id='sec26'></a>
+## 2.06. Functional Programming (FP) <a id='sec206'></a>
 Although the FP languages (e.g. Haskell) are not widely used in the industry,
 FP has influenced the industry by guiding the OOP with its principles.
 
@@ -296,7 +297,7 @@ The README file of the repository presents a detailed discussion about the persi
 
 **Keep in mind that each repository contains a README file with a brief discussion about the problem and the solutions present in the repository.**
 
-## 2.7. Data Oriented Design (DOD) <a id='sec27'></a>
+## 2.07. Data Oriented Design (DOD) <a id='sec207'></a>
 In the last decade, the clock frequency of CPUs did not improved significantly
 while the memory instructions did alot on behalf of the cache improvement (up to 100 times increase in cache size).
 This evolution forces the developers to evaluate more efficient cache usage as a crucial design parameter.
@@ -342,7 +343,41 @@ The README file of the repository presents a detailed discussion about the DOD p
 
 **Keep in mind that the repository contains a README file with a brief discussion about the problem and the solution present in the repository.**
 
-## 2.8. Template Metaprogramming <a id='sec28'></a>
+## 2.08. Socket Programming and Event-Driven Architecture <a id='sec208'></a>
+I actively study modern network programming with a primary focus on **POSIX** sockets, **TCP/UDP** communication and event-driven I/O architectures.
+My work builds upon a solid foundation of **low-latency** and **lock-free** concurrency, allowing me to design network components that are both robust and scalable.
+
+**Core Skills & Concepts**\
+1. **Socket API Fundamentals:** Creation and management of sockets (socket, bind, listen, accept, connect), address translation (getaddrinfo) and cross-platform differences between Linux (POSIX) and Windows (WinSock).
+2. **TCP & UDP Communication:** Understanding the characteristics, guarantees and trade-offs of connection-oriented (TCP) vs connectionless (UDP) protocols.
+3. **Blocking vs. Non-Blocking I/O:** Implementation of servers using both blocking interfaces and non-blocking mechanisms (fcntl, select), including timeout handling and graceful connection management.
+4. **Event-Driven Architecture:** Experience with select-based reactors, file-descriptor multiplexing and connection handling through central event loops.
+This includes understanding I/O readiness and the separation of concerns between the dispatcher, handler and logic layers.
+5. **Reactor Pattern:** Design of modular network servers inspired by the reactor pattern which is ready for future upgrades (epoll, kqueue or io_uring) for higher scalability.
+6. **Threading & Concurrency Integration:** Ability to mix network I/O with:
+- lock-free queue designs,
+- worker thread pools,
+- message-passing between I/O and compute threads,
+- back-pressure, buffering and safe shutdown patterns.
+
+**Concurrency Expertise**\
+My deep experience with lock-free and cache-efficient data structures and algorithms allows me to design socket-based systems that avoid unnecessary locks and minimize latency.
+This background naturally extends to:
+- per-connection worker threading,
+- I/O pipelines and
+- reactor + thread-pool hybrid architectures.
+
+**Current Focus**\
+I am currently building and refining:
+- standalone TCP/UDP servers (timer-driven, blocking and non-blocking variants),
+- select-based reactors with RAII-managed sockets,
+- cross-platform network utilities,
+- reusable C++ network abstractions for future high-performance systems.
+
+[Socket](https://github.com/BarisAlbayrakIEEE/socket.git) repository in my github page contains server designs based on the event-driven architecture.
+The repository is currently under construction and unfortunately, I could not introduce the detailed README for the repository yet.
+
+## 2.09. Template Metaprogramming <a id='sec209'></a>
 Template metaprogramming helps removing a lot of boilerplate code.
 
 C++ provides a compile-time (i.e., static) template definition,
@@ -364,7 +399,7 @@ Below are the key points when the template metaprogramming is considered:
 - Domain Specific Languages (DSLs)
 - **STL:** constexpr, type traits library (enable_if/void_t, conditional, is_same, etc.), tuple, integer_sequence and index_sequence, etc.
 
-## 2.9. Concurrency <a id='sec29'></a>
+## 2.10. Concurrency <a id='sec210'></a>
 First of all, the performance is not the only reason for the concurrent programming.
 Concurrency is about dealing with many tasks at the same time.
 On the other hand, parallelism is only for the performance: executing many tasks at the same time.
@@ -456,7 +491,7 @@ The README file of the repository presents a detailed discussion about the above
 
 [Lock-free](https://github.com/BarisAlbayrakIEEE/lock_free.git) repository in my github page contains a number of lock-free designs for the queue and stack data structures.
 
-[Socket (under construction)](https://github.com/BarisAlbayrakIEEE/socket.git) repository will contain some TCP server designs using `select/poll/epoll` event loops and various thread pools.
+[Socket](https://github.com/BarisAlbayrakIEEE/socket.git) repository in my github page contains flexible and extensible network components based on the event-driven architecture.
 
 [GeneticLaminate](https://github.com/BarisAlbayrakIEEE/GeneticLaminate.git) repository in my github page contains a genetic algorithm to optimize a composite laminate written in CUDA C.
 
@@ -489,7 +524,7 @@ The README file of the repository presents a detailed discussion about the above
 - **Type deduction rules:** Template and auto type deductions, C++11/14/17 rules with auto and decltype, perfect forwarding
 - **Idioms:** RAII, handle body idiom, copy and swap, swap and pop, lazy initialization, copy on write, EBC, double dispatch, SFINAE, CRTP, Pimpl, execute around pointer, NVI
 - **Optimization techniques:** Inlining, bit manipulation, bitwise copy, RVO and NRVO, loop unrolling, vectorization, hotpath/slowpath, branch reduction, etc.
-- **Template metaprogramming:** See [Template Metaprogramming](#sec28)
+- **Template metaprogramming:** See [Template Metaprogramming](#sec209)
 - **Lambda expressions:** Anonymous functions, capture modes, capture auto type deduction rules, return type deduction rules, STL algorithms
 - **Multithreading and multitasking:** std::thread/std::jthread vs std::async, std::atomic vs std::mutex, std::lock_guard vs std::scoped_lock vs std::unique_lock/std::shared_lock, std::condition_variable vs std::promise
 - **memory_order_seq_cst:** Sequentially consistent ordering: All threads see the same order of operations, obeys SW relationships, the default and the easiest one
